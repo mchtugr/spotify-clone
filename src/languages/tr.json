@@ -5,5 +5,13 @@
     "download": "İndir",
     "signup": "Kaydol",
     "login": "Oturum aç"
+  },
+  "trial": {
+    "h1": "Premium'u 1 ay boyunca ücretsiz kullan",
+    "price": "Sonra sadece 17,99 TL/ay. İstediğin zaman iptal et.",
+    "get_started": "KULLANMAYA BAŞLA",
+    "view_plans": "PLANLARI GÖRÜNTÜLE",
+    "footer_link": "Hüküm ve koşullar geçerlidir.",
+    "footer_text": "Premium'u daha önce denemiş olan kullanıcılar 1 aylık ücretsiz tekliften yararlanamaz."
   }
 }

@@ -5,5 +5,13 @@
     "download": "Download",
     "signup": "Sign up",
     "login": "Log in"
+  },
+  "trial": {
+    "h1": "Get Premium free for 1 month",
+    "price": "Just £9.99/month after. Cancel anytime.",
+    "get_started": "GET STARTED",
+    "view_plans": "VIEW PLANS",
+    "footer_link": "Terms and conditions apply.",
+    "footer_text": "1 month free not available for users who have already tried Premium."
   }
 }
