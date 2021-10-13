@@ -6,7 +6,29 @@ const OffersPage = () => {
   return (
     <div>
       <Header />
-      <Footer />
+      <div>
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+      </div>
+      {/* <Footer /> */}
     </div>
   )
 }
