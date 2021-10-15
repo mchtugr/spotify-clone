@@ -1,0 +1,56 @@
+.benefit-card {
+  width: 270px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  vertical-align: top;
+  align-items: center;
+  flex-grow: 1;
+  -webkit-box-flex: 1;
+}
+.download-card {
+  background: url(https://i.scdn.co/image/ab671c3d0000f43009302fbaf6259b4c117c704f);
+}
+.no-ads-card {
+  background: url(https://i.scdn.co/image/ab671c3d0000f43098292b95d24a697c20df5137);
+}
+.play-sonf-card {
+  background: url(https://i.scdn.co/image/ab671c3d0000f4306998d3ffd58aad6da6afdf67);
+}
+.skip-song-card {
+  background: url(https://i.scdn.co/image/ab671c3d0000f430cd6c528745e510c5be63a012);
+}
+.bg-img-container {
+  display: block;
+  width: 142px;
+  height: 142px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: block;
+  margin: 0px auto 40px;
+}
+
+.card-footer {
+  width: 100%;
+  display: block;
+  text-align: center;
+  align-items: center;
+}
+
+.card-footer-title {
+  font-size: 21px;
+  line-height: 1.3em;
+  font-weight: 700;
+  padding: 0;
+  margin-bottom: 10px;
+}
+
+.card-footer-description {
+  width: 85%;
+  line-height: 1.5;
+  font-size: 16px;
+  padding: 0;
+  margin: 0 auto;
+}

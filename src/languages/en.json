@@ -8,10 +8,29 @@
   },
   "trial": {
     "h1": "Get Premium free for 1 month",
-    "price": "Just £9.99/month after. Cancel anytime.",
+    "price": "Only $9.99 after. Cancel anytime.",
     "get_started": "GET STARTED",
     "view_plans": "VIEW PLANS",
     "footer_link": "Terms and conditions apply.",
     "footer_text": "1 month free not available for users who have already tried Premium."
+  },
+  "benefits": {
+    "h2": "Why go Premium?",
+    "footer1": {
+      "title": "Download music.",
+      "description": "Listen anywhere."
+    },
+    "footer2": {
+      "title": "No ad interruptions.",
+      "description": "Enjoy nonstop music."
+    },
+    "footer3": {
+      "title": "Play any song.",
+      "description": "Even on mobile."
+    },
+    "footer4": {
+      "title": "Unlimited skips.",
+      "description": "Just hit next."
+    }
   }
 }

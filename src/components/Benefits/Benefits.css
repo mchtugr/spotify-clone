@@ -1,0 +1,30 @@
+.benefits {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 55px;
+  padding: 75px 15px;
+}
+
+.benefits-header {
+  font-size: 40px;
+  line-height: 46px;
+  letter-spacing: -0.015em;
+  font-weight: 900;
+  padding: 0;
+  max-width: 670px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 72px;
+}
+.benefit-card-container {
+  padding: 0;
+}
+
+.benefit-card-inner-container {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: center;
+}

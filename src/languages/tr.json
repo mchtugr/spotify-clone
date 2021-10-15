@@ -13,5 +13,24 @@
     "view_plans": "PLANLARI GÖRÜNTÜLE",
     "footer_link": "Hüküm ve koşullar geçerlidir.",
     "footer_text": "Premium'u daha önce denemiş olan kullanıcılar 1 aylık ücretsiz tekliften yararlanamaz."
+  },
+  "benefits": {
+    "h2": "Neden Premium'a geçmelisin?",
+    "footer1": {
+      "title": "Müzik indir.",
+      "description": "İstediğin yerde dinle."
+    },
+    "footer2": {
+      "title": "Reklamlarla bölünmeden dinle.",
+      "description": "Kesintisiz müziğin keyfini çıkar."
+    },
+    "footer3": {
+      "title": "İstediğin şarkıyı çal.",
+      "description": "Mobil cihazında bile."
+    },
+    "footer4": {
+      "title": "Sınırsız şarkı atlama hakkı.",
+      "description": "Sonraki düğmesine basman yeterli."
+    }
   }
 }
