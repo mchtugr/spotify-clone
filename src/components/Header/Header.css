@@ -27,17 +27,7 @@
 
 /* MEDIA QUERIES */
 
-@media only screen and (min-width: 1200px) {
-  .navbar-container {
-    max-width: 1174px;
-  }
-}
-
-@media only screen and (min-width: 992px) {
-  .navbar-container {
-    max-width: 970px;
-  }
-}
+/* Small and Medium Screens */
 @media only screen and (max-width: 991px) {
   .banner {
     height: 54px;
@@ -58,5 +48,19 @@
 
   .logo {
     height: 25px;
+  }
+}
+
+/* // Large devices (desktops, 992px and up) */
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .navbar-container {
+    max-width: 970px;
+  }
+}
+
+/* // X-Large devices (large desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  .navbar-container {
+    max-width: 1174px;
   }
 }

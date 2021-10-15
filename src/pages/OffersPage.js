@@ -9,7 +9,7 @@ const OffersPage = () => {
     <div>
       <Header />
       <Trial />
-      {/* <Benefits /> */}
+      <Benefits />
       <div>
         <br />
         <br />
