@@ -7,9 +7,9 @@ const Benefits = () => {
   const { t } = useTranslation()
   return (
     <div className='benefits'>
-      <div className='benefits-header'>{t('benefits.h2')}</div>
-      <ul className='benefit-card-container'>
-        <div className='benefit-card-inner-container'>
+      <div className='benefits-heading'>{t('benefits.h2')}</div>
+      <div className='benefit-cards-container'>
+        <div className='benefit-cards-inner-container'>
           <BenefitCard
             title={t('benefits.footer1.title')}
             description={t('benefits.footer1.description')}
@@ -31,7 +31,7 @@ const Benefits = () => {
             className='skip-song-card'
           />
         </div>
-      </ul>
+      </div>
     </div>
   )
 }

@@ -32,5 +32,69 @@
       "title": "Unlimited skips.",
       "description": "Just hit next."
     }
+  },
+  "premium_plans": {
+    "h2": "Pick your Premium",
+    "h3": "Listen without limits on your phone, speaker, and other devices.",
+    "trial_period": "1 month free",
+    "plans": [
+      {
+        "index": 0,
+        "plan_name": "Individual",
+        "price": "$9.99/month after offer period",
+        "account_num": "1 account",
+        "features": [
+          "Listen to music ad-free",
+          "Play anywhere - even offline",
+          "On-demand playback"
+        ],
+        "footer_link": "Terms and conditions apply.",
+        "footer_text": "1 month free not available for users who have already tried Premium."
+      },
+      {
+        "index": 1,
+        "plan_name": "Duo",
+        "price": "$12.99/month after offer period",
+        "account_num": "2 account",
+        "features": [
+          "2 Premium accounts for a couple under one roof",
+          "Duo Mix: a playlist for two, regularly updated with music you both enjoy",
+          "Ad-free music listening, play offline, on-demand playback"
+        ],
+        "footer_link": "Terms and conditions apply.",
+        "footer_text": "1 month free not available for users who have already tried Premium."
+      },
+      {
+        "index": 2,
+        "plan_name": "Family",
+        "price": "$15.99/month after offer period",
+        "account_num": "6 account",
+        "features": [
+          "6 Premium accounts for family members living under one roof",
+          "Family Mix: a playlist for your family, regularly updated with music you all enjoy",
+          "Block explicit music",
+          "Ad-free music listening, play offline, on-demand playback",
+          "Spotify Kids: a separate app made just for kids"
+        ],
+        "footer_link": "Terms and conditions apply.",
+        "footer_text": "1 month free not available for users who have already tried Premium."
+      },
+      {
+        "index": 3,
+        "plan_name": "Student",
+        "price": "$4.99/month after offer period",
+        "account_num": "1 account",
+        "features": [
+          "Hulu (ad-supported) plan",
+          "SHOWTIME",
+          "Listen to music ad-free",
+          "Play anywhere - even offline",
+          "On-demand playback"
+        ],
+        "footer_link": "Terms and conditions apply.",
+        "footer_text": "Offer currently includes access to Hulu (ad-supported) plan and SHOWTIME Streaming Service, subject to eligibility. Available only to students at an accredited higher education institution. 1 month free only open to higher education students who haven't already tried Premium."
+      }
+    ],
+    "button": "Get Started"
   }
 }

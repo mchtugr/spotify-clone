@@ -7,8 +7,8 @@ const Trial = () => {
   const { t } = useTranslation()
   return (
     <div className='trial-offers'>
-      <h1 className='trial-header'>{t('trial.h1')}</h1>
-      <h2 className='trial-subheader'>{t('trial.price')}</h2>
+      <h1 className='trial-heading'>{t('trial.h1')}</h1>
+      <h2 className='trial-subheading'>{t('trial.price')}</h2>
       <div className='trial-btn-container'>
         <div className='get-started-btn'>
           <Button variant='dark'>{t('trial.get_started')}</Button>

@@ -3,6 +3,7 @@ import Header from '../components/Header'
 import Footer from '../components/Footer'
 import Trial from '../components/Trial'
 import Benefits from '../components/Benefits/Benefits'
+import PremiumPlans from '../components/PremiumPlans/PremiumPlans'
 
 const OffersPage = () => {
   return (
@@ -10,29 +11,9 @@ const OffersPage = () => {
       <Header />
       <Trial />
       <Benefits />
-      <div>
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-      </div>
-      {/* <Footer /> */}
+      <PremiumPlans />
+
+      <Footer />
     </div>
   )
 }

@@ -6,6 +6,7 @@
     "signup": "Kaydol",
     "login": "Oturum aç"
   },
+
   "trial": {
     "h1": "Premium'u 1 ay boyunca ücretsiz kullan",
     "price": "Sonra sadece 17,99 TL/ay. İstediğin zaman iptal et.",
@@ -14,6 +15,7 @@
     "footer_link": "Hüküm ve koşullar geçerlidir.",
     "footer_text": "Premium'u daha önce denemiş olan kullanıcılar 1 aylık ücretsiz tekliften yararlanamaz."
   },
+
   "benefits": {
     "h2": "Neden Premium'a geçmelisin?",
     "footer1": {
@@ -32,5 +34,72 @@
       "title": "Sınırsız şarkı atlama hakkı.",
       "description": "Sonraki düğmesine basman yeterli."
     }
+  },
+
+  "premium_plans": {
+    "h2": "Premium'unu seç",
+    "h3": "Telefonunda, hoparlöründe ve diğer cihazlarında sınırsız dinle.",
+    "trial_period": "1 ay ücretsiz",
+    "plans": [
+      {
+        "index": 0,
+        "plan_name": "Bireysel",
+        "price": "Teklif döneminden sonra ayda 17,99 TL",
+        "account_num": "1 hesap",
+        "features": [
+          "Müziklerini reklamsız dinle",
+          "Her yerde çal, hatta çevrimdışı dinle",
+          "İstediğin zaman çal"
+        ],
+        "footer_link": "Hüküm ve koşullar geçerlidir.",
+        "footer_text": "Premium'u daha önce denemiş olan kullanıcılar 1 aylık ücretsiz tekliften yararlanamaz.",
+        "one_time_payment": "Bir defalık ödeme yapılabilir",
+        "other_payment": "DİĞER ÖDEME SEÇENEKLERİ"
+      },
+      {
+        "index": 1,
+        "plan_name": "Duo",
+        "price": "Teklif döneminden sonra ayda 23,99 TL",
+        "account_num": "2 hesap",
+        "features": [
+          "Aynı çatı altında yaşayan çiftler için 2 Premium hesabı",
+          "Duo Mix: İki kişi için bir çalma listesi, ikinizin tadını çıkaracağı müziklerle düzenli olarak güncellenir",
+          "Kesintisiz müzik dinle, çevrimdışı çal, istediğin zaman çal"
+        ],
+        "footer_link": "Hüküm ve koşullar geçerlidir.",
+        "footer_text": "Premium'u daha önce denemiş olan kullanıcılar 1 aylık ücretsiz tekliften yararlanamaz.",
+        "other_payment": "DİĞER ÖDEME SEÇENEKLERİ"
+      },
+      {
+        "index": 2,
+        "plan_name": "Aile",
+        "price": "Teklif döneminden sonra ayda 29,99 TL",
+        "account_num": "6 hesap",
+        "features": [
+          "Aynı çatı altında yaşayan aile üyeleri için 6 ayrı Premium hesabı",
+          "Aile Mix'i: Ailen için bir çalma listesi, hepinizin tadını çıkaracağı müziklerle düzenli olarak güncellenir",
+          "Sansürsüz müziği engelle",
+          "Kesintisiz müzik dinle, çevrimdışı çal, istediğin zaman çal"
+        ],
+        "footer_link": "Hüküm ve koşullar geçerlidir.",
+        "footer_text": "Premium'u daha önce denemiş olan kullanıcılar 1 aylık ücretsiz tekliften yararlanamaz."
+      },
+      {
+        "index": 3,
+        "plan_name": "Öğrenci",
+        "price": "Teklif döneminden sonra ayda 8,99 TL",
+        "account_num": "1 hesap",
+        "features": [
+          "Yararlanabilecek üniversite öğrencilerine özel indirim",
+          "Müziklerini reklamsız dinle",
+          "Her yerde çal, hatta çevrimdışı dinle",
+          "İstediğin zaman çal"
+        ],
+        "footer_link": "Hüküm ve koşullar geçerlidir.",
+        "footer_text": "Teklif, yalnızca akredite olan yüksek öğrenim kurumlarındaki öğrenciler için geçerlidir. Premium'u daha önce denemiş olan kullanıcılar 1 aylık ücretsiz tekliften yararlanamaz. Spotify Öğrenci İndirimi Teklifi"
+      }
+    ],
+
+    "button": "Get Started"
   }
 }
