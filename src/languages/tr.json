@@ -100,6 +100,37 @@
       }
     ],
 
-    "button": "Get Started"
+    "button": "1 AY ÜCRETSİZ KULLAN"
+  },
+  "footer": {
+    "company": {
+      "title": "Şirket",
+      "about": "Hakkında",
+      "jobs": "Kariyer",
+      "for_the_recors": "For the Record"
+    },
+    "communities": {
+      "title": "Topluluklar",
+      "for_artists": "Sanatçılar İçin",
+      "developers": "Geliştiriciler",
+      "advertising": "Reklam",
+      "investors": "Yatırımcılar",
+      "vendors": "Satıcılar"
+    },
+    "useful_links": {
+      "title": "YARARLI BAĞLANTILAR",
+      "support": "Destek",
+      "web_player": "Web Çalar",
+      "free_mobile_app": "Ücretsiz Mobil Uygulama"
+    },
+    "footer_bottom": {
+      "legal": "Yasal",
+      "privacy_center": "Gizlilik Merkezi",
+      "privacy_policy": "Gizlilik Politikası",
+      "cookies": "Tanımlama Bilgileri",
+      "about_ads": "Reklamlar Hakkında",
+      "additional_ca": "",
+      "country": "Türkiye"
+    }
   }
 }

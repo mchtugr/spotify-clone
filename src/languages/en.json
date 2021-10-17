@@ -96,5 +96,37 @@
       }
     ],
     "button": "Get Started"
+  },
+
+  "footer": {
+    "company": {
+      "title": "COMPANY",
+      "about": "About",
+      "jobs": "Jobs",
+      "for_the_recors": "For the Record"
+    },
+    "communities": {
+      "title": "COMMUNITIES",
+      "for_artists": "For Artists",
+      "developers": "Developers",
+      "advertising": "Advertising",
+      "investors": "Investors",
+      "vendors": "Vendors"
+    },
+    "useful_links": {
+      "title": "USEFUL LINKS",
+      "support": "Support",
+      "web_player": "Web Player",
+      "free_mobile_app": "Free Mobile App"
+    },
+    "footer_bottom": {
+      "legal": "Legal",
+      "privacy_center": "Privacy Center",
+      "privacy_policy": "Privacy Policy",
+      "cookies": "Cookies",
+      "about_ads": "About Ads",
+      "additional_ca": "Additional CA Privacy Disclosures",
+      "country": "USA"
+    }
   }
 }
