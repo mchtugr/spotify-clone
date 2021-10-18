@@ -11,10 +11,14 @@ const Trial = () => {
       <h2 className='trial-subheading'>{t('trial.price')}</h2>
       <div className='trial-btn-container'>
         <div className='get-started-btn'>
-          <Button variant='dark'>{t('trial.get_started')}</Button>
+          <Button variant='dark' animated>
+            {t('trial.get_started')}
+          </Button>
         </div>
         <div className='view-plans-btn'>
-          <Button variant='primary'>{t('trial.view_plans')}</Button>
+          <Button variant='primary' animated>
+            {t('trial.view_plans')}
+          </Button>
         </div>
       </div>
       <div className='trial-footer'>

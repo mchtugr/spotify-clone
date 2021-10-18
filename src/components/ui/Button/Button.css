@@ -4,13 +4,13 @@
   letter-spacing: 2px;
   font-weight: 700;
   text-align: center;
-  text-transform: uppercase;
   user-select: none;
   font-size: 14px;
   cursor: pointer;
+  border: none;
 }
 
-.custom-btn:hover {
+.animated-btn:hover {
   transform: scale(1.05);
 }
 
@@ -24,4 +24,19 @@
   background-color: #1d75de;
   border: 2px solid #fff;
   color: #fff;
+}
+
+.facebook-btn {
+  background-color: #1877f2;
+  color: #fff;
+  padding: 14px 32px;
+}
+
+.facebook-btn:hover {
+  background-color: #4893f5;
+}
+
+.spotify-btn {
+  background-color: #1ed760;
+  color: #000;
 }

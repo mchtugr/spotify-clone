@@ -180,5 +180,29 @@
       { "title": null }
     ],
     "country": "Türkiye"
+  },
+  "signup": {
+    "heading": "Dinlemeye başlamak için ücretsiz kaydol.",
+    "facebook": "Facebook ile kaydol",
+    "or": "veya",
+    "subheading": "E-posta adresinle kaydol",
+    "email_label": "E-posta adresin nedir?",
+    "email_placeholder": "E-posta adresini gir.",
+    "email_error": "E-posta adresini girmen gerekiyor.",
+    "confirm_email_label": "E-posta adresini onayla",
+    "confirm_email_placeholder": "E-posta adresini yeniden gir.",
+    "confirm_email_error": "E-posta adresini onaylaman gerekiyor.",
+    "password_label": "Parola oluştur",
+    "pasword_placeholder": "Parola oluştur.",
+    "password_error": "Bir parola girmen gerekiyor.",
+    "username_label": "Sana hangi isimle hitap etmeliyiz?",
+    "username_placeholder": "Profil adı gir",
+    "username_error": "Profilin için bir ad gir.",
+    "gender_label": "Cinsiyetin nedir?",
+    "genders": ["Erkek", "Kadın", "Diğer"],
+    "checkbox": "Spotify'ın gönderdiği pazarlama mesajlarını almak istemiyorum",
+    "sign_up_btn": "Sign Up",
+    "login_direct": "Have an account?",
+    "login": "Log in"
   }
 }

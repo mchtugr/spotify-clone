@@ -1,11 +1,14 @@
 import React from 'react'
 import './Button.css'
 
-const Button = ({ variant, ...props }) => {
+const Button = ({ variant, animated, ...props }) => {
   return (
-    <div {...props} className={`custom-btn ${variant}-btn`}>
+    <button
+      {...props}
+      className={`${animated && 'animated-btn'} custom-btn ${variant}-btn`}
+    >
       {props.children}
-    </div>
+    </button>
   )
 }
 

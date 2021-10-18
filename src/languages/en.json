@@ -179,5 +179,29 @@
       }
     ],
     "country": "USA"
+  },
+  "signup": {
+    "heading": "Sign up for free to start listening.",
+    "facebook": "Sign up with Facebook",
+    "or": "or",
+    "subheading": "Sign up with your email address",
+    "email_label": "What's your email?",
+    "email_placeholder": "Enter your email.",
+    "email_error": "You need to enter your email.",
+    "confirm_email_label": "Confirm your email",
+    "confirm_email_placeholder": "Enter your email again.",
+    "confirm_email_error": "You need to confirm your email.",
+    "password_label": "Create a password",
+    "password_placeholder": "Create a password.",
+    "password_error": "You need to enter a password.",
+    "username_label": "What should we call you?",
+    "username_placeholder": "Enter a profile name.",
+    "username_error": "Enter a name for your profile.",
+    "gender_label": "What's your gender?",
+    "genders": ["Male", "Female", "Non-Binary"],
+    "checkbox": "Share my registration data with Spotify's content providers for marketing purposes.",
+    "sign_up_btn": "Sign Up",
+    "login_direct": "Have an account?",
+    "login": "Log in"
   }
 }
