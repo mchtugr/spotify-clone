@@ -25,7 +25,7 @@ const Header = () => {
     <div className='banner'>
       <div className='navbar-container'>
         <Link to='/' className='logo-container'>
-          <img src='logo.png' alt='' className='logo' />
+          <img src='logo.png' alt='spotify-logo' className='logo' />
         </Link>
         <HamburgerMenu onClick={toggleNavbar} />
         {screenSize.width > 991 ? <Navigation /> : <Navigation isMobile />}

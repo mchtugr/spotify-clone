@@ -11,7 +11,6 @@ const PremiumPlansCard = ({ langData }) => {
   })
 
   const namespace = `plans.${langData.index}`
-  console.log(langData.index)
   return (
     <div className='premium-plans-card'>
       <div className='premium-plans-card-header'>
@@ -28,7 +27,7 @@ const PremiumPlansCard = ({ langData }) => {
       <div className='premium-plans-card-body'>
         <ul className='feature-items-container'>
           {langData.features.map((feature, index) => (
-            <li className='feature-item'>
+            <li className='feature-item' key={index}>
               <div className='check-icon-container'>
                 <GrCheckmark size='24px' />
               </div>

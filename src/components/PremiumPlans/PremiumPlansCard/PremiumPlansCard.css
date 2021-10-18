@@ -91,6 +91,7 @@
 
 .premium-plans-card-footer-link {
   text-decoration: underline;
+  cursor: pointer;
 }
 
 /* Small devices (landscape phones, 576px and up) */
