@@ -203,5 +203,22 @@
     "sign_up_btn": "Sign Up",
     "login_direct": "Have an account?",
     "login": "Log in"
+  },
+  "login": {
+    "facebook": "CONTINUE WITH FACEBOOK",
+    "apple": "CONTINUE WITH APPLE",
+    "google": "CONTINUE WITH GOOGLE",
+    "or": "or",
+    "email_label": "Email address or username",
+    "email_placeholder": "Email address or username",
+    "email_error": "Please enter your Spotify username or email address.",
+    "password_label": "Password",
+    "password_placeholder": "Password",
+    "password_error": "Please enter your password.",
+    "forget": "Forgot your password?",
+    "remember": "Remember me",
+    "login-btn": "LOG IN",
+    "no_account": "Don't have an account?",
+    "sign-up-btn": "SIGN UP FOR SPOTIFY"
   }
 }

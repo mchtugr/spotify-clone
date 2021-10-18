@@ -204,5 +204,22 @@
     "sign_up_btn": "Sign Up",
     "login_direct": "Have an account?",
     "login": "Log in"
+  },
+  "login": {
+    "facebook": "FACEBOOK İLE DEVAM ET",
+    "apple": "APPLE İLE DEVAM ET",
+    "google": "GOOGLE İLE DEVAM ET",
+    "or": "veya",
+    "email_label": "E-posta adresi veya kullanıcı adı",
+    "email_placeholder": "E-posta adresi veya kullanıcı adı",
+    "email_error": "Lütfen Spotify kullanıcı adını veya eposta adresini gir.",
+    "password_label": "Parola",
+    "password_placeholder": "Parola",
+    "password_error": "Lütfen parolanı gir.",
+    "forget": "Parolanı mı unuttun?",
+    "remember": "Beni hatırla",
+    "login-btn": "OTURUM AÇ",
+    "no_account": "Hesabın yok mu?",
+    "sign-up-btn": "SPOTİFY İÇİN KAYDOL"
   }
 }
