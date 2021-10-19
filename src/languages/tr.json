@@ -209,7 +209,7 @@
     "facebook": "FACEBOOK İLE DEVAM ET",
     "apple": "APPLE İLE DEVAM ET",
     "google": "GOOGLE İLE DEVAM ET",
-    "or": "veya",
+    "or": "VEYA",
     "email_label": "E-posta adresi veya kullanıcı adı",
     "email_placeholder": "E-posta adresi veya kullanıcı adı",
     "email_error": "Lütfen Spotify kullanıcı adını veya eposta adresini gir.",
@@ -220,6 +220,6 @@
     "remember": "Beni hatırla",
     "login-btn": "OTURUM AÇ",
     "no_account": "Hesabın yok mu?",
-    "sign-up-btn": "SPOTİFY İÇİN KAYDOL"
+    "sign_up_btn": "SPOTİFY İÇİN KAYDOL"
   }
 }

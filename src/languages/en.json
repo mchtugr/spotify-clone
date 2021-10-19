@@ -208,7 +208,7 @@
     "facebook": "CONTINUE WITH FACEBOOK",
     "apple": "CONTINUE WITH APPLE",
     "google": "CONTINUE WITH GOOGLE",
-    "or": "or",
+    "or": "OR",
     "email_label": "Email address or username",
     "email_placeholder": "Email address or username",
     "email_error": "Please enter your Spotify username or email address.",
@@ -219,6 +219,6 @@
     "remember": "Remember me",
     "login-btn": "LOG IN",
     "no_account": "Don't have an account?",
-    "sign-up-btn": "SIGN UP FOR SPOTIFY"
+    "sign_up_btn": "SIGN UP FOR SPOTIFY"
   }
 }

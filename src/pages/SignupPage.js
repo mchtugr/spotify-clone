@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next'
 import { Link } from 'react-router-dom'
 import './SignupPage.css'
 import CustomInput from '../components/ui/CustomInput'
+import Divider from '../components/ui/Divider'
 
 const SignupPage = () => {
   const { t } = useTranslation('translation', { keyPrefix: 'signup' })
@@ -45,9 +46,11 @@ const SignupPage = () => {
   return (
     <div className='signup-container'>
       <div className='header-container'>
-        <Link to='/' className='logo-container signup-logo'>
-          <img src='logo-b.png' alt='spotify-logo' className='logo' />
-        </Link>
+        <div className='signup-page-logo-section'>
+          <Link to='/' className='signup-page-logo-container'>
+            <div className='signup-logo'></div>
+          </Link>
+        </div>
         <h2 className='signup-heading'>{t('heading')}</h2>
       </div>
       <div
@@ -60,8 +63,7 @@ const SignupPage = () => {
           </Button>
         </div>
       </div>
-
-      <div className='divider'> {t('or')} </div>
+      <Divider>{t('or')}</Divider>
       <form onSubmit={handleSubmit}>
         <h2 className='signup-subheader'>{t('subheading')}</h2>
         <CustomInput

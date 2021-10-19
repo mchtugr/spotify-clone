@@ -2,7 +2,7 @@ import React from 'react'
 import './CustomInput.css'
 import { MdClose } from 'react-icons/md'
 
-const CustomInput = ({ showError, ...props }) => {
+const CustomInput = ({ showError, className, isLogin, ...props }) => {
   return (
     <div className='custom-input-container'>
       <div className='label-container'>
@@ -10,12 +10,18 @@ const CustomInput = ({ showError, ...props }) => {
       </div>
       <input
         {...props}
-        className={`signup-input ${props.showError && 'signup-input-error'}`}
+        className={`signup-input ${
+          props.showError && 'signup-input-error'
+        } ${className}`}
       />
       {showError && (
-        <div className='input-error'>
-          <span className='error-icon'></span>
-          <MdClose size='16px' />
+        <div className={`input-error ${isLogin && 'login-input-error'}`}>
+          {!isLogin && (
+            <span className='error-icon'>
+              <MdClose size='16px' />
+            </span>
+          )}
+
           {props.error}
         </div>
       )}
