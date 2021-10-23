@@ -220,5 +220,14 @@
     "login-btn": "LOG IN",
     "no_account": "Don't have an account?",
     "sign_up_btn": "SIGN UP FOR SPOTIFY"
+  },
+  "vertical_navbar": {
+    "homepage": "Home",
+    "search": "Search",
+    "library": "Library",
+    "playlist": "Create a playlist",
+    "favorite_songs": "Favorite Songs",
+    "episodes": "Episodes",
+    "download": "Download the App"
   }
 }

@@ -37,7 +37,7 @@
 }
 
 .nav-links-secondary {
-  color: #d9dadc;
+  color: #b9bfcc;
 }
 
 .seperator {
@@ -53,6 +53,15 @@
 .nav-links:hover {
   color: #1ed760;
   cursor: pointer;
+}
+
+.route-link {
+  text-decoration: none;
+  color: #b9bfcc;
+}
+
+.route-link:hover {
+  color: #1ed760;
 }
 
 @media only screen and (max-width: 991px) {

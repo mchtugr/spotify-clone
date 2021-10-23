@@ -221,5 +221,14 @@
     "login-btn": "OTURUM AÇ",
     "no_account": "Hesabın yok mu?",
     "sign_up_btn": "SPOTİFY İÇİN KAYDOL"
+  },
+  "vertical_navbar": {
+    "homepage": "Ana sayfa",
+    "search": "Ara",
+    "library": "Kitaplığın",
+    "playlist": "Çalma Listesi Oluştur",
+    "favorite_songs": "Beğenilen Şarkılar",
+    "episodes": "Bölümlerin",
+    "download": "Uygulamayı Yükle"
   }
 }
