@@ -3,11 +3,12 @@
   background-color: #000;
   height: calc(100vh - 80px);
   color: #fff;
-  position: fixed;
+  /* position: fixed; */
 }
 
 .vertical-navbar-inner-container {
   padding: 0 8px;
+  width: 241px;
 }
 
 .vertical-logo-container {
