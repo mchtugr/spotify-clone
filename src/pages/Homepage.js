@@ -6,6 +6,7 @@ import axios from 'axios'
 import SpotifyWebApi from 'spotify-web-api-js'
 import LeftNavbar from '../components/LeftNavbar/LeftNavbar'
 import Banner from '../components/Banner'
+import WebPlayer from '../components/WebPlayer'
 
 const Homepage = ({ location }) => {
   const [name, setName] = useState(null)
@@ -37,6 +38,7 @@ const Homepage = ({ location }) => {
     <div style={{ display: 'flex' }}>
       <LeftNavbar />
       <Banner />
+      <WebPlayer />
     </div>
   )
 }
