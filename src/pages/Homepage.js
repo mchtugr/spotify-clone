@@ -7,6 +7,9 @@ import SpotifyWebApi from 'spotify-web-api-js'
 import LeftNavbar from '../components/LeftNavbar/LeftNavbar'
 import Banner from '../components/Banner'
 import WebPlayer from '../components/WebPlayer'
+import GridContainer from '../components/GridContainer/GridContainer'
+import WelcomeSection from '../components/WelcomeSection/WelcomeSection'
+import './HomePage.css'
 
 const Homepage = ({ location }) => {
   const [name, setName] = useState(null)
@@ -35,9 +38,16 @@ const Homepage = ({ location }) => {
   spotifyApi.getMe().then((data) => setDisplayName(data.display_name))
 
   return (
-    <div style={{ display: 'flex' }}>
+    <div className='page-wrapper'>
       <LeftNavbar />
-      <Banner />
+      <div className='page-content'>
+        <Banner />
+        <GridContainer>
+          <WelcomeSection />
+          <div>Deneme</div>
+          <div>Deneme 2</div>
+        </GridContainer>
+      </div>
       <WebPlayer />
     </div>
   )

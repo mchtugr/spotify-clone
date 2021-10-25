@@ -1,0 +1,28 @@
+.welcome-section {
+  padding-top: 24px;
+  display: flex;
+  flex-direction: column;
+  background-color: transparent;
+  height: 200px;
+  color: #fff;
+}
+
+.welcome-message {
+  max-width: 100%;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 36px;
+  text-transform: none;
+}
+
+.welcome-card-container {
+  margin-top: 22px;
+  color: #fff;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 24px;
+  row-gap: 16px;
+}

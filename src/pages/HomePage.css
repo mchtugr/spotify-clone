@@ -1,0 +1,8 @@
+.page-wrapper {
+  display: flex;
+  grid-template-columns: 1fr auto;
+}
+
+.page-content {
+  flex: 1;
+}
