@@ -1,0 +1,36 @@
+.discover-section {
+  margin-top: 32px;
+}
+
+.discover-section-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 22px;
+  align-items: flex-end;
+}
+
+.discover-section-card-container {
+  display: grid;
+  grid-column-gap: 24px;
+  column-gap: 24px;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  overflow-y: hidden;
+  grid-auto-rows: 0;
+  grid-template-rows: 1fr;
+}
+
+.discover-see-all {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  line-height: 16px;
+  text-transform: uppercase;
+  background: transparent;
+  color: #b3b3b3;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.discover-see-all:hover {
+  text-decoration: underline;
+}
