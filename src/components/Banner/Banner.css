@@ -1,12 +1,13 @@
 .top-banner {
-  background-color: #a2410e;
-  width: 100%;
+  background-color: transparent;
+  width: calc(100vw - 241px);
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0 32px;
-  align-items: center;
   height: 60px;
+  position: fixed;
+  z-index: 999;
 }
 
 .navigation-btn-container {
@@ -32,6 +33,7 @@
 }
 
 .display-name-container {
+  cursor: pointer;
   position: relative;
   display: flex;
   align-items: center;
@@ -75,4 +77,8 @@
   letter-spacing: normal;
   line-height: 16px;
   text-transform: none;
+}
+
+.login-signin-section {
+  display: flex;
 }

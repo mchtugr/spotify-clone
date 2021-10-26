@@ -1,9 +1,12 @@
 .grid-container {
   display: grid;
   padding: 0 16px;
-  background-color: #121212;
+  background-color: transparent;
   color: #fff;
   min-height: calc((100vh - 90px) - 60px);
+  height: auto;
+  overflow: scroll;
+  margin-top: 60px;
 }
 
 @media only screen and (min-width: 1024px) {

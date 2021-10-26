@@ -20,12 +20,12 @@ const WebPlayer = () => {
       <div className='web-player'>
         <div className='player-left'>
           <div className='footer-img-container'>
-            <img src='favorites.png' alt='song-poster' className='footer-img' />
+            <img src='deneme.jpeg' alt='song-poster' className='footer-img' />
           </div>
           <div className='footer-song-details'>
-            <p className='footer-song-title'>Hope is</p>
+            <p className='footer-song-title'>MargaM</p>
             <p className='footer-artist'>
-              <small>Lana Del Rey</small>
+              <small>Çetin Çetintaş</small>
             </p>
           </div>
           <div className='footer-like footer-icons'>
@@ -62,7 +62,7 @@ const WebPlayer = () => {
               </div>
             </div>
             <div className='playback-bar'>
-              <p className='current-time'>00.30</p>
+              <p className='current-time'>0:30</p>
               <input
                 type='range'
                 name=''
@@ -73,11 +73,11 @@ const WebPlayer = () => {
                 max='200'
                 className='duration-bar'
               />
-              <p className='total-time'>03.50</p>
+              <p className='total-time'>3:50</p>
             </div>
           </div>
         </div>
-        <divt className='player-right'>
+        <div className='player-right'>
           <div className='footer-queue footer-icons'>
             <QueueIcon />
           </div>
@@ -102,7 +102,7 @@ const WebPlayer = () => {
           <div className='full-screen footer-icons'>
             <FullScreenIcon />
           </div>
-        </divt>
+        </div>
       </div>
     </footer>
   )

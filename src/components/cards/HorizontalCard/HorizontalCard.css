@@ -1,11 +1,11 @@
 .horizontal-card {
   display: flex;
   position: relative;
+  cursor: pointer;
 }
 
 .horizontal-card-inner-container {
-  display: flex;
-  align-items: center;
+  /* align-items: center; */
   position: relative;
   width: 100%;
   height: 80px;
@@ -20,7 +20,7 @@
   width: 80px;
   height: 80px;
 }
-.horizontal-card-img-container img {
+.horizontal-card img {
   width: 100%;
   height: 100%;
   border-radius: 4px 0 0 4px;

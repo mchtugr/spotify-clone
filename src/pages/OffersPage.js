@@ -12,7 +12,6 @@ const OffersPage = () => {
       <Trial />
       <Benefits />
       <PremiumPlans />
-
       <Footer />
     </div>
   )

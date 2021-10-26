@@ -1,0 +1,41 @@
+.music-types-card {
+  display: block;
+  background-color: darkgoldenrod;
+  border-radius: 8px;
+  width: 100%;
+  position: relative;
+  border: none;
+  overflow: hidden;
+  /* height: 200px; Edit this line */
+  cursor: pointer;
+}
+
+.music-types-card::after {
+  content: '';
+  display: block;
+  padding-bottom: 100%;
+}
+
+.music-types-card-img {
+  bottom: 0;
+  box-shadow: 0 2px 4px 0 rgb(0 0 0 / 20%);
+  position: absolute;
+  right: 0;
+  transform: rotate(25deg) translate(18%, -2%);
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+}
+
+.music-types-card-title {
+  padding: 16px;
+  margin: 0;
+  top: 0;
+  letter-spacing: -0.04em;
+  overflow-wrap: break-word;
+  position: absolute;
+  font-size: 24px;
+  line-height: 28px;
+  font-weight: 700;
+  text-transform: none;
+}

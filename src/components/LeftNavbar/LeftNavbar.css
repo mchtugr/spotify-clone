@@ -3,7 +3,7 @@
   background-color: #000;
   height: calc(100vh - 90px);
   color: #fff;
-  /* position: fixed; */
+  position: fixed;
 }
 
 .vertical-navbar-inner-container {

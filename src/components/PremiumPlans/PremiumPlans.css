@@ -82,7 +82,7 @@
 .premium-plans-cards-inner-container {
   display: grid;
   justify-content: center;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
 /* Small devices (landscape phones, 576px and up) */

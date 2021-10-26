@@ -9,7 +9,7 @@ const PremiumPlans = () => {
   const { plans: premiumPlans } = data.premium_plans
 
   return (
-    <div className='premium-plans'>
+    <div className='premium-plans' id='premium-plans'>
       <div className='premium-plans-inner-container'>
         <h2 className='premium-plans-heading'>{t('h2')}</h2>
         <h3 className='premium-plans-subheading'>{t('h3')}</h3>

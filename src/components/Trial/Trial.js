@@ -1,5 +1,6 @@
 import React from 'react'
 import { useTranslation } from 'react-i18next'
+import { Link } from 'react-router-dom'
 import './Trial.css'
 import Button from '../ui/Button'
 
@@ -11,14 +12,18 @@ const Trial = () => {
       <h2 className='trial-subheading'>{t('trial.price')}</h2>
       <div className='trial-btn-container'>
         <div className='get-started-btn'>
-          <Button variant='dark' animated>
-            {t('trial.get_started')}
-          </Button>
+          <Link to='/login'>
+            <Button variant='dark' animated>
+              {t('trial.get_started')}
+            </Button>
+          </Link>
         </div>
         <div className='view-plans-btn'>
-          <Button variant='primary' animated>
-            {t('trial.view_plans')}
-          </Button>
+          <a href='#premium-plans'>
+            <Button variant='primary' animated>
+              {t('trial.view_plans')}
+            </Button>
+          </a>
         </div>
       </div>
       <div className='trial-footer'>

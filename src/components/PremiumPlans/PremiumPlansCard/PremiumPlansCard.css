@@ -1,6 +1,6 @@
 .premium-plans-card {
   display: grid;
-  grid-template-rows: auto auto 20fr 7fr;
+  grid-template-rows: auto auto 2.5fr 1fr;
   /* max-width: 400px; */
   flex-direction: column;
   padding: 20px;
@@ -72,6 +72,11 @@
   padding: 0px;
   margin-bottom: 5px;
   line-height: 22px;
+}
+
+.premium-plans-btn-container {
+  display: flex;
+  justify-content: center;
 }
 
 .check-icon-container {
