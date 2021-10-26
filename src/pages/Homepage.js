@@ -12,6 +12,7 @@ import VerticalCard from '../components/cards/VerticalCard'
 import DiscoverSection from '../components/DiscoverSection/'
 import { useDispatch, useSelector } from 'react-redux'
 import { getUserDetails, setUserToken } from '../redux/actions'
+import Button from '../components/ui/Button'
 import './HomePage.css'
 
 const Homepage = ({ location }) => {
@@ -25,7 +26,6 @@ const Homepage = ({ location }) => {
     let parsed = queryString.parse(location.hash)
     let accessToken = parsed.access_token
     dispatch(setUserToken(accessToken))
-
     dispatch(getUserDetails(accessToken))
   }, [])
   const spotifyApi = new SpotifyWebApi()
@@ -43,12 +43,26 @@ const Homepage = ({ location }) => {
   //     }
   //   )
 
+  const tryMe = () => {
+    axios
+      .get('https://api.spotify.com/v1/browse/categories', {
+        headers: {
+          Authorization: 'Bearer ' + userData.token,
+        },
+        params: {
+          country: 'US',
+        },
+      })
+      .then((data) => console.log(data))
+  }
+
   return (
     <div className='page-wrapper'>
       <LeftNavbar />
       <div className='page-content'>
         <Banner />
         <GridContainer>
+          <Button onClick={tryMe}>Try Me</Button>
           <WelcomeSection />
           <DiscoverSection>
             <VerticalCard />

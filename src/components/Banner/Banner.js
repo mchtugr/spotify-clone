@@ -9,7 +9,7 @@ import SearchInput from '../SearchInput/SearchInput'
 import './Banner.css'
 import { Link } from 'react-router-dom'
 const Banner = ({ includeSearch }) => {
-  const displayName = useSelector((state) => state.user.user.display_name)
+  const displayName = useSelector((state) => state.user.data.display_name)
   return (
     <div className='top-banner'>
       <div className='navigation-btn-container'>

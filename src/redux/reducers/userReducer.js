@@ -6,8 +6,10 @@ import {
 } from '../types'
 
 const initialState = {
-  user: {},
-  userToken: '',
+  data: {},
+  token: '',
+  loading: false,
+  error: null,
 }
 
 const userReducer = (state = initialState, action) => {
@@ -20,12 +22,12 @@ const userReducer = (state = initialState, action) => {
     case GET_USER_DETAILS_LOADING:
       return {
         ...state,
-        loading: action.payload,
+        loading: true,
       }
     case GET_USER_DETAILS_SUCCESS:
-      return { ...state, user: action.payload }
+      return { ...state, loading: false, error: null, data: action.payload }
     case GET_USER_DETAILS_ERROR:
-      return { ...state, error: action.payload }
+      return { ...state, loading: false, error: action.payload }
     default:
       return state
   }
