@@ -9,6 +9,7 @@ import { FcGoogle } from 'react-icons/fc'
 import { IoCheckbox, IoSquareOutline } from 'react-icons/io5'
 import { useHistory } from 'react-router'
 import './LoginPage.css'
+import { accessUrl } from '../spotify'
 
 const LoginPage = () => {
   const history = useHistory()
@@ -21,10 +22,13 @@ const LoginPage = () => {
     e.preventDefault()
     if (!email) {
       setEmailError(true)
+      return
     }
     if (!password) {
       setPasswordError(true)
+      return
     }
+    window.location.assign(accessUrl)
   }
   const { t } = useTranslation('translation', { keyPrefix: 'login' })
   return (

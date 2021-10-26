@@ -1,5 +1,4 @@
-import React, { useState } from 'react'
-import { accessUrl } from '../spotify'
+import React, { useState, useEffect } from 'react'
 import queryString from 'query-string'
 import axios from 'axios'
 // import SpotifyPlayer from 'react-spotify-web-playback'
@@ -7,35 +6,42 @@ import SpotifyWebApi from 'spotify-web-api-js'
 import LeftNavbar from '../components/LeftNavbar/LeftNavbar'
 import Banner from '../components/Banner'
 import WebPlayer from '../components/WebPlayer'
-import GridContainer from '../components/GridContainer/GridContainer'
-import WelcomeSection from '../components/WelcomeSection/WelcomeSection'
+import GridContainer from '../components/GridContainer/'
+import WelcomeSection from '../components/WelcomeSection/'
+import VerticalCard from '../components/cards/VerticalCard'
+import DiscoverSection from '../components/DiscoverSection/'
+import { useDispatch, useSelector } from 'react-redux'
+import { getUserDetails, setUserToken } from '../redux/actions'
 import './HomePage.css'
 
 const Homepage = ({ location }) => {
   const [name, setName] = useState(null)
   const [displayName, setDisplayName] = useState(null)
-  const [token, setToken] = useState(
-    'BQB93ScYiFC5hJTyzYck8sY_F2tDtvDxsOXW25j4kjlm-ZyiX1aXpSi7cp6kxtxE7dm7fkFv2Ril8sGjzbfI2eVvLR5CmdmtnUCMXoKZPgJxiiw_wZiKYB5ntHMnKBFms65bvd2qCTi-NoZkOVXYJYB1nNuFllEWy9HizxyNM_1Ixh-KqZLB'
-  )
+
+  const dispatch = useDispatch()
+  const userData = useSelector((state) => state.user)
+
+  useEffect(() => {
+    let parsed = queryString.parse(location.hash)
+    let accessToken = parsed.access_token
+    dispatch(setUserToken(accessToken))
+
+    dispatch(getUserDetails(accessToken))
+  }, [])
   const spotifyApi = new SpotifyWebApi()
-  spotifyApi.setAccessToken(token)
-  // let parsed = queryString.parse(location.hash)
-  // let accessToken = parsed.access_token
-  // console.log(accessToken)
+  spotifyApi.setAccessToken(userData.token)
 
-  axios
-    .get('https://api.spotify.com/v1/me/', {
-      headers: {
-        Authorization: 'Bearer ' + token,
-        'Content-Type': 'application/json',
-      },
-    })
-    .then((data) => {
-      console.log(data)
-      setName(data.data.id)
-    })
-
-  spotifyApi.getMe().then((data) => setDisplayName(data.display_name))
+  // spotifyApi.getMe().then((data) => setDisplayName(data.display_name))
+  // spotifyApi
+  //   .getUserPlaylists()
+  //   .then(
+  //     function (data) {
+  //       console.log('User playlists', data)
+  //     },
+  //     function (err) {
+  //       console.error(err)
+  //     }
+  //   )
 
   return (
     <div className='page-wrapper'>
@@ -44,8 +50,12 @@ const Homepage = ({ location }) => {
         <Banner />
         <GridContainer>
           <WelcomeSection />
-          <div>Deneme</div>
-          <div>Deneme 2</div>
+          <DiscoverSection>
+            <VerticalCard />
+            <VerticalCard />
+            <VerticalCard />
+            <VerticalCard />
+          </DiscoverSection>
         </GridContainer>
       </div>
       <WebPlayer />

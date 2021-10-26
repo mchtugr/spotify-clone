@@ -1,8 +1,25 @@
 .page-wrapper {
   display: flex;
   grid-template-columns: 1fr auto;
+  background-image: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(rgba(0, 0, 0, 0.6)),
+    to(#121212)
+  );
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), #121212);
+  -webkit-transition: background 1s ease;
+  transition: background 1s ease;
+
+  background-color: tomato;
 }
 
 .page-content {
-  flex: 1;
+  min-width: calc(100vw - 241px);
+  position: relative;
+  left: 241px;
+  margin-top: 90px;
+  bottom: 90px;
+  margin-bottom: 20px;
 }
