@@ -5,17 +5,17 @@ import enLang from './languages/en.json'
 import trLang from './languages/tr.json'
 
 const resources = {
-  en: {
+  US: {
     translation: enLang,
   },
-  tr: {
+  TR: {
     translation: trLang,
   },
 }
 
 i18n.use(initReactI18next).init({
   resources,
-  lng: 'tr',
+  lng: 'TR',
   interpolation: {
     escapeValue: false,
   },

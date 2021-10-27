@@ -9,6 +9,7 @@ import {
   BROWSE_CATEGORIES_LOADING,
   BROWSE_CATEGORIES_SUCCESS,
   BROWSE_CATEGORIES_ERROR,
+  SELECT_LANGUAGE,
 } from '../types'
 
 import axios from 'axios'
@@ -26,12 +27,12 @@ export const setUserToken = (token) => {
   }
 }
 
-export const getUserDetails = (token) => (dispatch) => {
+export const getUserDetails = () => (dispatch, getState) => {
   dispatch({ type: GET_USER_DETAILS_LOADING })
   axios
     .get('https://api.spotify.com/v1/me/', {
       headers: {
-        Authorization: 'Bearer ' + token,
+        Authorization: 'Bearer ' + getState().user.token,
         'Content-Type': 'application/json',
       },
     })
@@ -47,16 +48,14 @@ export const browseCategories = () => (dispatch, getState) => {
   dispatch({ type: BROWSE_CATEGORIES_LOADING })
   const state = getState()
   axios
-    .get('https://api.spotify.com/v1/me/top/tracks', {
+    .get('https://api.spotify.com/v1/browse/featured-playlists', {
       headers: {
-        Authorization:
-          'Bearer ' +
-          'BQCAwBf4GjFocZGh_vcduXo0sfcsRhU1IFRC5AoIAGPpReCbONOPDLmS0gbCrBqr6i_E7vqD9uBf_sSU435KWqGfWgGGa_CCp0jpyqaAQQeufT-YRl9wQoupj54blOwcVe5VX5--3LolKKQ16KDnHmlnwNN1KHxniiCGNCoGBo6FqWlPi75U',
+        Authorization: 'Bearer ' + state.user.token,
         'Content-Type': 'application/json',
       },
-      // params: {
-      //   country: 'TR',
-      // },
+      params: {
+        country: 'TR',
+      },
     })
     .then((data) => {
       console.log(data)
@@ -68,4 +67,8 @@ export const browseCategories = () => (dispatch, getState) => {
     .catch((error) => {
       dispatch({ type: BROWSE_CATEGORIES_ERROR, payload: error })
     })
+}
+
+export const selectLanguage = (lang) => {
+  return { type: SELECT_LANGUAGE, payload: lang }
 }

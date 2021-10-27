@@ -227,5 +227,8 @@
     "favorite_songs": "Favorite Songs",
     "episodes": "Episodes",
     "download": "Download the App"
+  },
+  "banner": {
+    "logout": "Log out"
   }
 }

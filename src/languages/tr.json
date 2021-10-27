@@ -230,5 +230,8 @@
     "favorite_songs": "Beğenilen Şarkılar",
     "episodes": "Bölümlerin",
     "download": "Uygulamayı Yükle"
+  },
+  "banner": {
+    "logout": "Oturumu Kapat"
   }
 }

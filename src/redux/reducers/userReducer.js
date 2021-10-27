@@ -2,6 +2,7 @@ import {
   GET_USER_DETAILS_ERROR,
   GET_USER_DETAILS_LOADING,
   GET_USER_DETAILS_SUCCESS,
+  SELECT_LANGUAGE,
   SET_USER_TOKEN,
 } from '../types'
 
@@ -10,6 +11,7 @@ const initialState = {
   token: '',
   loading: false,
   error: null,
+  language: 'TR',
 }
 
 const userReducer = (state = initialState, action) => {
@@ -28,6 +30,8 @@ const userReducer = (state = initialState, action) => {
       return { ...state, loading: false, error: null, data: action.payload }
     case GET_USER_DETAILS_ERROR:
       return { ...state, loading: false, error: action.payload }
+    case SELECT_LANGUAGE:
+      return { ...state, language: action.payload }
     default:
       return state
   }
