@@ -10,6 +10,9 @@ import {
   BROWSE_CATEGORIES_SUCCESS,
   BROWSE_CATEGORIES_ERROR,
   SELECT_LANGUAGE,
+  BROWSE_FEATURED_PLAYLISTS_LOADING,
+  BROWSE_FEATURED_PLAYLISTS_SUCCESS,
+  BROWSE_FEATURED_PLAYLISTS_ERROR,
 } from '../types'
 
 import axios from 'axios'
@@ -20,6 +23,12 @@ export const login = () => (dispatch) => {
   })
 }
 
+// CHANGE LANGUAGE
+export const selectLanguage = (lang) => {
+  return { type: SELECT_LANGUAGE, payload: lang }
+}
+
+// SAVE SPOTIFY ACCESS TOKEN
 export const setUserToken = (token) => {
   return {
     type: SET_USER_TOKEN,
@@ -27,6 +36,7 @@ export const setUserToken = (token) => {
   }
 }
 
+// GET INFO ABOUT CURRENT USER
 export const getUserDetails = () => (dispatch, getState) => {
   dispatch({ type: GET_USER_DETAILS_LOADING })
   axios
@@ -44,21 +54,21 @@ export const getUserDetails = () => (dispatch, getState) => {
     })
 }
 
+// BROWSE SEARCH CATEGORIES
 export const browseCategories = () => (dispatch, getState) => {
   dispatch({ type: BROWSE_CATEGORIES_LOADING })
   const state = getState()
   axios
-    .get('https://api.spotify.com/v1/browse/featured-playlists', {
+    .get('https://api.spotify.com/v1/browse/categories', {
       headers: {
         Authorization: 'Bearer ' + state.user.token,
         'Content-Type': 'application/json',
       },
       params: {
-        country: 'TR',
+        country: getState().user.language,
       },
     })
     .then((data) => {
-      console.log(data)
       dispatch({
         type: BROWSE_CATEGORIES_SUCCESS,
         payload: data.data.categories.items,
@@ -69,6 +79,29 @@ export const browseCategories = () => (dispatch, getState) => {
     })
 }
 
-export const selectLanguage = (lang) => {
-  return { type: SELECT_LANGUAGE, payload: lang }
+// BROWSE FEATURED PLAYLISTS
+
+export const browseFeaturedPlaylists = () => (dispatch, getState) => {
+  dispatch({ type: BROWSE_FEATURED_PLAYLISTS_LOADING })
+  const state = getState()
+  axios
+    .get('https://api.spotify.com/v1/browse/featured-playlists', {
+      headers: {
+        Authorization: 'Bearer ' + state.user.token,
+        'Content-Type': 'application/json',
+      },
+      params: {
+        country: getState().user.language,
+      },
+    })
+    .then((data) => {
+      console.log(data)
+      dispatch({
+        type: BROWSE_FEATURED_PLAYLISTS_SUCCESS,
+        payload: data.data.playlists.items,
+      })
+    })
+    .catch((error) => {
+      dispatch({ type: BROWSE_FEATURED_PLAYLISTS_ERROR, payload: error })
+    })
 }
