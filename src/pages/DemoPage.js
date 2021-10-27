@@ -6,6 +6,7 @@ import axios from 'axios'
 import SpotifyWebApi from 'spotify-web-api-js'
 
 const DemoPage = ({ location }) => {
+  console.log(location)
   const [token, setToken] = useState('')
   // console.log('token:', token)
   const spotifyApi = new SpotifyWebApi()

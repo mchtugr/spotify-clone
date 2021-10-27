@@ -20,7 +20,7 @@ const WebPlayer = () => {
       <div className='web-player'>
         <div className='player-left'>
           <div className='footer-img-container'>
-            <img src='deneme.jpeg' alt='song-poster' className='footer-img' />
+            <img src='/deneme.jpeg' alt='song-poster' className='footer-img' />
           </div>
           <div className='footer-song-details'>
             <p className='footer-song-title'>MargaM</p>

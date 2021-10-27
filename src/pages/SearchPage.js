@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import Banner from '../components/Banner'
 import MusicTypesCard from '../components/cards/MusicTypesCard'
 import GridContainer from '../components/GridContainer'
@@ -10,6 +10,7 @@ import './SearchPage.css'
 
 const SearchPage = () => {
   const dispatch = useDispatch()
+  const categories = useSelector((state) => state.categories.list)
 
   useEffect(() => {
     dispatch(browseCategories())
@@ -23,15 +24,11 @@ const SearchPage = () => {
         <GridContainer>
           <h2>Hepsine Goz At</h2>
           <div className='demo-card-container'>
-            <MusicTypesCard />
-            <MusicTypesCard />
-            <MusicTypesCard />
-            <MusicTypesCard />
-            <MusicTypesCard />
-            <MusicTypesCard />
-            <MusicTypesCard />
-            <MusicTypesCard />
-            <MusicTypesCard />
+            {categories.map((category) => (
+              <React.Fragment key={category.id}>
+                <MusicTypesCard category={category} />
+              </React.Fragment>
+            ))}
           </div>
         </GridContainer>
       </div>

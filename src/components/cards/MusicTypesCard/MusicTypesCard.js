@@ -1,12 +1,16 @@
 import React from 'react'
 import './MusicTypesCard.css'
 
-const MusicTypesCard = () => {
+const MusicTypesCard = ({ category }) => {
   return (
     <div className='music-types-card'>
       <div className='music-types-card-inner-container'>
-        <img src='deneme.jpeg' alt='' className='music-types-card-img' />
-        <h2 className='music-types-card-title'>Yeni Cikanlar</h2>
+        <img
+          src={category.icons[0].url}
+          alt={category.name}
+          className='music-types-card-img'
+        />
+        <h2 className='music-types-card-title'>{category.name}</h2>
       </div>
     </div>
   )

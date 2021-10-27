@@ -9,7 +9,9 @@ const SearchInput = () => {
   }
   return (
     <div className='search-input-container'>
-      <div className='search-icon-container'></div>
+      <div className='search-icon-container'>
+        <SearchIcon />
+      </div>
       <input
         type='text'
         value={keyword}

@@ -1,7 +1,8 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Link } from 'react-router-dom'
 import { useLocation } from 'react-router-dom'
+import { useDispatch, useSelector } from 'react-redux'
 import CreatePlaylistIcon from '../icons/CreatePlaylistIcon'
 import DownloadIcon from '../icons/DownloadIcon'
 import HomeActiveIcon from '../icons/HomeActiveIcon'
@@ -10,16 +11,23 @@ import LibraryActiveIcon from '../icons/LibraryActiveIcon'
 import LibraryIcon from '../icons/LibraryIcon'
 import SearchActiveIcon from '../icons/SearchActiveIcon'
 import SearchIcon from '../icons/SearchIcon'
+import { browseFeaturedPlaylists } from '../../redux/actions'
 import './LeftNavbar.css'
 
 const LeftNavbar = () => {
   const { t } = useTranslation('translation', { keyPrefix: 'vertical_navbar' })
   const { pathname } = useLocation()
+  const dispatch = useDispatch()
+  const playlists = useSelector((state) => state.playlists.list)
+
+  useEffect(() => {
+    dispatch(browseFeaturedPlaylists())
+  }, [])
   return (
     <div className='vertical-navbar-container'>
       <div className='vertical-navbar-inner-container'>
         <div className='vertical-logo-container'>
-          <img className='vertical-logo' src='logo.png' alt='logo'></img>
+          <img className='vertical-logo' src='/logo.png' alt='logo'></img>
         </div>
         <div>
           <div
@@ -73,7 +81,7 @@ const LeftNavbar = () => {
           <div className='vertical-nav-item'>
             <span>
               <img
-                src='favorites.png'
+                src='/favorites.png'
                 alt='favorite_songs_icon'
                 className='nav-img'
               />
@@ -82,21 +90,28 @@ const LeftNavbar = () => {
           </div>
           <div className='vertical-nav-item'>
             <span>
-              <img src='episode.png' alt='episodes_icon' className='nav-img' />
+              <img src='/episode.png' alt='episodes_icon' className='nav-img' />
             </span>
             <p className='nav-link-text'>{t('episodes')}</p>
           </div>
           <div className='navbar-hr' />
           <div className='navbar-playlists'>
             <div className='navbar-playlists-container'>
-              <div className='playlist-title'>Rock</div>
+              {playlists.map((playlist) => {
+                return (
+                  <Link to={`/playlist/${playlist.id}`} key={playlist.id}>
+                    <div className='playlist-title'>{playlist.name}</div>
+                  </Link>
+                )
+              })}
+              {/* <div className='playlist-title'>Rock</div>
               <div className='playlist-title'>Pop</div>
               <div className='playlist-title'>Jazz</div>
               <div className='playlist-title'>Blues</div>
               <div className='playlist-title'>Hits</div>
               <div className='playlist-title'>60s</div>
               <div className='playlist-title'>70s</div>
-              <div className='playlist-title'>80s</div>
+              <div className='playlist-title'>80s</div> */}
             </div>
           </div>
         </div>

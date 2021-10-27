@@ -6,16 +6,14 @@ import GridContainer from '../components/GridContainer/'
 import WelcomeSection from '../components/WelcomeSection/'
 import VerticalCard from '../components/cards/VerticalCard'
 import DiscoverSection from '../components/DiscoverSection/'
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { getUserDetails } from '../redux/actions'
 import './HomePage.css'
 
 const Homepage = () => {
   const dispatch = useDispatch()
-  const userData = useSelector((state) => state.user)
-
   useEffect(() => {
-    dispatch(getUserDetails(userData.token))
+    dispatch(getUserDetails())
   }, [])
 
   return (

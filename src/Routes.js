@@ -8,6 +8,7 @@ import DemoPage from './pages/DemoPage'
 import SearchPage from './pages/SearchPage'
 import LibraryPage from './pages/LibraryPage'
 import AuthPage from './pages/AuthPage'
+import PlaylistDetailPage from './pages/PlaylistDetailPage'
 
 const Routes = () => {
   return (
@@ -21,6 +22,11 @@ const Routes = () => {
         <Route path='/offers' exact component={OffersPage} />
         <Route path='/search' exact component={SearchPage} />
         <Route path='/library' exact component={LibraryPage} />
+        <Route
+          path='/playlist/:playlistId'
+          exact
+          component={PlaylistDetailPage}
+        />
       </Switch>
     </Router>
   )
