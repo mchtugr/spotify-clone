@@ -1,0 +1,64 @@
+.playlist-controls {
+  display: flex;
+  align-items: center;
+  padding: 24px 0;
+  position: relative;
+}
+
+.playlist-controls-play-pause {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 32px;
+  width: 56px;
+  height: 56px;
+  border-radius: 28px;
+  background-color: #1db954;
+  transition: all 0.2s ease;
+}
+
+.playlist-controls-play-pause:hover {
+  transform: scale(1.06);
+}
+
+.playlist-controls-play-pause svg {
+  fill: #fff;
+  font-size: 28px;
+}
+
+.playlist-controls-fav {
+  background: transparent;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 32px;
+}
+
+.playlist-controls-fav svg {
+  font-size: 28px;
+  fill: hsla(0, 0%, 100%, 0.7);
+}
+
+.playlist-controls-fav svg:hover {
+  fill: #fff;
+}
+
+.playlist-controls-three-dots {
+  background: transparent;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.playlist-controls-three-dots svg {
+  font-size: 28px;
+  fill: hsla(0, 0%, 100%, 0.7);
+}
+
+.playlist-controls-three-dots svg:hover {
+  fill: #fff;
+}
