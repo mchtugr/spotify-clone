@@ -1,8 +1,4 @@
-import React, { useState, useEffect } from 'react'
-import queryString from 'query-string'
-import axios from 'axios'
-// import SpotifyPlayer from 'react-spotify-web-playback'
-import SpotifyWebApi from 'spotify-web-api-js'
+import React, { useEffect } from 'react'
 import LeftNavbar from '../components/LeftNavbar/LeftNavbar'
 import Banner from '../components/Banner'
 import WebPlayer from '../components/WebPlayer'
@@ -11,50 +7,16 @@ import WelcomeSection from '../components/WelcomeSection/'
 import VerticalCard from '../components/cards/VerticalCard'
 import DiscoverSection from '../components/DiscoverSection/'
 import { useDispatch, useSelector } from 'react-redux'
-import { getUserDetails, setUserToken } from '../redux/actions'
-import Button from '../components/ui/Button'
+import { getUserDetails } from '../redux/actions'
 import './HomePage.css'
 
-const Homepage = ({ location }) => {
-  const [name, setName] = useState(null)
-  const [displayName, setDisplayName] = useState(null)
-
+const Homepage = () => {
   const dispatch = useDispatch()
   const userData = useSelector((state) => state.user)
 
   useEffect(() => {
-    let parsed = queryString.parse(location.hash)
-    let accessToken = parsed.access_token
-    dispatch(setUserToken(accessToken))
-    dispatch(getUserDetails(accessToken))
+    dispatch(getUserDetails(userData.token))
   }, [])
-  const spotifyApi = new SpotifyWebApi()
-  spotifyApi.setAccessToken(userData.token)
-
-  // spotifyApi.getMe().then((data) => setDisplayName(data.display_name))
-  // spotifyApi
-  //   .getUserPlaylists()
-  //   .then(
-  //     function (data) {
-  //       console.log('User playlists', data)
-  //     },
-  //     function (err) {
-  //       console.error(err)
-  //     }
-  //   )
-
-  const tryMe = () => {
-    axios
-      .get('https://api.spotify.com/v1/browse/categories', {
-        headers: {
-          Authorization: 'Bearer ' + userData.token,
-        },
-        params: {
-          country: 'US',
-        },
-      })
-      .then((data) => console.log(data))
-  }
 
   return (
     <div className='page-wrapper'>
@@ -62,7 +24,6 @@ const Homepage = ({ location }) => {
       <div className='page-content'>
         <Banner />
         <GridContainer>
-          <Button onClick={tryMe}>Try Me</Button>
           <WelcomeSection />
           <DiscoverSection>
             <VerticalCard />

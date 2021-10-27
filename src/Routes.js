@@ -7,12 +7,14 @@ import SignupPage from './pages/SignupPage'
 import DemoPage from './pages/DemoPage'
 import SearchPage from './pages/SearchPage'
 import LibraryPage from './pages/LibraryPage'
+import AuthPage from './pages/AuthPage'
 
 const Routes = () => {
   return (
     <Router>
       <Switch>
         <Route path='/demo' exact component={DemoPage} />
+        <Route path='/auth' exact component={AuthPage} />
         <Route path='/' exact component={Homepage} />
         <Route path='/login' exact component={LoginPage} />
         <Route path='/signup' exact component={SignupPage} />

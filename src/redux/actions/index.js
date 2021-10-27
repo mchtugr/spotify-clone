@@ -45,20 +45,21 @@ export const getUserDetails = (token) => (dispatch) => {
 
 export const browseCategories = () => (dispatch, getState) => {
   dispatch({ type: BROWSE_CATEGORIES_LOADING })
-
+  const state = getState()
   axios
-    .get('https://api.spotify.com/v1/browse/categories', {
+    .get('https://api.spotify.com/v1/me/top/tracks', {
       headers: {
         Authorization:
           'Bearer ' +
-          'BQDjK91RXS1xrJQxw7M6hwt0dj3cH3rwqpPO3OKjBfdhQ2NiVSTIZ-R6drqRJb9L29t1zkFr_7FauyxP3Mh29MLTK6QN_bdtEomqyv-GrGU91oGgAAT6R-7xI5K1DEFSaZKsXQBFWLsSLJYS7ELo1Q6FS4zSQVLTkahDGcJZcNZ5j9SxMe9u',
+          'BQCAwBf4GjFocZGh_vcduXo0sfcsRhU1IFRC5AoIAGPpReCbONOPDLmS0gbCrBqr6i_E7vqD9uBf_sSU435KWqGfWgGGa_CCp0jpyqaAQQeufT-YRl9wQoupj54blOwcVe5VX5--3LolKKQ16KDnHmlnwNN1KHxniiCGNCoGBo6FqWlPi75U',
         'Content-Type': 'application/json',
       },
-      params: {
-        country: 'TR',
-      },
+      // params: {
+      //   country: 'TR',
+      // },
     })
     .then((data) => {
+      console.log(data)
       dispatch({
         type: BROWSE_CATEGORIES_SUCCESS,
         payload: data.data.categories.items,
