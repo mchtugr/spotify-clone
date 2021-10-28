@@ -245,5 +245,8 @@
       "album": "ALBÜM",
       "added_at": "TARİH EKLENDİ"
     }
+  },
+  "vertical_card": {
+    "artist": "Sanatçı"
   }
 }

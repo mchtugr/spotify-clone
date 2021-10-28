@@ -242,5 +242,8 @@
       "album": "ALBUM",
       "added_at": "ADDED AT"
     }
+  },
+  "vertical_card": {
+    "artist": "Artist"
   }
 }

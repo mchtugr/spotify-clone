@@ -7,16 +7,18 @@ import WelcomeSection from '../components/WelcomeSection/'
 import VerticalCard from '../components/cards/VerticalCard'
 import DiscoverSection from '../components/DiscoverSection/'
 import { useDispatch, useSelector } from 'react-redux'
-import { getNewReleases, getUserDetails } from '../redux/actions'
+import { getNewReleases, getTopArtists, getUserDetails } from '../redux/actions'
 import './HomePage.css'
 import { Link } from 'react-router-dom'
 
 const Homepage = () => {
   const dispatch = useDispatch()
   const newReleases = useSelector((state) => state.newReleases)
+  const topArtists = useSelector((state) => state.topArtists)
   useEffect(() => {
     dispatch(getUserDetails())
     dispatch(getNewReleases())
+    dispatch(getTopArtists())
   }, [dispatch])
 
   return (
@@ -27,10 +29,8 @@ const Homepage = () => {
         <GridContainer>
           <Link to='/demo'> TRY ME </Link>
           <WelcomeSection />
-          <DiscoverSection
-            title={'New Releases'}
-            data={newReleases}
-          ></DiscoverSection>
+          <DiscoverSection title={'New Releases'} data={newReleases} />
+          <DiscoverSection title={'Top Artists'} data={topArtists} isArtist />
         </GridContainer>
       </div>
       <WebPlayer />

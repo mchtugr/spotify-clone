@@ -4,6 +4,7 @@ import categoriesReducer from './categoriesReducer'
 import featuredPlaylistsReducer from './featuredPlayListsReducer'
 import currentPlaylistReducer from './currentPlaylistReducer'
 import newReleasesReducer from './newReleasesReducer'
+import topArtistsReducer from './topArtistsReducer'
 
 export default combineReducers({
   user: userReducer,
@@ -11,4 +12,5 @@ export default combineReducers({
   playlists: featuredPlaylistsReducer,
   currentPlaylist: currentPlaylistReducer,
   newReleases: newReleasesReducer,
+  topArtists: topArtistsReducer,
 })

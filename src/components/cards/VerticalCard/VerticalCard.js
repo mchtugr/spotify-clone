@@ -1,7 +1,10 @@
 import React from 'react'
+import { useTranslation } from 'react-i18next'
 import PlayIcon from '../../icons/PlayIcon'
 import './VerticalCard.css'
 const VerticalCard = ({ data, isArtist }) => {
+  const { t } = useTranslation('translation', { keyPrefix: 'vertical_card' })
+
   return (
     <div className='vertical-card'>
       <div className='vertical-card-inner-container'>
@@ -20,7 +23,7 @@ const VerticalCard = ({ data, isArtist }) => {
         <div className='vertical-card-title'>
           <p className='vertical-card-song'>{data.name}</p>
           <p className='vertical-card-artist'>
-            {data.artists.map((i) => i.name)}
+            {!isArtist ? data.artists.map((i) => i.name) : t('artist')}
           </p>
         </div>
       </div>

@@ -16,6 +16,9 @@ import {
   GET_NEW_RELEASES_LOADING,
   GET_NEW_RELEASES_SUCCESS,
   GET_NEW_RELEASES_ERROR,
+  GET_TOP_ARTISTS_LOADING,
+  GET_TOP_ARTISTS_SUCCESS,
+  GET_TOP_ARTISTS_ERROR,
 } from '../types'
 
 import axios from 'axios'
@@ -150,5 +153,28 @@ export const getNewReleases = () => (dispatch, getState) => {
     })
     .catch((error) => {
       dispatch({ type: GET_NEW_RELEASES_ERROR, payload: error.message })
+    })
+}
+
+// GET CURRENT USER TOP ARTISTS
+
+export const getTopArtists = () => (dispatch, getState) => {
+  dispatch({ type: GET_TOP_ARTISTS_LOADING })
+
+  axios
+    .get('https://api.spotify.com/v1/me/top/artists', {
+      headers: {
+        Authorization: 'Bearer ' + getState().user.token,
+        'Content-Type': 'application/json',
+      },
+    })
+    .then((data) => {
+      dispatch({
+        type: GET_TOP_ARTISTS_SUCCESS,
+        payload: data.data.items,
+      })
+    })
+    .catch((error) => {
+      dispatch({ type: GET_TOP_ARTISTS_ERROR, payload: error.message })
     })
 }
