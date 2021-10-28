@@ -13,6 +13,9 @@ import {
   GET_PLAYLIST_LOADING,
   GET_PLAYLIST_SUCCESS,
   GET_PLAYLIST_ERROR,
+  GET_NEW_RELEASES_LOADING,
+  GET_NEW_RELEASES_SUCCESS,
+  GET_NEW_RELEASES_ERROR,
 } from '../types'
 
 import axios from 'axios'
@@ -121,5 +124,31 @@ export const getPlaylist = (playlistId) => (dispatch, getState) => {
     })
     .catch((error) => {
       dispatch({ type: GET_PLAYLIST_ERROR, payload: error.message })
+    })
+}
+
+// Get a list of new album releases
+
+export const getNewReleases = () => (dispatch, getState) => {
+  dispatch({ type: GET_NEW_RELEASES_LOADING })
+
+  axios
+    .get('https://api.spotify.com/v1/browse/new-releases', {
+      headers: {
+        Authorization: 'Bearer ' + getState().user.token,
+        'Content-Type': 'application/json',
+      },
+      params: {
+        country: getState().user.language,
+      },
+    })
+    .then((data) => {
+      dispatch({
+        type: GET_NEW_RELEASES_SUCCESS,
+        payload: data.data.albums.items,
+      })
+    })
+    .catch((error) => {
+      dispatch({ type: GET_NEW_RELEASES_ERROR, payload: error.message })
     })
 }

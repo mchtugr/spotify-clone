@@ -26,13 +26,17 @@
   position: relative;
 }
 
-.vertical-card img {
+.vertical-card-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center center;
   box-shadow: 0 -4px 12px rgb(0 0 0 / 50%);
   border-radius: 2px;
+}
+
+.vertical-card-artist-img {
+  border-radius: 500px;
 }
 
 .vertical-card-title {
