@@ -13,6 +13,9 @@ import {
   BROWSE_FEATURED_PLAYLISTS_LOADING,
   BROWSE_FEATURED_PLAYLISTS_SUCCESS,
   BROWSE_FEATURED_PLAYLISTS_ERROR,
+  GET_PLAYLIST_LOADING,
+  GET_PLAYLIST_SUCCESS,
+  GET_PLAYLIST_ERROR,
 } from '../types'
 
 import axios from 'axios'
@@ -50,7 +53,7 @@ export const getUserDetails = () => (dispatch, getState) => {
       dispatch({ type: GET_USER_DETAILS_SUCCESS, payload: data.data })
     })
     .catch((error) => {
-      dispatch({ type: GET_USER_DETAILS_ERROR, payload: error })
+      dispatch({ type: GET_USER_DETAILS_ERROR, payload: error.message })
     })
 }
 
@@ -75,7 +78,7 @@ export const browseCategories = () => (dispatch, getState) => {
       })
     })
     .catch((error) => {
-      dispatch({ type: BROWSE_CATEGORIES_ERROR, payload: error })
+      dispatch({ type: BROWSE_CATEGORIES_ERROR, payload: error.message })
     })
 }
 
@@ -95,13 +98,38 @@ export const browseFeaturedPlaylists = () => (dispatch, getState) => {
       },
     })
     .then((data) => {
-      console.log(data)
       dispatch({
         type: BROWSE_FEATURED_PLAYLISTS_SUCCESS,
         payload: data.data.playlists.items,
       })
     })
     .catch((error) => {
-      dispatch({ type: BROWSE_FEATURED_PLAYLISTS_ERROR, payload: error })
+      dispatch({
+        type: BROWSE_FEATURED_PLAYLISTS_ERROR,
+        payload: error.message,
+      })
+    })
+}
+
+// GET SPECIFIC PLAYLIST BY ID
+
+export const getPlaylist = (playlistId) => (dispatch, getState) => {
+  dispatch({ type: GET_PLAYLIST_LOADING })
+  axios
+    .get(`https://api.spotify.com/v1/playlists/${playlistId}`, {
+      headers: {
+        Authorization: 'Bearer ' + getState().user.token,
+        'Content-Type': 'application/json',
+      },
+      params: {
+        country: getState().user.language,
+      },
+    })
+    .then((data) => {
+      console.log(data)
+      dispatch({ type: GET_PLAYLIST_SUCCESS, payload: data.data })
+    })
+    .catch((error) => {
+      dispatch({ type: GET_PLAYLIST_ERROR, payload: error.message })
     })
 }
