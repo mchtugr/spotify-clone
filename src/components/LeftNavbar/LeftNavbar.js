@@ -47,7 +47,7 @@ const LeftNavbar = () => {
               pathname === '/search' && 'vertical-nav-item-selected'
             }`}
           >
-            <Link to='search' className='vertical-navbar-link'>
+            <Link to='/search' className='vertical-navbar-link'>
               <span className='nav-icon-container'>
                 {pathname === '/search' ? <SearchActiveIcon /> : <SearchIcon />}
               </span>

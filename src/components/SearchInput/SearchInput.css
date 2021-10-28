@@ -35,3 +35,12 @@
 .search-input:focus {
   outline: none;
 }
+
+.cross-icon-container {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  left: 330px;
+  top: 8px;
+}

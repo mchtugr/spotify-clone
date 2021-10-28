@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import Banner from '../components/Banner'
-import MusicTypesCard from '../components/cards/MusicTypesCard'
+import DiscoverSection from '../components/DiscoverSection'
+import DefaultSearchCategories from '../components/DefaultSearchCategories/DefaultSearchCategories'
 import GridContainer from '../components/GridContainer'
 import LeftNavbar from '../components/LeftNavbar/LeftNavbar'
 import WebPlayer from '../components/WebPlayer'
@@ -11,6 +12,7 @@ import './SearchPage.css'
 const SearchPage = () => {
   const dispatch = useDispatch()
   const categories = useSelector((state) => state.categories.list)
+  const search = useSelector((state) => state.search)
 
   useEffect(() => {
     dispatch(browseCategories())
@@ -22,14 +24,31 @@ const SearchPage = () => {
       <div className='page-content'>
         <Banner includeSearch />
         <GridContainer>
-          <h2>Hepsine Goz At</h2>
-          <div className='demo-card-container'>
-            {categories.map((category) => (
-              <React.Fragment key={category.id}>
-                <MusicTypesCard category={category} />
-              </React.Fragment>
-            ))}
-          </div>
+          {search.displayDefault ? (
+            <DefaultSearchCategories />
+          ) : (
+            <>
+              <DiscoverSection
+                title='Albums'
+                data={search.data.albums}
+                fromSearch
+              />
+              <DiscoverSection
+                title='Playlists'
+                data={search.data.playlists}
+                fromSearch
+                isPlaylist
+              />
+              <DiscoverSection
+                title='Artists'
+                data={search.data.artists}
+                isArtist
+                fromSearch
+              />
+
+              {/* <DiscoverSection title={} data={} /> */}
+            </>
+          )}
         </GridContainer>
       </div>
       <WebPlayer />
