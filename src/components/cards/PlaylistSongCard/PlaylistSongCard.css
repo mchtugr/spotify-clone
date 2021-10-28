@@ -14,9 +14,11 @@
   background-color: hsla(0, 0%, 100%, 0.1);
 }
 
-.playlist-songs-table-item {
-  display: flex;
-  align-items: center;
+.playlist-song-card:hover .playlist-songs-title-detail {
+  color: #fff;
+}
+.playlist-song-card:hover .playlist-songs-album {
+  color: #fff;
 }
 
 .playlist-songs-title {

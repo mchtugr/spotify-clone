@@ -1,18 +1,32 @@
 import React from 'react'
 import HorizontalCard from '../cards/HorizontalCard'
+import { useSelector } from 'react-redux'
+import { Link } from 'react-router-dom'
 import './WelcomeSection.css'
 
 const WelcomeSection = () => {
+  const playlists = useSelector((state) => state.playlists)
+
+  if (playlists.loading) {
+    return <div>Loading...</div>
+  }
+
+  const firstFivePlaylist = playlists.list.slice(0, 5)
   return (
     <div className='welcome-section'>
-      <h2 className='welcome-message'>Gunaydin</h2>
+      <h2 className='welcome-message'>Merhaba</h2>
       <div className='welcome-card-container'>
-        <HorizontalCard />
-        <HorizontalCard />
-        <HorizontalCard />
-        <HorizontalCard />
-        <HorizontalCard />
-        <HorizontalCard />
+        {firstFivePlaylist.map((playlist) => (
+          <Link to={`/playlist/${playlist.id}`} key={playlist.id}>
+            <HorizontalCard playlistData={playlist} />
+          </Link>
+        ))}
+        <HorizontalCard
+          playlistData={{
+            images: [{ url: '/favorites.png' }],
+            name: 'Begenilen Sarkilar',
+          }}
+        />
       </div>
     </div>
   )

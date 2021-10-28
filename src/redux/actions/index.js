@@ -1,7 +1,4 @@
 import {
-  LOGIN_LOADING,
-  LOGIN_SUCCESS,
-  LOGIN_ERROR,
   SET_USER_TOKEN,
   GET_USER_DETAILS_ERROR,
   GET_USER_DETAILS_LOADING,
@@ -19,12 +16,6 @@ import {
 } from '../types'
 
 import axios from 'axios'
-
-export const login = () => (dispatch) => {
-  dispatch({
-    type: LOGIN_LOADING,
-  })
-}
 
 // CHANGE LANGUAGE
 export const selectLanguage = (lang) => {
@@ -126,7 +117,6 @@ export const getPlaylist = (playlistId) => (dispatch, getState) => {
       },
     })
     .then((data) => {
-      console.log(data)
       dispatch({ type: GET_PLAYLIST_SUCCESS, payload: data.data })
     })
     .catch((error) => {

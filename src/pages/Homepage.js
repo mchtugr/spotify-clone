@@ -9,12 +9,13 @@ import DiscoverSection from '../components/DiscoverSection/'
 import { useDispatch } from 'react-redux'
 import { getUserDetails } from '../redux/actions'
 import './HomePage.css'
+import { Link } from 'react-router-dom'
 
 const Homepage = () => {
   const dispatch = useDispatch()
   useEffect(() => {
     dispatch(getUserDetails())
-  }, [])
+  }, [dispatch])
 
   return (
     <div className='page-wrapper'>
@@ -22,6 +23,7 @@ const Homepage = () => {
       <div className='page-content'>
         <Banner />
         <GridContainer>
+          <Link to='demo'> TRY ME </Link>
           <WelcomeSection />
           <DiscoverSection>
             <VerticalCard />

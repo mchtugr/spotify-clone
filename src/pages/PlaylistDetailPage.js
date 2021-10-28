@@ -17,7 +17,7 @@ const PlaylistDetailPage = (props) => {
 
   useEffect(() => {
     dispatch(getPlaylist(playlistId))
-  }, [playlistId])
+  }, [playlistId, dispatch])
 
   let items = []
   if (!currentPlaylist.loading) {

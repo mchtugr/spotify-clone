@@ -22,7 +22,7 @@ const LeftNavbar = () => {
 
   useEffect(() => {
     dispatch(browseFeaturedPlaylists())
-  }, [])
+  }, [dispatch])
   return (
     <div className='vertical-navbar-container'>
       <div className='vertical-navbar-inner-container'>

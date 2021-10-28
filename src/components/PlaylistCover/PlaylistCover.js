@@ -33,7 +33,10 @@ const PlaylistCover = () => {
               {currentPlaylist.data.owner.display_name}
             </p>
             <p className='playlist-cover-detail-owner-item'>
-              {currentPlaylist.data.followers.total} {t('likes')}
+              {currentPlaylist.data.followers.total
+                .toString()
+                .replace(/\B(?=(\d{3})+(?!\d))/g, '.')}{' '}
+              {t('likes')}
             </p>
             <p className='playlist-cover-detail-owner-item'>
               {currentPlaylist.data.tracks.total} {t('songs')}

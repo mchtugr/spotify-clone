@@ -14,7 +14,7 @@ const SearchPage = () => {
 
   useEffect(() => {
     dispatch(browseCategories())
-  }, [])
+  }, [dispatch])
 
   return (
     <div className='page-wrapper'>
