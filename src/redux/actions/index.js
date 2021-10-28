@@ -19,6 +19,10 @@ import {
   GET_TOP_ARTISTS_LOADING,
   GET_TOP_ARTISTS_SUCCESS,
   GET_TOP_ARTISTS_ERROR,
+  GET_SEARCH_RESULTS_LOADING,
+  GET_SEARCH_RESULTS_SUCCESS,
+  GET_SEARCH_RESULTS_ERROR,
+  DISPLAY_DEFAULT_SEARCH_CATEGORIES,
 } from '../types'
 
 import axios from 'axios'
@@ -177,4 +181,34 @@ export const getTopArtists = () => (dispatch, getState) => {
     .catch((error) => {
       dispatch({ type: GET_TOP_ARTISTS_ERROR, payload: error.message })
     })
+}
+
+export const getSearchResults = (query) => (dispatch, getState) => {
+  dispatch({ type: GET_SEARCH_RESULTS_LOADING })
+
+  axios
+    .get('https://api.spotify.com/v1/search', {
+      headers: {
+        Authorization: 'Bearer ' + getState().user.token,
+        'Content-Type': 'application/json',
+      },
+      params: {
+        q: query,
+        type: 'track,artist,playlist,album',
+      },
+    })
+    .then((data) => {
+      dispatch({
+        type: GET_SEARCH_RESULTS_SUCCESS,
+        payload: data.data,
+      })
+    })
+    .catch((error) => {
+      dispatch({ type: GET_SEARCH_RESULTS_ERROR, payload: error.message })
+    })
+}
+
+// IF INPUT IS EMPTY, DISPLAY DEFAULT CATEGORIES
+export const displayDefaultSearchCategories = () => {
+  return { type: DISPLAY_DEFAULT_SEARCH_CATEGORIES }
 }
