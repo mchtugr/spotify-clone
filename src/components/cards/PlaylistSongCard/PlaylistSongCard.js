@@ -1,31 +1,33 @@
 import React from 'react'
 import './PlaylistSongCard.css'
 
-const PlaylistSongCard = () => {
+const PlaylistSongCard = ({ songData, index }) => {
   return (
     <div className='playlist-song-card'>
       <div className='playlist-songs-table'>
         <div className='playlist-songs-order playlist-songs-table-item'>
-          <p className='demo'>1</p>
+          <p className='demo'>{index + 1}</p>
         </div>
         <div className='playlist-songs-title playlist-songs-table-item'>
           <div className='playlist-songs-title-img-container'>
             <img
-              src='/deneme.jpeg'
+              src={songData.track.album.images[1].url}
               alt='deneme'
               className='playlist-songs-title-img'
             />
           </div>
           <div className='playlist-songs-title-detail'>
-            <p className='playlist-song-name'>Fikrimin Ince Gulu</p>
-            <p className='playlist-song-artist'>Muzeyyen Senar</p>
+            <p className='playlist-song-name'>{songData.track.name}</p>
+            <p className='playlist-song-artist'>
+              {songData.track.artists.map((artist) => artist.name).join(', ')}
+            </p>
           </div>
         </div>
         <div className='playlist-songs-album playlist-songs-table-item'>
-          Some Album name Here
+          {songData.track.name}
         </div>
         <div className='playlist-songs-added-on playlist-songs-table-item'>
-          23 Sep 2021
+          {new Date(songData.added_at).toDateString()}
         </div>
         <div className='playlist-songs-duration playlist-songs-table-item'>
           3:44

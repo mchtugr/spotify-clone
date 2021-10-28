@@ -230,5 +230,17 @@
   },
   "banner": {
     "logout": "Log out"
+  },
+  "playlist_detail_page": {
+    "playlist_cover": {
+      "playlist": "PLAYLIST",
+      "likes": "likes",
+      "songs": "songs"
+    },
+    "playlist_songs_container": {
+      "title": "TITLE",
+      "album": "ALBUM",
+      "added_at": "ADDED AT"
+    }
   }
 }

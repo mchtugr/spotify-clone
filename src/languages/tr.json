@@ -233,5 +233,17 @@
   },
   "banner": {
     "logout": "Oturumu Kapat"
+  },
+  "playlist_detail_page": {
+    "playlist_cover": {
+      "playlist": "ÇALMA LİSTESİ",
+      "likes": "beğenme",
+      "songs": "şarkı"
+    },
+    "playlist_songs_container": {
+      "title": "BAŞLIK",
+      "album": "ALBÜM",
+      "added_at": "TARİH EKLENDİ"
+    }
   }
 }

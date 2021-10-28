@@ -25,6 +25,7 @@
 }
 
 .playlist-songs-title-img-container {
+  display: block;
   width: 40px;
   height: 40px;
   margin-right: 16px;

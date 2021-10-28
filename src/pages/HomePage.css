@@ -16,7 +16,7 @@
 }
 
 .page-content {
-  min-width: calc(100vw - 241px);
+  width: calc(100vw - 241px);
   position: relative;
   left: 241px;
   margin-top: 90px;

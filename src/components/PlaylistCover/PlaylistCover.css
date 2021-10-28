@@ -43,16 +43,18 @@
   overflow: hidden;
   margin: 0;
   padding: 0.08em 0;
-  font-size: 48px;
-  line-height: 48px;
+  font-size: 72px;
+  line-height: 72px;
   font-weight: 700;
   letter-spacing: -0.04em;
   text-transform: none;
+  margin-top: 8px;
 }
 
 .playlist-cover-detail {
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
   margin-top: 16px;
 }
 
@@ -73,8 +75,33 @@
 .playlist-cover-detail-text {
   font-size: 14px;
   line-height: 16px;
+  font-weight: 400;
   letter-spacing: normal;
   text-transform: none;
-  margin-left: 6px;
+  color: #b3b3b3;
+}
+
+.playlist-cover-detail-owner-section {
+  display: flex;
+  color: #b3b3b3;
+  cursor: pointer;
+  font-size: 14px;
+  line-height: 16px;
+  font-weight: 400;
+  letter-spacing: normal;
+  text-transform: none;
+}
+
+.playlist-cover-detail-owner {
+  color: #fff;
   font-weight: 700;
+}
+
+.playlist-cover-detail-owner:hover {
+  text-decoration: underline;
+}
+
+.playlist-cover-detail-owner-item::before {
+  content: '•';
+  margin: 0px 4px;
 }
