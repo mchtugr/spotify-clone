@@ -1,10 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react'
 
+import PauseIcon from '../../icons/PauseIcon'
 import PlayIcon from '../../icons/PlayIcon'
 
 import './HorizontalCard.css'
 
 const HorizontalCard = ({ playlistData }) => {
+  const [isPlaying, setIsPlaying] = useState(false)
   return (
     <div className='horizontal-card'>
       <div className='horizontal-card-inner-container'>
@@ -18,8 +20,11 @@ const HorizontalCard = ({ playlistData }) => {
         </div>
       </div>
       {/* ABSOLUTE POSITIONED PLAY BTN */}
-      <div className='horizontal-play-pause'>
-        <PlayIcon />
+      <div
+        className='horizontal-play-pause'
+        onClick={() => setIsPlaying(!isPlaying)}
+      >
+        {isPlaying ? <PauseIcon /> : <PlayIcon />}
       </div>
     </div>
   )

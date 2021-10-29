@@ -17,6 +17,8 @@ import './WebPlayer.css'
 
 const WebPlayer = () => {
   const [isPlaying, setIsPlaying] = useState(false)
+  const [isFav, setIsFav] = useState(false)
+
   return (
     <footer>
       <div className='web-player'>
@@ -31,7 +33,10 @@ const WebPlayer = () => {
               <small>Çetin Çetintaş</small>
             </p>
           </div>
-          <div className='footer-like footer-icons'>
+          <div
+            className={`footer-like footer-icons ${isFav && 'liked-icon'}`}
+            onClick={() => setIsFav(!isFav)}
+          >
             <FooterLikeIcon />
           </div>
           <div className='footer-poster footer-icons'>

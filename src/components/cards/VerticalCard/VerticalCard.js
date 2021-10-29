@@ -1,11 +1,13 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 
+import PauseIcon from '../../icons/PauseIcon'
 import PlayIcon from '../../icons/PlayIcon'
 
 import './VerticalCard.css'
 
 const VerticalCard = ({ data, isArtist, isPlaylist }) => {
+  const [isPlaying, setIsPlaying] = useState(false)
   // to translate from language files
   const { t } = useTranslation('translation', { keyPrefix: 'vertical_card' })
   return (
@@ -21,8 +23,11 @@ const VerticalCard = ({ data, isArtist, isPlaylist }) => {
             }`}
           />
           {/* ABSOLUTE POSITIONED PLAY BTN */}
-          <div className='vertical-play-pause'>
-            <PlayIcon />
+          <div
+            className='vertical-play-pause'
+            onClick={() => setIsPlaying(!isPlaying)}
+          >
+            {isPlaying ? <PauseIcon /> : <PlayIcon />}
           </div>
         </div>
         {/* CARD INFO */}

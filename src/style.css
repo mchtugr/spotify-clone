@@ -85,3 +85,11 @@ a {
 .search-card-16 {
   background-color: #9cf0e1;
 }
+
+.liked-icon svg {
+  fill: #1ed760;
+}
+
+.liked-icon svg:hover {
+  fill: #1ed760;
+}

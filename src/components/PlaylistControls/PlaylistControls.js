@@ -8,17 +8,21 @@ import ThreeDotsIcon from '../icons/ThreeDotsIcon'
 import './PlaylistControls.css'
 
 const PlaylistControls = () => {
-  const [playing, setPlaying] = useState(false)
+  const [isPlaying, setIsPlaying] = useState(false)
+  const [isFav, setIsFav] = useState(false)
 
   const handlePlayPause = () => {
-    setPlaying(!playing)
+    setIsPlaying(!isPlaying)
   }
   return (
     <div className='playlist-controls'>
       <div className='playlist-controls-play-pause' onClick={handlePlayPause}>
-        {playing ? <PlayIcon /> : <PauseIcon />}
+        {isPlaying ? <PauseIcon /> : <PlayIcon />}
       </div>
-      <div className='playlist-controls-fav'>
+      <div
+        className={`playlist-controls-fav ${isFav && 'liked-icon'}`}
+        onClick={() => setIsFav(!isFav)}
+      >
         <FooterLikeIcon />
       </div>
       <div className='playlist-controls-three-dots'>
