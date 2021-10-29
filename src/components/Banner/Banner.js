@@ -3,23 +3,27 @@ import { Link } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { useHistory } from 'react-router'
 import { useTranslation } from 'react-i18next'
+
 import Button from '../ui/Button'
 import BottomArrow from '../icons/BottomArrow'
 import NextPageIcon from '../icons/NextPageIcon'
 import NoProfileIcon from '../icons/NoProfileIcon'
 import PrevPageIcon from '../icons/PrevPageIcon'
-import SearchInput from '../SearchInput/SearchInput'
-import { selectLanguage } from '../../redux/actions'
-import './Banner.css'
-import CollectionNav from '../CollectionNav/CollectionNav'
+import SearchInput from '../SearchInput/'
+import CollectionNav from '../CollectionNav/'
 import TopArrow from '../icons/TopArrow'
+import { selectLanguage } from '../../redux/actions'
+
+import './Banner.css'
 
 const Banner = ({ includeSearch, includeCollectionNav, activeTab }) => {
   const [isSelected, setIsSelected] = useState(false)
   const displayName = useSelector((state) => state.user.data.display_name)
-  const dispatch = useDispatch()
   const { language } = useSelector((state) => state.user)
+
+  // to translate from language files
   const { t, i18n } = useTranslation()
+  const dispatch = useDispatch()
   const history = useHistory()
 
   const handleLanguage = (lang) => {
@@ -31,6 +35,7 @@ const Banner = ({ includeSearch, includeCollectionNav, activeTab }) => {
     console.log(
       'Logout button not working because "token" needed for data fetching!'
     )
+    // redirect user to login so that they feel they logged out
     history.push('/login')
   }
   const toggleDrowdown = () => {
@@ -41,6 +46,9 @@ const Banner = ({ includeSearch, includeCollectionNav, activeTab }) => {
   window.onclick = function (event) {
     if (!event.target.matches('.display-name-container')) {
       var dropdowns = document.getElementsByClassName('dropdown-box')
+      // dropdown arrow functions properly
+      setIsSelected(false)
+
       var i
       for (i = 0; i < dropdowns.length; i++) {
         var openDropdown = dropdowns[i]
@@ -52,6 +60,7 @@ const Banner = ({ includeSearch, includeCollectionNav, activeTab }) => {
   }
 
   const handleGoBack = () => {
+    // if user at homepage, do not allow goback
     if (history.location.pathname === '/') {
       return
     } else {
@@ -65,6 +74,7 @@ const Banner = ({ includeSearch, includeCollectionNav, activeTab }) => {
 
   return (
     <div className='top-banner'>
+      {/* Navigation BTNs */}
       <div className='navigation-btn-container'>
         <span className='navigation-btn' onClick={handleGoBack}>
           <PrevPageIcon />
@@ -73,8 +83,14 @@ const Banner = ({ includeSearch, includeCollectionNav, activeTab }) => {
           <NextPageIcon />
         </span>
       </div>
+
+      {/* only show in SearchPage */}
       {includeSearch && <SearchInput />}
+
+      {/* only show in collection page */}
       {includeCollectionNav && <CollectionNav activeTab={activeTab} />}
+
+      {/* if user exist in store show info */}
       {displayName ? (
         <div onClick={toggleDrowdown}>
           <div
@@ -110,18 +126,22 @@ const Banner = ({ includeSearch, includeCollectionNav, activeTab }) => {
           </div>
         </div>
       ) : (
-        <div className='login-signin-section'>
-          <Link to='/signup'>
-            <Button variant='banner-btn-signup' animated>
-              Sign up
-            </Button>
-          </Link>
-          <Link to='/login'>
-            <Button variant='banner-btn-login' animated>
-              Login
-            </Button>
-          </Link>
-        </div>
+        {
+          /* else show login signup BTNS */
+        }(
+          <div className='login-signin-section'>
+            <Link to='/signup'>
+              <Button variant='banner-btn-signup' animated>
+                Sign up
+              </Button>
+            </Link>
+            <Link to='/login'>
+              <Button variant='banner-btn-login' animated>
+                Login
+              </Button>
+            </Link>
+          </div>
+        )
       )}
     </div>
   )
