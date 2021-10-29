@@ -9,11 +9,13 @@ import { useDispatch, useSelector } from 'react-redux'
 import { getNewReleases, getTopArtists, getUserDetails } from '../redux/actions'
 import './HomePage.css'
 import { Link } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
 
 const Homepage = () => {
   const dispatch = useDispatch()
   const newReleases = useSelector((state) => state.newReleases)
   const topArtists = useSelector((state) => state.topArtists)
+  const { t } = useTranslation('translation', { keyPrefix: 'homepage' })
   useEffect(() => {
     dispatch(getUserDetails())
     dispatch(getNewReleases())
@@ -26,10 +28,14 @@ const Homepage = () => {
       <div className='page-content'>
         <Banner />
         <GridContainer>
-          <Link to='/demo'> TRY ME </Link>
+          {/* <Link to='/demo'> TRY ME </Link> */}
           <WelcomeSection />
-          <DiscoverSection title={'New Releases'} data={newReleases} />
-          <DiscoverSection title={'Top Artists'} data={topArtists} isArtist />
+          <DiscoverSection title={t('new_releases')} data={newReleases} />
+          <DiscoverSection
+            title={t('top_artists')}
+            data={topArtists}
+            isArtist
+          />
         </GridContainer>
       </div>
       <WebPlayer />

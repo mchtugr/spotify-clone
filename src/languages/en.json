@@ -229,7 +229,10 @@
     "download": "Download the App"
   },
   "banner": {
-    "logout": "Log out"
+    "logout": "Log out",
+    "input": {
+      "placeholder": "Artists, tracks and podcasts"
+    }
   },
   "playlist_detail_page": {
     "playlist_cover": {
@@ -245,5 +248,23 @@
   },
   "vertical_card": {
     "artist": "Artist"
-  }
+  },
+  "collections": {
+    "playlists": "Playlists",
+    "podcasts": "Podcasts",
+    "artists": "Artists",
+    "albums": "Albums"
+  },
+  "homepage": {
+    "hello": "Hello",
+    "favorite_songs": "Favorite Songs",
+    "new_releases": "New Releases",
+    "top_artists": "Top Artists",
+    "see_all": "SEE ALL"
+  },
+  "searchpage": {
+    "browse_all": "Browse All",
+    "see_all": "SEE ALL"
+  },
+  "loading": "Loading..."
 }

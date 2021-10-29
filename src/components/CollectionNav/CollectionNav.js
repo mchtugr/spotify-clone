@@ -1,7 +1,9 @@
 import React from 'react'
 import './CollectionNav.css'
 import { Link } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
 const CollectionNav = ({ activeTab }) => {
+  const { t } = useTranslation('translation', { keyPrefix: 'collections' })
   return (
     <ul className='collection-nav'>
       <li
@@ -10,7 +12,7 @@ const CollectionNav = ({ activeTab }) => {
         }`}
       >
         <Link to='/collection/playlists' className='collection-nav-link'>
-          Playlists
+          {t('playlists')}
         </Link>
       </li>
       <li
@@ -19,7 +21,7 @@ const CollectionNav = ({ activeTab }) => {
         }`}
       >
         <Link to='/collection/podcasts' className='collection-nav-link'>
-          Podcasts
+          {t('podcasts')}
         </Link>
       </li>
       <li
@@ -28,7 +30,7 @@ const CollectionNav = ({ activeTab }) => {
         }`}
       >
         <Link to='/collection/artists' className='collection-nav-link'>
-          Artists
+          {t('artists')}
         </Link>
       </li>
       <li
@@ -37,7 +39,7 @@ const CollectionNav = ({ activeTab }) => {
         }`}
       >
         <Link to='/collection/albums' className='collection-nav-link'>
-          Albums
+          {t('albums')}
         </Link>
       </li>
     </ul>

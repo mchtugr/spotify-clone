@@ -7,8 +7,10 @@ import {
   getSearchResults,
 } from '../../redux/actions'
 import CrossIcon from '../icons/CrossIcon'
+import { useTranslation } from 'react-i18next'
 const SearchInput = () => {
   const [keyword, setKeyword] = useState('')
+  const { t } = useTranslation('translation', { keyPrefix: 'banner.input' })
   const dispatch = useDispatch()
 
   useEffect(() => {
@@ -48,7 +50,7 @@ const SearchInput = () => {
           type='text'
           value={keyword}
           onChange={handleChange}
-          placeholder="Sanatçılar, şarkılar ve podcast'ler"
+          placeholder={t('placeholder')}
           className='search-input'
         />
         {keyword.length > 0 && (

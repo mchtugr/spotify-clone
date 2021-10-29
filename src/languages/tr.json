@@ -232,7 +232,10 @@
     "download": "Uygulamayı Yükle"
   },
   "banner": {
-    "logout": "Oturumu Kapat"
+    "logout": "Oturumu Kapat",
+    "input": {
+      "placeholder": "Sanatçılar, şarkılar ve podcast'ler"
+    }
   },
   "playlist_detail_page": {
     "playlist_cover": {
@@ -248,5 +251,23 @@
   },
   "vertical_card": {
     "artist": "Sanatçı"
-  }
+  },
+  "collections": {
+    "playlists": "Çalma Listeleri",
+    "podcasts": "Podcast'ler",
+    "artists": "Sanatçılar",
+    "albums": "Albümler"
+  },
+  "homepage": {
+    "hello": "Merhaba",
+    "favorite_songs": "Beğenilen Şarkılar",
+    "new_releases": "Yakında Çıkanlar",
+    "top_artists": "Gözde Sanatçıların",
+    "see_all": "HEPSİNİ GÖR"
+  },
+  "searchpage": {
+    "browse_all": "Hepsine Göz At",
+    "see_all": "HEPSİNİ GÖR"
+  },
+  "loading": "Yükleniyor..."
 }
