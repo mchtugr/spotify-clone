@@ -26,9 +26,11 @@ const LeftNavbar = () => {
   return (
     <div className='vertical-navbar-container'>
       <div className='vertical-navbar-inner-container'>
-        <div className='vertical-logo-container'>
-          <img className='vertical-logo' src='/logo.png' alt='logo'></img>
-        </div>
+        <Link to='/'>
+          <div className='vertical-logo-container'>
+            <img className='vertical-logo' src='/logo.png' alt='logo'></img>
+          </div>
+        </Link>
         <div>
           <div
             className={`vertical-nav-item ${

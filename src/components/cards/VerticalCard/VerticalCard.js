@@ -4,7 +4,6 @@ import PlayIcon from '../../icons/PlayIcon'
 import './VerticalCard.css'
 const VerticalCard = ({ data, isArtist, isPlaylist }) => {
   const { t } = useTranslation('translation', { keyPrefix: 'vertical_card' })
-  console.log(data)
   return (
     <div className='vertical-card'>
       <div className='vertical-card-inner-container'>

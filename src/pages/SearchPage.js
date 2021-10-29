@@ -14,7 +14,6 @@ import './SearchPage.css'
 
 const SearchPage = () => {
   const dispatch = useDispatch()
-  const categories = useSelector((state) => state.categories.list)
   const search = useSelector((state) => state.search)
 
   useEffect(() => {
@@ -49,8 +48,6 @@ const SearchPage = () => {
                 isArtist
                 fromSearch
               />
-
-              {/* <DiscoverSection title={} data={} /> */}
             </>
           )}
         </GridContainer>

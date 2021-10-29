@@ -7,6 +7,7 @@ import LeftNavbar from '../components/LeftNavbar/'
 import PlaylistControls from '../components/PlaylistControls/PlaylistControls'
 import PlaylistCover from '../components/PlaylistCover/PlaylistCover'
 import PlaylistSongsContainer from '../components/PlaylistSongsContainer/PlaylistSongsContainer'
+import Loading from '../components/ui/Loading'
 import WebPlayer from '../components/WebPlayer'
 import { getPlaylist } from '../redux/actions'
 
@@ -19,9 +20,8 @@ const PlaylistDetailPage = (props) => {
     dispatch(getPlaylist(playlistId))
   }, [playlistId, dispatch])
 
-  let items = []
-  if (!currentPlaylist.loading) {
-    items = currentPlaylist.data.tracks.items
+  if (currentPlaylist.loading) {
+    return <Loading />
   }
 
   return (
@@ -35,8 +35,8 @@ const PlaylistDetailPage = (props) => {
           )}
           <PlaylistControls />
           <PlaylistSongsContainer>
-            {items.map((song, i) => (
-              <React.Fragment key={song.track.id}>
+            {currentPlaylist.data.tracks.items.map((song, i) => (
+              <React.Fragment key={i}>
                 <PlaylistSongCard songData={song} index={i} />
               </React.Fragment>
             ))}

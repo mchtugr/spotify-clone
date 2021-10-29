@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { useTranslation } from 'react-i18next'
@@ -11,8 +11,10 @@ import SearchInput from '../SearchInput/SearchInput'
 import { selectLanguage } from '../../redux/actions'
 import './Banner.css'
 import CollectionNav from '../CollectionNav/CollectionNav'
+import TopArrow from '../icons/TopArrow'
 
 const Banner = ({ includeSearch, includeCollectionNav, activeTab }) => {
+  const [isSelected, setIsSelected] = useState(false)
   const displayName = useSelector((state) => state.user.data.display_name)
   const dispatch = useDispatch()
   const { language } = useSelector((state) => state.user)
@@ -59,13 +61,16 @@ const Banner = ({ includeSearch, includeCollectionNav, activeTab }) => {
       {includeCollectionNav && <CollectionNav activeTab={activeTab} />}
       {displayName ? (
         <div onClick={toggleDrowdown}>
-          <div className='display-name-container'>
+          <div
+            className='display-name-container'
+            onClick={() => setIsSelected(!isSelected)}
+          >
             <span className='no-profile-icon'>
               <NoProfileIcon />
             </span>
             <span className='display-name'>{displayName}</span>
             <span className='arrow-icon'>
-              <BottomArrow />
+              {isSelected ? <TopArrow /> : <BottomArrow />}
             </span>
           </div>
           <div id='dropdown-box' className='dropdown-box'>
