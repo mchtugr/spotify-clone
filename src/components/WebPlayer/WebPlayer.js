@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+
 import FooterLikeIcon from '../icons/FooterLikeIcon'
 import ShowPosterIcon from '../icons/ShowPosterIcon'
 import ShuffleIcon from '../icons/ShuffleIcon'
@@ -11,6 +12,7 @@ import QueueIcon from '../icons/QueueIcon'
 import ConnectToDeviceIcon from '../icons/ConnectToDeviceIcon'
 import VolumeHighIcon from '../icons/VolumeHighIcon'
 import FullScreenIcon from '../icons/FullScreenIcon'
+
 import './WebPlayer.css'
 
 const WebPlayer = () => {
@@ -18,6 +20,7 @@ const WebPlayer = () => {
   return (
     <footer>
       <div className='web-player'>
+        {/* LEFT */}
         <div className='player-left'>
           <div className='footer-img-container'>
             <img src='/deneme.jpeg' alt='song-poster' className='footer-img' />
@@ -35,6 +38,7 @@ const WebPlayer = () => {
             <ShowPosterIcon />
           </div>
         </div>
+        {/* MIDDLE */}
         <div className='player-middle'>
           <div className='player-middle-container'>
             <div className='player-control'>
@@ -52,6 +56,7 @@ const WebPlayer = () => {
               >
                 {isPlaying ? <PauseIcon /> : <PlayIcon />}
               </div>
+              {/* RIGHT */}
               <div className='right-control'>
                 <div className='next-song-icon footer-icons'>
                   <NextSongIcon />

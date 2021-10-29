@@ -1,16 +1,20 @@
 import React from 'react'
-import Button from '../../ui/Button'
 import { useTranslation } from 'react-i18next'
-import './PremiumPlansCard.css'
 import { GrCheckmark } from 'react-icons/gr'
 
+import Button from '../../ui/Button'
+
+import './PremiumPlansCard.css'
+
 const PremiumPlansCard = ({ langData }) => {
+  // to translate from language files
   const { t } = useTranslation('translation', {
     keyPrefix: 'premium_plans',
     returnObjects: true,
   })
 
   const namespace = `plans.${langData.index}`
+
   return (
     <div className='premium-plans-card'>
       <div className='premium-plans-card-header'>

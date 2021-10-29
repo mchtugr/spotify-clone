@@ -1,9 +1,11 @@
 import React from 'react'
 import { useTranslation } from 'react-i18next'
-import './Navigation.css'
 import { Link } from 'react-router-dom'
 
+import './Navigation.css'
+
 const Navigation = ({ isMobile }) => {
+  // to translate from language files
   const { t } = useTranslation()
 
   return (

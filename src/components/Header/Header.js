@@ -1,12 +1,15 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
-import './Header.css'
-import useWindowSize from '../../hooks/useWindowSize'
+
 import Navigation from './Navigation'
-import HamburgerMenu from '../ui/HamburgerMenu/HamburgerMenu'
+import HamburgerMenu from '../ui/HamburgerMenu/'
+import useWindowSize from '../../hooks/useWindowSize'
+
+import './Header.css'
 
 const Header = () => {
   const [selected, setSelected] = useState(false)
+  // GET SCREEN SIZE USING CUSTOM HOOK
   const screenSize = useWindowSize()
 
   // TOGGLE NAV LINKS IN SMALL SCREENS
@@ -21,6 +24,7 @@ const Header = () => {
       mobileNavbar.style.display = 'none'
     }
   }
+
   return (
     <div className='banner'>
       <div className='navbar-container'>

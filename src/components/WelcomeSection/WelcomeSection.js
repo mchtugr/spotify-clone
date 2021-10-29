@@ -1,16 +1,20 @@
 import React from 'react'
-import HorizontalCard from '../cards/HorizontalCard'
 import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
-import './WelcomeSection.css'
 import { useTranslation } from 'react-i18next'
+
+import HorizontalCard from '../cards/HorizontalCard'
+
+import './WelcomeSection.css'
+import Loading from '../ui/Loading/Loading'
 
 const WelcomeSection = () => {
   const playlists = useSelector((state) => state.playlists)
+  // to translate from language files
   const { t } = useTranslation('translation', { keyPrefix: 'homepage' })
 
   if (playlists.loading) {
-    return <div>Loading...</div>
+    return <Loading />
   }
 
   const firstFivePlaylist = playlists.list.slice(0, 5)

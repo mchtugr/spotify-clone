@@ -1,6 +1,7 @@
 import React from 'react'
-import './CustomInput.css'
 import { MdClose } from 'react-icons/md'
+
+import './CustomInput.css'
 
 const CustomInput = ({ showError, className, isLogin, ...props }) => {
   return (
@@ -14,6 +15,7 @@ const CustomInput = ({ showError, className, isLogin, ...props }) => {
           props.showError && 'signup-input-error'
         } ${className}`}
       />
+      {/* ERROR SECTION IF ANY */}
       {showError && (
         <div className={`input-error ${isLogin && 'login-input-error'}`}>
           {!isLogin && (

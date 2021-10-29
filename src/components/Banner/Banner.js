@@ -126,22 +126,18 @@ const Banner = ({ includeSearch, includeCollectionNav, activeTab }) => {
           </div>
         </div>
       ) : (
-        {
-          /* else show login signup BTNS */
-        }(
-          <div className='login-signin-section'>
-            <Link to='/signup'>
-              <Button variant='banner-btn-signup' animated>
-                Sign up
-              </Button>
-            </Link>
-            <Link to='/login'>
-              <Button variant='banner-btn-login' animated>
-                Login
-              </Button>
-            </Link>
-          </div>
-        )
+        <div className='login-signin-section'>
+          <Link to='/signup'>
+            <Button variant='banner-btn-signup' animated>
+              Sign up
+            </Button>
+          </Link>
+          <Link to='/login'>
+            <Button variant='banner-btn-login' animated>
+              Login
+            </Button>
+          </Link>
+        </div>
       )}
     </div>
   )

@@ -1,18 +1,24 @@
 import React from 'react'
+import { useSelector } from 'react-redux'
+import { useTranslation } from 'react-i18next'
+
 import Banner from '../components/Banner'
 import VerticalCard from '../components/cards/VerticalCard'
 import GridContainer from '../components/GridContainer'
 import LeftNavbar from '../components/LeftNavbar/LeftNavbar'
-import { useSelector } from 'react-redux'
 import WebPlayer from '../components/WebPlayer'
-import { useTranslation } from 'react-i18next'
 
 const CollectionPage = ({ match }) => {
+  // to translate from language files
   const { t } = useTranslation('translation', { keyPrefix: 'collections' })
   const playlists = useSelector((state) => state.playlists.list)
+  // DIDN'T GET FROM SPOTIFY API
   const podcasts = []
   const artists = useSelector((state) => state.topArtists.list)
+  // DIDN'T GET FAV ALBUMS FROM SPOTIFY API
   const albums = []
+
+  // CHANGE MAP ARRAY DEPENDING ON PARAMS
   let list
   switch (match.params.type) {
     case 'playlists':

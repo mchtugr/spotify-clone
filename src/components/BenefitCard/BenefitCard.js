@@ -1,4 +1,5 @@
 import React from 'react'
+
 import './BenefitCard.css'
 
 const BenefitCard = ({ title, description, className }) => {

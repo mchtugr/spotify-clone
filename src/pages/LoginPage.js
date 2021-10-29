@@ -1,25 +1,30 @@
 import React, { useState } from 'react'
-import { useTranslation } from 'react-i18next'
 import { Link } from 'react-router-dom'
-import Button from '../components/ui/Button'
-import Divider from '../components/ui/Divider'
-import CustomInput from '../components/ui/CustomInput'
+import { useHistory } from 'react-router'
+import { useTranslation } from 'react-i18next'
 import { RiFacebookCircleFill, RiAppleFill } from 'react-icons/ri'
 import { FcGoogle } from 'react-icons/fc'
 import { IoCheckbox, IoSquareOutline } from 'react-icons/io5'
-import { useHistory } from 'react-router'
-import './LoginPage.css'
+
+import Button from '../components/ui/Button'
+import Divider from '../components/ui/Divider'
+import CustomInput from '../components/ui/CustomInput'
 import { accessUrl } from '../spotify'
+
+import './LoginPage.css'
 
 const LoginPage = () => {
   const history = useHistory()
+  // FORM STATES
   const [selected, setSelected] = useState(false)
   const [email, setEmail] = useState('')
   const [emailError, setEmailError] = useState(false)
   const [password, setPassword] = useState('')
   const [passwordError, setPasswordError] = useState(false)
+
   const handleLogin = (e) => {
     e.preventDefault()
+    // CHECK VALIDITY
     if (!email) {
       setEmailError(true)
       return
@@ -28,17 +33,22 @@ const LoginPage = () => {
       setPasswordError(true)
       return
     }
+    // IF FORM HAS NO INVALID INPUT, REDIRECT TO REAL SPOTIFY AUTH PAGE
     window.location.assign(accessUrl)
   }
+  // to translate from language files
   const { t } = useTranslation('translation', { keyPrefix: 'login' })
+
   return (
     <div className='login-page-container'>
+      {/* LOGO */}
       <div className='login-page-logo-section'>
         <Link to='/' className='login-logo-container'>
           <div className='login-logo'></div>
         </Link>
       </div>
       <div className='login-page-inner-container'>
+        {/* FACEBOOK LOGIN */}
         <div className='facebook-container social-icon-container'>
           <Button variant='facebook-dark'>
             <span className='social-btn-icon'>
@@ -47,6 +57,7 @@ const LoginPage = () => {
             {t('facebook')}
           </Button>
         </div>
+        {/* APPLE LOGIN */}
         <div className='apple-container social-icon-container'>
           <Button variant='apple'>
             <span className='social-btn-icon'>
@@ -55,6 +66,7 @@ const LoginPage = () => {
             {t('apple')}
           </Button>
         </div>
+        {/* GOOGLE LOGIN */}
         <div className='apple-container social-icon-container'>
           <Button variant='google'>
             <span className='social-btn-icon'>
@@ -63,6 +75,7 @@ const LoginPage = () => {
             {t('google')}
           </Button>
         </div>
+        {/* CUSTOM DIVIDER */}
         <Divider
           style={{
             width: '100%',
@@ -76,6 +89,7 @@ const LoginPage = () => {
           {t('or')}{' '}
         </Divider>
         <form onSubmit={handleLogin}>
+          {/* EMAIL */}
           <CustomInput
             label={t('email_label')}
             placeholder={t('email_placeholder')}
@@ -87,6 +101,7 @@ const LoginPage = () => {
             showError={emailError}
             isLogin
           />
+          {/* PASSWORD */}
           <CustomInput
             label={t('password_label')}
             placeholder={t('password_placeholder')}
@@ -123,6 +138,7 @@ const LoginPage = () => {
             </Button>
           </div>
         </form>
+        {/* SIGNUP REDIRECT */}
         <Divider style={{ width: '100%' }} />
         <div className='login-footer-signup'>
           <h2 className='no-account'>{t('no_account')}</h2>

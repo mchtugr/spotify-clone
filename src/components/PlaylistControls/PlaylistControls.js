@@ -1,8 +1,10 @@
 import React, { useState } from 'react'
+
 import FooterLikeIcon from '../icons/FooterLikeIcon'
 import PauseIcon from '../icons/PauseIcon'
 import PlayIcon from '../icons/PlayIcon'
 import ThreeDotsIcon from '../icons/ThreeDotsIcon'
+
 import './PlaylistControls.css'
 
 const PlaylistControls = () => {

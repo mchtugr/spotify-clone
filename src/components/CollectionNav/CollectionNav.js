@@ -1,9 +1,13 @@
 import React from 'react'
-import './CollectionNav.css'
 import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
+
+import './CollectionNav.css'
+
 const CollectionNav = ({ activeTab }) => {
+  // to translate from language files
   const { t } = useTranslation('translation', { keyPrefix: 'collections' })
+
   return (
     <ul className='collection-nav'>
       <li

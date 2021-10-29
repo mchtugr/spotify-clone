@@ -183,6 +183,7 @@ export const getTopArtists = () => (dispatch, getState) => {
     })
 }
 
+// SEARCH TRACK | ARTIST | PLAYLIST | ALBUM
 export const getSearchResults = (query) => (dispatch, getState) => {
   dispatch({ type: GET_SEARCH_RESULTS_LOADING })
 
@@ -194,6 +195,7 @@ export const getSearchResults = (query) => (dispatch, getState) => {
       },
       params: {
         q: query,
+        // include more or remove some
         type: 'track,artist,playlist,album',
       },
     })

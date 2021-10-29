@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+
 import Banner from '../components/Banner'
 import DiscoverSection from '../components/DiscoverSection'
 import DefaultSearchCategories from '../components/DefaultSearchCategories/DefaultSearchCategories'
@@ -10,12 +11,14 @@ import {
   browseCategories,
   displayDefaultSearchCategories,
 } from '../redux/actions'
+
 import './SearchPage.css'
 
 const SearchPage = () => {
   const dispatch = useDispatch()
   const search = useSelector((state) => state.search)
 
+  // FETCH DATA ON FIRST RENDER
   useEffect(() => {
     dispatch(browseCategories())
     dispatch(displayDefaultSearchCategories())

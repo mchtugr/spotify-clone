@@ -1,13 +1,17 @@
 import React, { useState } from 'react'
-import Button from '../components/ui/Button'
-import { useTranslation } from 'react-i18next'
 import { Link } from 'react-router-dom'
-import './SignupPage.css'
+import { useTranslation } from 'react-i18next'
+
+import Button from '../components/ui/Button'
 import CustomInput from '../components/ui/CustomInput'
 import Divider from '../components/ui/Divider'
 
+import './SignupPage.css'
+
 const SignupPage = () => {
+  // to translate from language files
   const { t } = useTranslation('translation', { keyPrefix: 'signup' })
+  // FORM STATES
   const [email, setEmail] = useState('')
   const [emailError, setEmailError] = useState(false)
   const [emailCheck, setEmailCheck] = useState('')
@@ -19,20 +23,23 @@ const SignupPage = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
+    // CHECK EMAIL VALIDATION
     if (!email || !email.includes('@')) {
       setEmailError(true)
     }
     if (!emailCheck || !email.includes('@')) {
       setEmailCheckError(true)
     }
-
+    // CHECK BOTH EMAILS MATCH
     if (email !== emailCheck) {
       alert('email does not match!')
       return
     }
+    // PASSWORD REQUIRED
     if (!password) {
       setPasswordError(true)
     }
+    // USERNAME REQUIRED
     if (!username) {
       setUsernameError(true)
     } else {
@@ -46,6 +53,7 @@ const SignupPage = () => {
   return (
     <div className='signup-container'>
       <div className='header-container'>
+        {/* LOGO */}
         <div className='signup-page-logo-section'>
           <Link to='/' className='signup-page-logo-container'>
             <div className='signup-logo'></div>
@@ -53,6 +61,7 @@ const SignupPage = () => {
         </div>
         <h2 className='signup-heading'>{t('heading')}</h2>
       </div>
+      {/* FACEBOOK SIGNUP */}
       <div
         className='facebook-signup-container'
         onClick={() => alert('Not Active!')}
@@ -63,9 +72,11 @@ const SignupPage = () => {
           </Button>
         </div>
       </div>
+      {/* CUSTOM DIVIDER */}
       <Divider>{t('or')}</Divider>
       <form onSubmit={handleSubmit}>
         <h2 className='signup-subheader'>{t('subheading')}</h2>
+        {/* EMAIL */}
         <CustomInput
           label={t('email_label')}
           type='text'
@@ -75,6 +86,7 @@ const SignupPage = () => {
           onChange={(e) => setEmail(e.target.value)}
           showError={emailError}
         />
+        {/* RETYPE EMAIL */}
         <CustomInput
           label={t('confirm_email_label')}
           type='text'
@@ -84,6 +96,7 @@ const SignupPage = () => {
           onChange={(e) => setEmailCheck(e.target.value)}
           showError={emailCheckError}
         />
+        {/* PASSWORD */}
         <CustomInput
           label={t('password_label')}
           type='password'
@@ -93,6 +106,7 @@ const SignupPage = () => {
           onChange={(e) => setPassword(e.target.value)}
           showError={passwordError}
         />
+        {/* USERNAME */}
         <CustomInput
           label={t('username_label')}
           type='text'
@@ -110,6 +124,7 @@ const SignupPage = () => {
             </Button>
           </div>
         </div>
+        {/* LOGIN REDIRECT */}
         <div className='login-option'>
           <span>{t('login_direct')}</span>
           <span>

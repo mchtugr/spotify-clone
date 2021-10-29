@@ -1,9 +1,13 @@
 import React from 'react'
 import { useTranslation } from 'react-i18next'
+
 import BenefitCard from './BenefitCard'
+
 import './Benefits.css'
 
 const Benefits = () => {
+  // to translate from language files
+
   const { t } = useTranslation()
   return (
     <div className='benefits'>

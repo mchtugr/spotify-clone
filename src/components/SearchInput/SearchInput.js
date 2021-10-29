@@ -1,18 +1,24 @@
 import React, { useState, useEffect } from 'react'
-import SearchIcon from '../icons/SearchIcon'
 import { useDispatch } from 'react-redux'
-import './SearchInput.css'
+import { useTranslation } from 'react-i18next'
+
+import SearchIcon from '../icons/SearchIcon'
+import CrossIcon from '../icons/CrossIcon'
 import {
   displayDefaultSearchCategories,
   getSearchResults,
 } from '../../redux/actions'
-import CrossIcon from '../icons/CrossIcon'
-import { useTranslation } from 'react-i18next'
+
+import './SearchInput.css'
+
 const SearchInput = () => {
   const [keyword, setKeyword] = useState('')
+
+  // to translate from language files
   const { t } = useTranslation('translation', { keyPrefix: 'banner.input' })
   const dispatch = useDispatch()
 
+  // FETCH DATA WHEN USER STOPS TYPING
   useEffect(() => {
     const delayDebounceFn = setTimeout(() => {
       if (keyword.length > 2) {

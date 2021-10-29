@@ -1,9 +1,12 @@
 import React from 'react'
 import { useTranslation } from 'react-i18next'
+
 import './FooterListCard.css'
+
 const FooterListCard = ({ data }) => {
+  // to translate from language files
   const { t } = useTranslation('translation', { keyPrefix: 'footer' })
-  console.log(data.contents)
+
   return (
     <div className='footer-list-card-container'>
       <dl>
@@ -11,6 +14,7 @@ const FooterListCard = ({ data }) => {
         {data.contents.map((item, i) => (
           <dd key={i}>
             <a href={item.link}>
+              {/* REPLACED SPACE WITH UNDERSCORE TO WORK WITH I18NEXT */}
               {t(
                 `${data.title
                   .replace(' ', '_')
