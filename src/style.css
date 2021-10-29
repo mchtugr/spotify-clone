@@ -28,3 +28,60 @@ p {
 a {
   text-decoration: none;
 }
+
+/* RANDDOM COLORS FOR SEARCH CARDS */
+
+.search-card-1 {
+  background-color: #26856a;
+}
+
+.search-card-2 {
+  background-color: #8d67ac;
+}
+.search-card-3 {
+  background-color: #dc148c;
+}
+
+.search-card-4 {
+  background-color: #1e3164;
+}
+
+.search-card-5 {
+  background-color: #e8115b;
+}
+.search-card-6 {
+  background-color: #ffc864;
+}
+
+.search-card-7 {
+  background-color: #bb5d06;
+}
+
+.search-card-8 {
+  background-color: #477e95;
+}
+.search-card-9 {
+  background-color: #138a09;
+}
+.search-card-10 {
+  background-color: #e61e32;
+}
+.search-card-11 {
+  background-color: #181818;
+}
+
+.search-card-12 {
+  background-color: #777777;
+}
+.search-card-13 {
+  background-color: #8c1932;
+}
+.search-card-14 {
+  background-color: #0c73ec;
+}
+.search-card-15 {
+  background-color: #608108;
+}
+.search-card-16 {
+  background-color: #9cf0e1;
+}

@@ -2,8 +2,9 @@ import React from 'react'
 import './MusicTypesCard.css'
 
 const MusicTypesCard = ({ category }) => {
+  const randomNum = Math.floor(Math.random() * 16) + 1
   return (
-    <div className='music-types-card'>
+    <div className={`music-types-card search-card-${randomNum}`}>
       <div className='music-types-card-inner-container'>
         <img
           src={category.icons[0].url}

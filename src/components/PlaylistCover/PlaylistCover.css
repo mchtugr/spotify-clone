@@ -85,7 +85,6 @@
 .playlist-cover-detail-owner-section {
   display: flex;
   color: #b3b3b3;
-  cursor: pointer;
   font-size: 14px;
   line-height: 16px;
   font-weight: 400;
@@ -96,6 +95,7 @@
 .playlist-cover-detail-owner {
   color: #fff;
   font-weight: 700;
+  cursor: pointer;
 }
 
 .playlist-cover-detail-owner:hover {

@@ -11,8 +11,7 @@
   background-image: linear-gradient(rgba(0, 0, 0, 0.6), #121212);
   -webkit-transition: background 1s ease;
   transition: background 1s ease;
-
-  background-color: tomato;
+  background-color: #333;
 }
 
 .page-content {

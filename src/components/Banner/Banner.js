@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
+import { useHistory } from 'react-router'
 import { useTranslation } from 'react-i18next'
 import Button from '../ui/Button'
 import BottomArrow from '../icons/BottomArrow'
@@ -19,6 +20,7 @@ const Banner = ({ includeSearch, includeCollectionNav, activeTab }) => {
   const dispatch = useDispatch()
   const { language } = useSelector((state) => state.user)
   const { t, i18n } = useTranslation()
+  const history = useHistory()
 
   const handleLanguage = (lang) => {
     dispatch(selectLanguage(lang))
@@ -29,6 +31,7 @@ const Banner = ({ includeSearch, includeCollectionNav, activeTab }) => {
     console.log(
       'Logout button not working because "token" needed for data fetching!'
     )
+    history.push('/login')
   }
   const toggleDrowdown = () => {
     document.querySelector('#dropdown-box').classList.toggle('show')
@@ -47,13 +50,26 @@ const Banner = ({ includeSearch, includeCollectionNav, activeTab }) => {
       }
     }
   }
+
+  const handleGoBack = () => {
+    if (history.location.pathname === '/') {
+      return
+    } else {
+      history.goBack()
+    }
+  }
+
+  const handleGoForward = () => {
+    history.goForward()
+  }
+
   return (
     <div className='top-banner'>
       <div className='navigation-btn-container'>
-        <span className='navigation-btn'>
+        <span className='navigation-btn' onClick={handleGoBack}>
           <PrevPageIcon />
         </span>
-        <span className='navigation-btn'>
+        <span className='navigation-btn' onClick={handleGoForward}>
           <NextPageIcon />
         </span>
       </div>
