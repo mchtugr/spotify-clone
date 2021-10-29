@@ -56,12 +56,12 @@ const LeftNavbar = () => {
           </div>
           <div
             className={`vertical-nav-item ${
-              pathname === '/library' && 'vertical-nav-item-selected'
+              pathname === '/collection' && 'vertical-nav-item-selected'
             }`}
           >
-            <Link to='/library' className='vertical-navbar-link'>
+            <Link to='/collection/playlists' className='vertical-navbar-link'>
               <span className='nav-icon-container'>
-                {pathname === '/library' ? (
+                {pathname === '/collection' ? (
                   <LibraryActiveIcon />
                 ) : (
                   <LibraryIcon />

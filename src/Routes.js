@@ -6,9 +6,9 @@ import OffersPage from './pages/OffersPage'
 import SignupPage from './pages/SignupPage'
 import DemoPage from './pages/DemoPage'
 import SearchPage from './pages/SearchPage'
-import LibraryPage from './pages/LibraryPage'
 import AuthPage from './pages/AuthPage'
 import PlaylistDetailPage from './pages/PlaylistDetailPage'
+import CollectionPage from './pages/CollectionPage'
 
 const Routes = () => {
   return (
@@ -21,7 +21,7 @@ const Routes = () => {
         <Route path='/signup' exact component={SignupPage} />
         <Route path='/offers' exact component={OffersPage} />
         <Route path='/search' exact component={SearchPage} />
-        <Route path='/library' exact component={LibraryPage} />
+        <Route path='/collection/:type' exact component={CollectionPage} />
         <Route
           path='/playlist/:playlistId'
           exact

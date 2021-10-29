@@ -6,7 +6,10 @@ import DefaultSearchCategories from '../components/DefaultSearchCategories/Defau
 import GridContainer from '../components/GridContainer'
 import LeftNavbar from '../components/LeftNavbar/LeftNavbar'
 import WebPlayer from '../components/WebPlayer'
-import { browseCategories } from '../redux/actions'
+import {
+  browseCategories,
+  displayDefaultSearchCategories,
+} from '../redux/actions'
 import './SearchPage.css'
 
 const SearchPage = () => {
@@ -16,6 +19,7 @@ const SearchPage = () => {
 
   useEffect(() => {
     dispatch(browseCategories())
+    dispatch(displayDefaultSearchCategories())
   }, [dispatch])
 
   return (

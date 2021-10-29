@@ -10,8 +10,9 @@ import PrevPageIcon from '../icons/PrevPageIcon'
 import SearchInput from '../SearchInput/SearchInput'
 import { selectLanguage } from '../../redux/actions'
 import './Banner.css'
+import CollectionNav from '../CollectionNav/CollectionNav'
 
-const Banner = ({ includeSearch }) => {
+const Banner = ({ includeSearch, includeCollectionNav, activeTab }) => {
   const displayName = useSelector((state) => state.user.data.display_name)
   const dispatch = useDispatch()
   const { language } = useSelector((state) => state.user)
@@ -55,6 +56,7 @@ const Banner = ({ includeSearch }) => {
         </span>
       </div>
       {includeSearch && <SearchInput />}
+      {includeCollectionNav && <CollectionNav activeTab={activeTab} />}
       {displayName ? (
         <div onClick={toggleDrowdown}>
           <div className='display-name-container'>
