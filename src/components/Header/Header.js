@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 
-import Navigation from './Navigation'
+import Navigation from '../Navigation'
 import HamburgerMenu from '../ui/HamburgerMenu/'
 import useWindowSize from '../../hooks/useWindowSize'
 

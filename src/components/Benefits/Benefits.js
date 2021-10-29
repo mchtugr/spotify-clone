@@ -1,7 +1,7 @@
 import React from 'react'
 import { useTranslation } from 'react-i18next'
 
-import BenefitCard from './BenefitCard'
+import BenefitCard from '../cards/BenefitCard'
 
 import './Benefits.css'
 

@@ -1,7 +1,7 @@
 import React from 'react'
 import { useTranslation } from 'react-i18next'
 
-import PremiumPlansCard from './PremiumPlansCard/PremiumPlansCard'
+import PremiumPlansCard from '../cards/PremiumPlansCard/PremiumPlansCard'
 import data from '../../languages/en.json'
 
 import './PremiumPlans.css'

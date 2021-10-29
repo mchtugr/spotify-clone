@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next'
 import { Link } from 'react-router-dom'
 import { BiWorld } from 'react-icons/bi'
 
-import FooterListCard from './FooterListCard/FooterListCard'
+import FooterListCard from '../cards/FooterListCard/FooterListCard'
 import data from '../../languages/en.json'
 
 import './Footer.css'
