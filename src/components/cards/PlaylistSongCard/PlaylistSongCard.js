@@ -11,15 +11,15 @@ const PlaylistSongCard = ({ songData, index }) => {
         <div className='playlist-songs-title playlist-songs-table-item'>
           <div className='playlist-songs-title-img-container'>
             <img
-              src={songData.track.album.images[1].url}
-              alt='deneme'
+              src={songData.track?.album.images[1].url}
+              alt={songData.name}
               className='playlist-songs-title-img'
             />
           </div>
           <div className='playlist-songs-title-detail'>
-            <p className='playlist-song-name'>{songData.track.name}</p>
+            <p className='playlist-song-name'>{songData.track?.name}</p>
             <p className='playlist-song-artistt'>
-              {songData.track.artists.map((artist, i) => {
+              {songData.track?.artists.map((artist, i) => {
                 if (i === 0) {
                   return (
                     <span className='playlist-song-artist' key={i}>
@@ -41,7 +41,7 @@ const PlaylistSongCard = ({ songData, index }) => {
           </div>
         </div>
         <p className='playlist-songs-album playlist-songs-table-item'>
-          {songData.track.name}
+          {songData.track?.name}
         </p>
         <div className='playlist-songs-added-on playlist-songs-table-item'>
           {new Date(songData.added_at).toDateString()}
