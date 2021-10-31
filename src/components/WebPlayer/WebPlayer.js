@@ -25,7 +25,11 @@ const WebPlayer = () => {
         {/* LEFT */}
         <div className='player-left'>
           <div className='footer-img-container'>
-            <img src='/deneme.jpeg' alt='song-poster' className='footer-img' />
+            <img
+              src='https://raw.githubusercontent.com/murtazaaylak/spotify-clone/main/public/deneme.jpeg'
+              alt='song-poster'
+              className='footer-img'
+            />
           </div>
           <div className='footer-song-details'>
             <p className='footer-song-title'>MargaM</p>

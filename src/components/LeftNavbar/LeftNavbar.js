@@ -35,7 +35,11 @@ const LeftNavbar = () => {
         {/* LOGO */}
         <Link to='/'>
           <div className='vertical-logo-container'>
-            <img className='vertical-logo' src='/logo.png' alt='logo'></img>
+            <img
+              className='vertical-logo'
+              src='https://raw.githubusercontent.com/murtazaaylak/spotify-clone/main/public/logo.png'
+              alt='logo'
+            ></img>
           </div>
         </Link>
         <div>
@@ -96,7 +100,7 @@ const LeftNavbar = () => {
           <div className='vertical-nav-item'>
             <span>
               <img
-                src='/favorites.png'
+                src='https://raw.githubusercontent.com/murtazaaylak/spotify-clone/main/public/favorites.png'
                 alt='favorite_songs_icon'
                 className='nav-img'
               />
@@ -106,7 +110,11 @@ const LeftNavbar = () => {
           {/* EPISODES */}
           <div className='vertical-nav-item'>
             <span>
-              <img src='/episode.png' alt='episodes_icon' className='nav-img' />
+              <img
+                src='https://raw.githubusercontent.com/murtazaaylak/spotify-clone/main/public/episode.png'
+                alt='episodes_icon'
+                className='nav-img'
+              />
             </span>
             <p className='nav-link-text'>{t('episodes')}</p>
           </div>

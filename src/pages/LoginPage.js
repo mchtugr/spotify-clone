@@ -25,7 +25,7 @@ const LoginPage = () => {
   const handleLogin = (e) => {
     e.preventDefault()
     // CHECK VALIDITY
-    if (!email) {
+    if (!email || !email.includes('@')) {
       setEmailError(true)
       return
     }

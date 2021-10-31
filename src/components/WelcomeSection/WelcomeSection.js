@@ -29,7 +29,11 @@ const WelcomeSection = () => {
         ))}
         <HorizontalCard
           playlistData={{
-            images: [{ url: '/favorites.png' }],
+            images: [
+              {
+                url: 'https://raw.githubusercontent.com/murtazaaylak/spotify-clone/main/public/favorites.png',
+              },
+            ],
             name: t('favorite_songs'),
           }}
         />
