@@ -6,7 +6,7 @@ This project is coded for Kodluyoruz JavaScript & React Bootcamp. Spotify Web Ap
 
 ## Demo Link
 
-You can preview the app [here]('https://github.com/murtazaaylak')
+You can preview the app [here](https://murtazaaylak.github.io/spotify-clone/)
 
 ## Built With
 

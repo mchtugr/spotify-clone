@@ -11,8 +11,9 @@ import PlaylistDetailPage from './pages/PlaylistDetailPage'
 import CollectionPage from './pages/CollectionPage'
 
 const Routes = () => {
+  console.log(process.env.PUBLIC_URL)
   return (
-    <Router>
+    <Router basename={process.env.PUBLIC_URL}>
       <Switch>
         <Route path='/demo' exact component={DemoPage} />
         <Route path='/auth' exact component={AuthPage} />

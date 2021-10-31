@@ -9,7 +9,6 @@ import Loading from '../components/ui/Loading/Loading'
 const AuthPage = ({ location, history }) => {
   const dispatch = useDispatch()
   const { token } = useSelector((state) => state.user)
-
   // Get token from url and store it
   useEffect(() => {
     let parsed = queryString.parse(location.hash)
