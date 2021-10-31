@@ -15,16 +15,44 @@ const Routes = () => {
   return (
     <Router basename={process.env.PUBLIC_URL}>
       <Switch>
-        <Route path='/demo' exact component={DemoPage} />
-        <Route path='/auth' exact component={AuthPage} />
-        <Route path='/' exact component={Homepage} />
-        <Route path='/login' exact component={LoginPage} />
-        <Route path='/signup' exact component={SignupPage} />
-        <Route path='/offers' exact component={OffersPage} />
-        <Route path='/search' exact component={SearchPage} />
-        <Route path='/collection/:type' exact component={CollectionPage} />
         <Route
-          path='/playlist/:playlistId'
+          path={process.env.PUBLIC_URL + '/demo'}
+          exact
+          component={DemoPage}
+        />
+        <Route
+          path={process.env.PUBLIC_URL + '/auth'}
+          exact
+          component={AuthPage}
+        />
+        <Route path={process.env.PUBLIC_URL + '/'} exact component={Homepage} />
+        <Route
+          path={process.env.PUBLIC_URL + '/login'}
+          exact
+          component={LoginPage}
+        />
+        <Route
+          path={process.env.PUBLIC_URL + '/signup'}
+          exact
+          component={SignupPage}
+        />
+        <Route
+          path={process.env.PUBLIC_URL + '/offers'}
+          exact
+          component={OffersPage}
+        />
+        <Route
+          path={process.env.PUBLIC_URL + '/search'}
+          exact
+          component={SearchPage}
+        />
+        <Route
+          path={process.env.PUBLIC_URL + '/collection/:type'}
+          exact
+          component={CollectionPage}
+        />
+        <Route
+          path={process.env.PUBLIC_URL + '/playlist/:playlistId'}
           exact
           component={PlaylistDetailPage}
         />
