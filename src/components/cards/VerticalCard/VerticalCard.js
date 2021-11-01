@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { useTranslation } from 'react-i18next'
+import { useHistory } from 'react-router'
 
 import PauseIcon from '../../icons/PauseIcon'
 import PlayIcon from '../../icons/PlayIcon'
@@ -8,10 +9,15 @@ import './VerticalCard.css'
 
 const VerticalCard = ({ data, isArtist, isPlaylist }) => {
   const [isPlaying, setIsPlaying] = useState(false)
+  const history = useHistory()
   // to translate from language files
   const { t } = useTranslation('translation', { keyPrefix: 'vertical_card' })
+
+  const handleClick = () => {
+    if (isPlaylist) history.push(`/playlist/${data.id}`)
+  }
   return (
-    <div className='vertical-card'>
+    <div className='vertical-card' onClick={handleClick}>
       <div className='vertical-card-inner-container'>
         {/* IMG */}
         <div className='vertical-card-img-container'>
