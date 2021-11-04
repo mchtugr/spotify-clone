@@ -1,14 +1,59 @@
 # Spotify Clone
 
-## About the Project
+This project is coded for Kodluyoruz JavaScript & React Bootcamp.
+Spotify Web Api was used to fetch real data.
+To be able to see the content, you must login to your Spotify account and give related permissions.
+You can search tracks, artists and albums, and get the hit playlists.
 
-This project is coded for Kodluyoruz JavaScript & React Bootcamp. Spotify Web Api was used to fetch real data. To be able to see the content, you must login to your Spotify account and give related permissions
+## Important!
 
-## Demo Link
+To be able to view the page fully functional, your Spotify email address should be submitted to Spotify Dashboard for the app. You can send your Spotify email address to mchtugr@gmail.com.
 
-You can preview the app [here](https://murtazaaylak.github.io/spotify-clone/)
+## Run locally
 
-## Built With
+Clone the project
+
+```bash
+  git clone https://github.com/mchtugr/spotify-clone.git
+```
+
+Proje dizinine gidin
+
+```bash
+  cd spotify-clone
+```
+
+Gerekli paketleri yükleyin
+
+```bash
+  npm install
+```
+
+Sunucuyu çalıştırın
+
+```bash
+  npm run start
+```
+
+## Screenshot
+
+#### Offers Page & Login
+
+![Offers Page & Login](ss/offers.gif)
+
+#### User playlists & artists
+
+![User playlists & artists](ss/collections.gif)
+
+#### Search Page
+
+![Search Page](ss/search.gif)
+
+#### Hit playlists detail
+
+![Hit playlists detail](ss/playlists.gif)
+
+## Built with
 
 - React
 - Redux
@@ -21,9 +66,8 @@ You can preview the app [here](https://murtazaaylak.github.io/spotify-clone/)
 
 ## Contributing
 
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
-
-Please make sure to update tests as appropriate.
+Pull requests are welcome.
+For major changes, please open an issue first to discuss what you would like to change.
 
 ## License
 
