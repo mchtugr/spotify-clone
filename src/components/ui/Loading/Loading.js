@@ -1,13 +1,11 @@
 import React from 'react'
-import { useTranslation } from 'react-i18next'
+import BeatLoader from 'react-spinners/BeatLoader'
 
 import './Loading.css'
 const Loading = () => {
-  // to translate from language files
-  const { t } = useTranslation()
   return (
     <div className='loading-container'>
-      <h1>{t('loading')}</h1>
+      <BeatLoader color='#fff' loading='true' size='15' margin='5' />
     </div>
   )
 }
