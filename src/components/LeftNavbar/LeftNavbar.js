@@ -72,7 +72,7 @@ const LeftNavbar = () => {
           {/* COLLECTIONS */}
           <div
             className={`vertical-nav-item ${
-              pathname === '/collection' && 'vertical-nav-item-selected'
+              pathname.includes('/collection') && 'vertical-nav-item-selected'
             }`}
           >
             <Link to='/collection/playlists' className='vertical-navbar-link'>
