@@ -1,0 +1,120 @@
+@import '../../../styles/variables';
+@import '../../../styles/mixins';
+
+.btn {
+  width: 100%;
+  padding: 17px 48px;
+  border-radius: 500px;
+  letter-spacing: 2px;
+  font-weight: 700;
+  user-select: none;
+  font-size: 14px;
+  cursor: pointer;
+  border: none;
+  @include center;
+
+  //   btn--animated
+  &--animated:hover {
+    transform: scale(1.05);
+  }
+
+  //   btn__dark
+  &__dark {
+    background-color: $very-dark;
+    border: 2px solid $very-dark;
+    color: $white;
+  }
+
+  //   btn__primary
+  &__primary {
+    background-color: $primary;
+    border: 2px solid $white;
+    color: $white;
+  }
+
+  //   btn__facebook
+  &__facebook {
+    background-color: $facebook-blue;
+    color: $white;
+    padding: 14px 32px;
+
+    &:hover {
+      background-color: $facebook-blue-hover;
+    }
+  }
+
+  //   btn__spotify
+  &__spotify {
+    background-color: $spotify-green;
+    color: $black;
+  }
+
+  //   btn__facebook-dark
+  &__facebook-dark {
+    background-color: $facebook-dark-blue;
+    color: $white;
+
+    &:hover {
+      background-color: $facebook-dark-blue-hover;
+    }
+  }
+
+  //   btn__apple
+  &__apple {
+    background-color: $black;
+    color: $white;
+
+    &:hover {
+      background-color: $apple-black-hover;
+    }
+  }
+
+  //   google
+  &__google {
+    color: $google-grey;
+    box-shadow: inset 0 0 0 2px $google-grey;
+    background-color: transparent;
+    transition: background-color 0.2s ease;
+
+    &:hover {
+      background-color: $google-grey;
+      color: $white;
+    }
+  }
+
+  //   btn__spotify-dark
+  &__spotify-dark {
+    background-color: $spotify-dark-green;
+    color: $white;
+    transition: background-color 0.2s ease;
+
+    &:hover {
+      background-color: $spotify-dark-green-hover;
+    }
+  }
+
+  &__banner-login,
+  &__banner-signup {
+    border: 2px solid transparent;
+    display: inline-block;
+    font-size: 12px;
+    letter-spacing: 1.76px;
+    line-height: 18px;
+    padding: 8px 34px;
+    text-transform: uppercase;
+    -webkit-transition: all 33ms cubic-bezier(0.3, 0, 0, 1);
+    transition: all 33ms cubic-bezier(0.3, 0, 0, 1);
+    white-space: nowrap;
+    will-change: transform;
+  }
+
+  &__banner-login {
+    background-color: $white;
+    color: $bg-color-11;
+  }
+
+  &__banner-signup {
+    background-color: transparent;
+    color: $white;
+  }
+}

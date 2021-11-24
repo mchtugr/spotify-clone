@@ -128,12 +128,12 @@ const Banner = ({ includeSearch, includeCollectionNav, activeTab }) => {
       ) : (
         <div className='login-signin-section'>
           <Link to='/signup'>
-            <Button variant='banner-btn-signup' animated>
+            <Button variant='banner-signup' animated>
               Sign up
             </Button>
           </Link>
           <Link to='/login'>
-            <Button variant='banner-btn-login' animated>
+            <Button variant='banner-login' animated>
               Login
             </Button>
           </Link>

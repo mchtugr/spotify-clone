@@ -1,12 +1,12 @@
 import React from 'react'
 
-import './Button.css'
+import './button.scss'
 
 const Button = ({ variant, animated, ...props }) => {
   return (
     <button
       {...props}
-      className={`${animated && 'animated-btn'} custom-btn ${variant}-btn`}
+      className={`${animated && 'btn--animated'} btn btn__${variant}`}
     >
       {props.children}
     </button>
