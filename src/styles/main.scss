@@ -1,0 +1,125 @@
+@import './variables';
+@import './mixins';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: spotify-circular, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  user-select: none;
+}
+
+body {
+  background-color: #000;
+}
+
+p {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  white-space: unset;
+  word-break: break-all;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+#root {
+  background-color: #fff;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* RANDOM COLORS FOR SEARCH CARDS */
+
+.search-card {
+  // search-card-1
+  &-1 {
+    background-color: $bg-color-1;
+  }
+
+  // search-card-2
+  &-2 {
+    background-color: $bg-color-2;
+  }
+
+  // search-card-3
+  &-3 {
+    background-color: $bg-color-3;
+  }
+
+  // search-card-4
+  &-4 {
+    background-color: $bg-color-4;
+  }
+
+  // search-card-5
+  &-5 {
+    background-color: $bg-color-5;
+  }
+
+  // search-card-6
+  &-6 {
+    background-color: $bg-color-6;
+  }
+
+  // search-card-7
+  &-7 {
+    background-color: $bg-color-7;
+  }
+
+  // search-card-8
+  &-8 {
+    background-color: $bg-color-8;
+  }
+
+  // search-card-9
+  &-9 {
+    background-color: $bg-color-9;
+  }
+
+  // search-card-10
+  &-10 {
+    background-color: $bg-color-10;
+  }
+
+  // search-card-11
+  &-11 {
+    background-color: $bg-color-11;
+  }
+
+  // search-card-12
+  &-12 {
+    background-color: $bg-color-12;
+  }
+
+  // search-card-13
+  &-13 {
+    background-color: $bg-color-13;
+  }
+
+  // search-card-14
+  &-14 {
+    background-color: $bg-color-14;
+  }
+
+  // search-card-15
+  &-15 {
+    background-color: $bg-color-15;
+  }
+
+  // search-card-16
+  &-16 {
+    background-color: $bg-color-16;
+  }
+}
+
+.liked-icon svg {
+  fill: #1ed760;
+}
+
+.liked-icon svg:hover {
+  fill: #1ed760;
+}
