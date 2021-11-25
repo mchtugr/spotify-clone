@@ -1,0 +1,62 @@
+@import '../../../styles/variables';
+@import '../../../styles/mixins';
+.custom-input {
+  padding-bottom: 24px;
+
+  &__label {
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.25px;
+    font-weight: $font-bold;
+    width: 100%;
+    padding-bottom: 8px;
+  }
+
+  &__field {
+    border: 0;
+    border-radius: 4px;
+    color: $black;
+    display: block;
+    font-size: 16px;
+    font-weight: $font-normal;
+    line-height: 24px;
+    width: 100%;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 14px;
+
+    @include box-shadow(inset, 1px, $input-box-shadow);
+
+    &--login {
+      padding: 9px;
+    }
+
+    &:focus {
+      outline: none;
+      @include box-shadow(inset, 2px, $black);
+    }
+
+    &--error {
+      @include box-shadow(inset, 1px, $input-error-box);
+    }
+  }
+
+  &__error {
+    color: $input-error;
+    font-size: 14px;
+    font-weight: $font-normal;
+    line-height: 20px;
+    letter-spacing: 0.25px;
+    margin-top: 8px;
+  }
+
+  &--login {
+    color: $input-error-login;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+}
+
+.error-icon {
+  @include center;
+}

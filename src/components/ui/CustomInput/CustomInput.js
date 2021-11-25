@@ -1,23 +1,27 @@
 import React from 'react'
 import { MdClose } from 'react-icons/md'
 
-import './CustomInput.css'
+import './custom-input.scss'
 
 const CustomInput = ({ showError, className, isLogin, ...props }) => {
   return (
-    <div className='custom-input-container'>
-      <div className='label-container'>
+    <div className='custom-input'>
+      <div className='custom-input__label'>
         <label htmlFor={props.name}>{props.label}</label>
       </div>
       <input
         {...props}
-        className={`signup-input ${
-          props.showError && 'signup-input-error'
+        className={`custom-input__field ${
+          showError && 'custom-input__field--error'
         } ${className}`}
       />
       {/* ERROR SECTION IF ANY */}
       {showError && (
-        <div className={`input-error ${isLogin && 'login-input-error'}`}>
+        <div
+          className={`custom-input__error ${
+            isLogin && 'custom-input__error--login'
+          }`}
+        >
           {!isLogin && (
             <span className='error-icon'>
               <MdClose size='16px' />

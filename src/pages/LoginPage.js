@@ -95,7 +95,7 @@ const LoginPage = () => {
             placeholder={t('email_placeholder')}
             error={t('email_error')}
             type='text'
-            className='login-input'
+            className='custom-input__field--login'
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             showError={emailError}
@@ -107,7 +107,7 @@ const LoginPage = () => {
             placeholder={t('password_placeholder')}
             error={t('password_error')}
             type='password'
-            className='login-input'
+            className='custom-input__field--login'
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             showError={passwordError}
