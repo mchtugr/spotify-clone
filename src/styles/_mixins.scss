@@ -9,3 +9,13 @@
 @mixin box-shadow($inset, $spread, $color) {
   box-shadow: $inset 0 0 0 $spread $color;
 }
+
+@mixin ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 14px;
+  letter-spacing: normal;
+  line-height: 16px;
+  text-transform: none;
+}

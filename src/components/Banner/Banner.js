@@ -14,7 +14,7 @@ import CollectionNav from '../CollectionNav/'
 import TopArrow from '../icons/TopArrow'
 import { selectLanguage } from '../../redux/actions'
 
-import './Banner.css'
+import './banner.scss'
 
 const Banner = ({ includeSearch, includeCollectionNav, activeTab }) => {
   const [isSelected, setIsSelected] = useState(false)
@@ -44,8 +44,10 @@ const Banner = ({ includeSearch, includeCollectionNav, activeTab }) => {
 
   // Close the dropdown menu if the user clicks outside of it
   window.onclick = function (event) {
-    if (!event.target.matches('.display-name-container')) {
-      var dropdowns = document.getElementsByClassName('dropdown-box')
+    if (!event.target.matches('.username-display')) {
+      var dropdowns = document.getElementsByClassName(
+        'username-display__dropdown'
+      )
       // dropdown arrow functions properly
       setIsSelected(false)
 
@@ -75,11 +77,11 @@ const Banner = ({ includeSearch, includeCollectionNav, activeTab }) => {
   return (
     <div className='top-banner'>
       {/* Navigation BTNs */}
-      <div className='navigation-btn-container'>
-        <span className='navigation-btn' onClick={handleGoBack}>
+      <div className='top-banner__navigation'>
+        <span className='top-banner__navigation-btn' onClick={handleGoBack}>
           <PrevPageIcon />
         </span>
-        <span className='navigation-btn' onClick={handleGoForward}>
+        <span className='top-banner__navigation-btn' onClick={handleGoForward}>
           <NextPageIcon />
         </span>
       </div>
@@ -94,33 +96,40 @@ const Banner = ({ includeSearch, includeCollectionNav, activeTab }) => {
       {displayName ? (
         <div onClick={toggleDrowdown}>
           <div
-            className='display-name-container'
+            className='username-display'
             onClick={() => setIsSelected(!isSelected)}
           >
-            <span className='no-profile-icon'>
+            <span className='username-display__icon'>
               <NoProfileIcon />
             </span>
-            <span className='display-name'>{displayName}</span>
-            <span className='arrow-icon'>
+            <span className='username-display__field'>{displayName}</span>
+            <span className='username-display__arrow-icon'>
               {isSelected ? <TopArrow /> : <BottomArrow />}
             </span>
           </div>
-          <div id='dropdown-box' className='dropdown-box'>
-            <div className='dropdown-item language'>
+          <div id='dropdown-box' className='username-display__dropdown'>
+            <div className='username-display__dropdown-item language'>
               <span
-                className={`demo ${language === 'TR' && 'selectedLanguage'}`}
+                className={`${
+                  language === 'TR' && 'username-display__dropdown--selected'
+                }`}
                 onClick={() => handleLanguage('TR')}
               >
                 TR
               </span>
               <span
-                className={`demo ${language === 'US' && 'selectedLanguage'}`}
+                className={`${
+                  language === 'US' && 'username-display__dropdown--selected'
+                }`}
                 onClick={() => handleLanguage('US')}
               >
                 US
               </span>
             </div>
-            <div className='dropdown-item' onClick={handleLogout}>
+            <div
+              className='username-display__dropdown-item'
+              onClick={handleLogout}
+            >
               {t('banner.logout')}
             </div>
           </div>
