@@ -1,11 +1,11 @@
 import React from 'react'
 
-import './Divider.css'
+import './divider.scss'
 
 const Divider = ({ children, ...props }) => {
   return (
     <div className='divider' {...props}>
-      {children}{' '}
+      {children}
     </div>
   )
 }

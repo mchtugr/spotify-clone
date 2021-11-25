@@ -1,0 +1,23 @@
+@import '../../../styles/variables';
+
+.divider {
+  display: table;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 2px;
+  margin: 0px auto 1em;
+  color: rgb(127, 127, 127);
+  position: relative;
+  text-align: center;
+  width: 85%;
+
+  &::before,
+  &::after {
+    border-top: 1px solid $divider-border;
+    content: '';
+    display: table-cell;
+    position: relative;
+    top: 0.8em;
+    width: 42%;
+  }
+}

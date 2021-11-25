@@ -1,0 +1,86 @@
+@import '../../../styles/variables';
+
+/* TOGGLE BTN FOR RESPONSIVE VIEW */
+
+.toggle-btn {
+  z-index: 999;
+  padding-right: 15px;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  cursor: pointer;
+
+  &__label {
+    width: 24px;
+    height: 3px;
+    background-color: $white;
+    position: absolute;
+    cursor: pointer;
+
+    &--clicker {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      padding: 13px;
+      left: -1px;
+    }
+
+    &::after,
+    &::before {
+      content: '';
+      width: 24px;
+      height: 3px;
+      background-color: $white;
+      position: absolute;
+      cursor: pointer;
+      display: block;
+      transition: all 0.2s cubic-bezier(1, 0, 0, 1);
+    }
+
+    &::before {
+      top: -250%;
+      left: -0%;
+      transform: rotateZ(0deg);
+      transform-origin: right top;
+    }
+
+    &::after {
+      top: 250%;
+      left: 0%;
+      transform: rotateZ(0deg);
+      transform-origin: right bottom;
+    }
+  }
+
+  #toggle:checked ~ label::before {
+    content: '';
+    transform: rotateZ(-41deg);
+    right: 10%;
+  }
+
+  #toggle:checked ~ label::after {
+    content: '';
+    transform: rotateZ(41deg);
+    right: 0;
+  }
+
+  #toggle:checked ~ label {
+    background-color: black;
+  }
+
+  #toggle ~ label {
+    transition: all 0.2s cubic-bezier(1, 0, 0, 1);
+  }
+
+  #toggle {
+    display: none;
+    padding: 10px;
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  .toggle-btn-container {
+    display: flex;
+  }
+}

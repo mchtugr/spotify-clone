@@ -1,0 +1,10 @@
+@import '../../../styles/variables';
+@import '../../../styles/mixins';
+
+.loading-container {
+  min-height: 600px;
+  background-color: $black;
+  color: $white;
+
+  @include center;
+}

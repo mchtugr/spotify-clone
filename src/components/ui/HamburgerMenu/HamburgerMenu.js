@@ -1,11 +1,11 @@
 import React from 'react'
-import './HamburgerMenu.css'
+import './hamburger-menu.scss'
 const HamburgerMenu = ({ onClick }) => {
   return (
-    <div className='toggle-btn-container' onClick={onClick}>
+    <div className='toggle-btn' onClick={onClick}>
       <input type='checkbox' id='toggle' />
-      <label htmlFor='toggle' className='toggle-label' />
-      <div className='label-clicker'></div>
+      <label htmlFor='toggle' className='toggle-btn__label' />
+      <div className='toggle-btn__label--clicker'></div>
     </div>
   )
 }

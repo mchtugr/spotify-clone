@@ -1,7 +1,7 @@
 import React from 'react'
 import BeatLoader from 'react-spinners/BeatLoader'
 
-import './Loading.css'
+import './loading.scss'
 const Loading = () => {
   return (
     <div className='loading-container'>
