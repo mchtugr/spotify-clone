@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next'
 
 import BenefitCard from '../cards/BenefitCard'
 
-import './Benefits.css'
+import './benefits.scss'
 
 const Benefits = () => {
   // to translate from language files
@@ -11,9 +11,9 @@ const Benefits = () => {
   const { t } = useTranslation()
   return (
     <div className='benefits'>
-      <div className='benefits-heading'>{t('benefits.h2')}</div>
-      <div className='benefit-cards-container'>
-        <div className='benefit-cards-inner-container'>
+      <div className='benefits__heading'>{t('benefits.h2')}</div>
+      <div className='benefits__cards'>
+        <div className='benefits__cards-inner'>
           <BenefitCard
             title={t('benefits.footer1.title')}
             description={t('benefits.footer1.description')}

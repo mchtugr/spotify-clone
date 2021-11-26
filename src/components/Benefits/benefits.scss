@@ -1,0 +1,87 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+.benefits {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  padding: 75px 15px;
+
+  //   benefits__heading
+  &__heading {
+    font-size: 40px;
+    line-height: 46px;
+    letter-spacing: -0.015em;
+    font-weight: $font-black;
+    padding: 0;
+    max-width: 670px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 72px;
+  }
+
+  //   benefits__cards
+  &__cards {
+    padding: 0;
+
+    //   benefits__cards-inner
+    &-inner {
+      @include center;
+
+      flex-wrap: nowrap;
+      flex-direction: row;
+    }
+  }
+}
+
+/* MEDIA QUERIES */
+@media only screen and (max-width: 480px) {
+  .benefits__cards-inner {
+    flex-wrap: wrap;
+  }
+}
+
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+  .benefits {
+    padding: 35px 15px;
+
+    &__heading {
+      font-size: 28px;
+      line-height: 32px;
+      margin-bottom: 30px;
+    }
+
+    &__cards-inner {
+      flex-wrap: wrap;
+    }
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .benefits {
+    width: $medium-width;
+    &__cards-inner {
+      flex-wrap: wrap;
+    }
+  }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .benefits {
+    width: $large-width;
+    &__cards-inner {
+      flex-wrap: wrap;
+    }
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .benefits {
+    width: $x-large-width;
+    margin: 0 auto;
+    &__cards-inner {
+      flex-wrap: nowrap;
+    }
+  }
+}
