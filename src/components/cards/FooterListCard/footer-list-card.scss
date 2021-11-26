@@ -1,3 +1,5 @@
+@import '../../../styles/variables';
+
 dl {
   display: block;
   width: 200px;
@@ -5,9 +7,9 @@ dl {
 }
 dt {
   margin: 20px 0;
-  color: #919496;
+  color: $footer-heading;
   font-size: 12px;
-  font-weight: 900;
+  font-weight: $font-black;
   line-height: 1.4;
   letter-spacing: 0.08em;
 }
@@ -15,16 +17,16 @@ dt {
 dd a {
   padding: 3px 0 15px;
   text-decoration: none;
-  color: #fff;
+  color: $white;
   display: inline-block;
   font-size: 16px;
-  font-weight: 400;
+  font-weight: $font-normal;
   line-height: 1.5;
   text-decoration: none;
 }
 
 dd a:hover {
-  color: #1ed760;
+  color: $spotify-green;
 }
 
 /* Small devices (landscape phones) */
@@ -48,8 +50,4 @@ dd a:hover {
     width: 170px;
     padding: 0 15px;
   }
-}
-
-/* X-Large devices (large desktops, 1200px and up) */
-@media only screen and (min-width: 1200px) {
 }

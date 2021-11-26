@@ -1,7 +1,7 @@
 import React from 'react'
 import { useTranslation } from 'react-i18next'
 
-import './FooterListCard.css'
+import './footer-list-card.scss'
 
 const FooterListCard = ({ data }) => {
   // to translate from language files
