@@ -1,0 +1,89 @@
+@import '../../../styles/variables';
+@import '../../../styles/mixins';
+
+.horizontal-card {
+  display: flex;
+  position: relative;
+  cursor: pointer;
+
+  //  .horizontal-card:hover
+  &:hover {
+    background: $dark-grey-hover;
+    -webkit-backdrop-filter: blur(60px);
+    backdrop-filter: blur(60px);
+
+    //  .horizontal-card:hover .horizontal-card__play
+    & .horizontal-card__play {
+      background-color: $spotify-dark-green-hover;
+      opacity: 1;
+    }
+  }
+
+  //  .horizontal-card__inner
+  &__inner {
+    position: relative;
+    width: 100%;
+    height: $horizontal-card-img;
+    background-color: $dark-grey;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+    display: grid;
+    grid-template-columns: 80px 1fr;
+  }
+
+  //  .horizontal-card__imgbox
+  &__imgbox {
+    width: $horizontal-card-img;
+    height: $horizontal-card-img;
+
+    //  .horizontal-card__imgbox img
+    & img {
+      width: 100%;
+      height: 100%;
+      border-radius: 4px 0 0 4px;
+    }
+  }
+
+  //  .horizontal-card__title
+  &__title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 16px;
+    color: $white;
+
+    //  .horizontal-card__title p
+    & p {
+      font-size: 16px;
+      font-weight: $font-bold;
+      line-height: 24px;
+      letter-spacing: normal;
+      text-transform: none;
+    }
+  }
+
+  //  .horizontal-card__play
+  &__play {
+    @include center;
+    width: 40px;
+    height: 40px;
+    opacity: 0;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 8px rgb(0 0 0 / 30%);
+    z-index: 2;
+    border-radius: 500px;
+    position: absolute;
+    right: 16px;
+    top: calc(50% - 20px);
+
+    //  .horizontal-card__play:hover
+    &:hover {
+      transform: scale(1.06);
+    }
+
+    //  .horizontal-card__play svg
+    & svg {
+      fill: $white;
+    }
+  }
+}
