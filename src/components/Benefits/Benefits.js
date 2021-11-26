@@ -27,7 +27,7 @@ const Benefits = () => {
           <BenefitCard
             title={t('benefits.footer3.title')}
             description={t('benefits.footer3.description')}
-            className='play-sonf-card'
+            className='play-song-card'
           />
           <BenefitCard
             title={t('benefits.footer4.title')}

@@ -1,0 +1,181 @@
+@import '../../../styles/variables';
+@import '../../../styles/mixins';
+
+.benefit-card {
+  @include center;
+  width: 270px;
+  margin-bottom: 20px;
+  vertical-align: top;
+  align-items: center;
+  flex-grow: 1;
+  -webkit-box-flex: 1;
+
+  &__imgbox {
+    display: block;
+    width: 142px;
+    height: 142px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin: 0px auto 40px;
+  }
+
+  &__footer {
+    width: 100%;
+    display: block;
+    text-align: center;
+    align-items: center;
+
+    &--title {
+      font-size: 21px;
+      line-height: 1.3em;
+      font-weight: 700;
+      padding: 0;
+      margin-bottom: 10px;
+    }
+    &--description {
+      width: 85%;
+      line-height: 1.5;
+      font-size: 16px;
+      padding: 0;
+      margin: 0 auto;
+    }
+  }
+}
+
+.download-card {
+  background: url(https://i.scdn.co/image/ab671c3d0000f43009302fbaf6259b4c117c704f);
+}
+.no-ads-card {
+  background: url(https://i.scdn.co/image/ab671c3d0000f43098292b95d24a697c20df5137);
+}
+.play-song-card {
+  background: url(https://i.scdn.co/image/ab671c3d0000f4306998d3ffd58aad6da6afdf67);
+}
+.skip-song-card {
+  background: url(https://i.scdn.co/image/ab671c3d0000f430cd6c528745e510c5be63a012);
+}
+
+/* MEDIA QUERIES */
+
+@media only screen and (max-width: 767px) {
+  .benefit-card {
+    width: 100%;
+    flex-direction: row;
+    margin-bottom: 20px;
+    align-items: flex-start;
+
+    &__imgbox {
+      display: inline-block;
+      background-position: center top;
+      flex-grow: 1;
+      margin: 0;
+      margin-right: 20px;
+    }
+
+    &__footer {
+      width: 100%;
+      display: inline-block;
+      flex-grow: 1;
+      margin: 16px 0px;
+      text-align: left;
+
+      &--title {
+        font-weight: bold;
+        margin-bottom: 10px;
+        font-size: 21px;
+        padding: 0px;
+        line-height: 1.3em;
+      }
+      &--description {
+        width: 85%;
+        line-height: 1.5;
+        font-size: 16px;
+        padding: 0;
+        margin: 0;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .benefit-card {
+    flex-grow: 1;
+    width: 50%;
+    flex-direction: row;
+    margin-bottom: 20px;
+    align-items: flex-start;
+
+    &__imgbox {
+      display: inline-block;
+      background-position: center top;
+      flex-grow: 1;
+      margin: 0;
+      margin-right: 20px;
+    }
+
+    &__footer {
+      width: 100%;
+      display: inline-block;
+      flex-grow: 1;
+      margin: 16px 0px;
+      text-align: left;
+
+      &--title {
+        font-weight: bold;
+        margin-bottom: 10px;
+        font-size: 21px;
+        padding: 0px;
+        line-height: 1.3em;
+      }
+      &--description {
+        width: 85%;
+        line-height: 1.5;
+        font-size: 16px;
+        padding: 0;
+        margin: 0;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .benefit-card {
+    flex-grow: 1;
+    width: 50%;
+    flex-direction: row;
+    margin-bottom: 20px;
+    align-items: flex-start;
+
+    &__imgbox {
+      display: inline-block;
+      background-position: center top;
+      flex-grow: 1;
+      margin: 0;
+      margin-right: 20px;
+    }
+
+    &__footer {
+      width: 100%;
+      display: inline-block;
+      flex-grow: 1;
+      margin: 16px 0px;
+      text-align: left;
+
+      &--title {
+        font-weight: bold;
+        margin-bottom: 10px;
+        font-size: 21px;
+        padding: 0px;
+        line-height: 1.3em;
+      }
+      &--description {
+        width: 85%;
+        line-height: 1.5;
+        font-size: 16px;
+        padding: 0;
+        margin: 0;
+      }
+    }
+  }
+}
