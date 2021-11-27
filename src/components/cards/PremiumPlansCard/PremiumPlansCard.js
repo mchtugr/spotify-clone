@@ -4,7 +4,7 @@ import { GrCheckmark } from 'react-icons/gr'
 
 import Button from '../../ui/Button'
 
-import './PremiumPlansCard.css'
+import './premium-plans-card.scss'
 
 const PremiumPlansCard = ({ langData }) => {
   // to translate from language files
@@ -17,21 +17,25 @@ const PremiumPlansCard = ({ langData }) => {
 
   return (
     <div className='premium-plans-card'>
-      <div className='premium-plans-card-header'>
-        <div className='trial-period-container'>
-          <span className='trial-period'>{t('trial_period')}</span>
+      <div className='premium-plans-card__header'>
+        <div className='premium-plans-card__header--trial-period'>
+          <span>{t('trial_period')}</span>
         </div>
-        <h3 className='premium-plan-name'>{t(`${namespace}.plan_name`)}</h3>
-        <p className='premium-plan-price'>{t(`${namespace}.price`)}</p>
-        <p className='premium-plan-account-num'>
+        <h3 className='premium-plans-card__header--plan-name'>
+          {t(`${namespace}.plan_name`)}
+        </h3>
+        <p className='premium-plans-card__header--price'>
+          {t(`${namespace}.price`)}
+        </p>
+        <p className='premium-plans-card__header--account-num'>
           {t(`${namespace}.account_num`)}
         </p>
       </div>
       <hr />
-      <div className='premium-plans-card-body'>
-        <ul className='feature-items-container'>
+      <div className='premium-plans-card__body'>
+        <ul className='premium-plans-card__features'>
           {langData.features.map((feature, index) => (
-            <li className='feature-item' key={index}>
+            <li className='premium-plans-card__features--item' key={index}>
               <div className='check-icon-container'>
                 <GrCheckmark size='24px' />
               </div>
@@ -39,26 +43,26 @@ const PremiumPlansCard = ({ langData }) => {
             </li>
           ))}
         </ul>
-        <div className='premium-plans-btn-container'>
+        <div className='premium-plans-card__btn'>
           <Button variant='dark'>{t('button')}</Button>
         </div>
       </div>
-      <div className='premium-plans-card-footer'>
+      <div className='premium-plans-card__footer'>
         {langData.index !== 3 ? (
           <>
-            <span className='premium-plans-card-footer-link'>
+            <span className='premium-plans-card__footer--link'>
               {t(`${namespace}.footer_link`)}
             </span>{' '}
-            <span className='premium-plans-card-footer-text'>
+            <span className='premium-plans-card__footer--text'>
               {t(`${namespace}.footer_text`)}
             </span>
           </>
         ) : (
           <>
-            <span className='premium-plans-card-footer-text'>
+            <span className='premium-plans-card__footer--text'>
               {t(`${namespace}.footer_text`)}
             </span>{' '}
-            <span className='premium-plans-card-footer-link'>
+            <span className='premium-plans-card__footer--link'>
               {t(`${namespace}.footer_link`)}
             </span>
           </>

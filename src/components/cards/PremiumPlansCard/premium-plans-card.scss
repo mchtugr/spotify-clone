@@ -1,0 +1,130 @@
+@import '../../../styles/variables';
+
+.premium-plans-card {
+  display: grid;
+  grid-template-rows: auto auto 2.5fr 1fr;
+  flex-direction: column;
+  padding: 20px;
+  padding-top: 32px;
+  margin-right: 16px;
+  margin-top: 0px;
+  background-color: $white;
+  border-radius: 10px;
+  box-shadow: rgb(255 255 255) 0px 8px 0px 0px, rgb(0 0 0 / 30%) 0px 8px 8px 1px;
+
+  //  .premium-plans-card__header
+  &__header {
+    //  .premium-plans-card__header--trial-period
+    &--trial-period {
+      border-radius: 4px;
+      font-size: 14px;
+      padding: 4px 8px;
+      display: inline-block;
+      font-weight: 900;
+      margin: 0px 4px 10px 0px;
+      margin-block: 0px 10px;
+      color: $white;
+      background-color: $premium-plans-card-trial-period;
+    }
+    //  .premium-plans-card__header--plan-name
+    &--plan-name {
+      font-size: 24px;
+      font-weight: $font-bold;
+      line-height: 24px;
+      margin: 0px 0px 5px;
+      padding: 0px;
+    }
+    //  .premium-plans-card__header--price
+    &--price {
+      color: $black;
+      display: block;
+      font-size: 16px;
+      font-weight: $font-normal;
+      line-height: 22px;
+      margin: 0px 0px 2px;
+    }
+    //  .premium-plans-card__header--account-num
+    &--account-num {
+      color: $black;
+      display: block;
+      font-size: 16px;
+      font-weight: $font-normal;
+      line-height: 22px;
+      margin: 0px 0px 2px;
+      margin-bottom: 20px;
+    }
+  }
+
+  //  .premium-plans-card__body
+  &__body {
+    padding-top: 20px;
+    padding-bottom: 16px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  //  .premium-plans-card__features
+  &__features {
+    flex: 1;
+    padding-bottom: 16px;
+
+    //  .premium-plans-card__features--item
+    &--item {
+      list-style: none;
+      display: flex;
+      align-items: flex-start;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      margin-bottom: 5px;
+      line-height: 22px;
+    }
+  }
+
+  //  .premium-plans-card__btn
+  &__btn {
+    display: flex;
+    justify-content: center;
+  }
+
+  //  .premium-plans-card__footer
+  &__footer {
+    margin-top: 12px;
+    color: $premium-plans-card-footer;
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: $font-normal;
+    text-align: left;
+    letter-spacing: 0.25px;
+
+    //  .premium-plans-card__footer--link
+    &--link {
+      text-decoration: underline;
+      cursor: pointer;
+    }
+  }
+}
+
+.check-icon-container {
+  display: inline-block;
+  padding-right: 10px;
+}
+
+/* Apart from X-Large devices  */
+@media only screen and (max-width: 1199px) {
+  .premium-plans-card {
+    display: flex;
+    padding-top: 20px;
+    margin-bottom: 20px;
+  }
+}
+
+/* X-Large devices (large desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  .premium-plans-card {
+    margin: 0px 16px 0px 0px;
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-top: 20px;
+  }
+}
