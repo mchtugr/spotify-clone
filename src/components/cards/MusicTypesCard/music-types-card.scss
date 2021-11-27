@@ -1,0 +1,40 @@
+@import '../../../styles/variables';
+.music-types-card {
+  display: block;
+  background-color: $bg-color-11;
+  border-radius: 8px;
+  width: 100%;
+  position: relative;
+  border: none;
+  overflow: hidden;
+  cursor: pointer;
+
+  &::after {
+    content: '';
+    display: block;
+    padding-bottom: 100%;
+  }
+
+  &__img {
+    bottom: 0;
+    box-shadow: 0 2px 4px 0 rgb(0 0 0 / 20%);
+    position: absolute;
+    right: 0;
+    transform: rotate(25deg) translate(18%, -2%);
+    width: $music-types-card-img;
+    height: $music-types-card-img;
+    object-fit: cover;
+  }
+  &__title {
+    padding: 16px;
+    margin: 0;
+    top: 0;
+    letter-spacing: -0.04em;
+    overflow-wrap: break-word;
+    position: absolute;
+    font-size: 24px;
+    line-height: 28px;
+    font-weight: $font-bold;
+    text-transform: none;
+  }
+}
