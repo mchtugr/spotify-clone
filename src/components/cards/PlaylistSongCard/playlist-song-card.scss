@@ -1,0 +1,107 @@
+@import '../../../styles/variables';
+
+.playlist-card {
+  display: flex;
+  width: 100%;
+  background: none;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  color: $white;
+  position: relative;
+  text-align: left;
+  height: 56px;
+
+  // .playlist-card:hover
+  &:hover {
+    background-color: $dark-grey;
+
+    // .playlist-card:hover .playlist-card__detail,
+    // .playlist-card:hover .playlist-card__album
+    .playlist-card__detail,
+    .playlist-card__album {
+      color: $white;
+    }
+  }
+
+  // .playlist-card__table
+  &__table {
+    grid-gap: 16px;
+    padding: 0 16px;
+    display: grid;
+    align-items: center;
+    width: 100%;
+    grid-template-columns: 16px 6fr 4fr 3fr 1fr;
+
+    // .playlist-card__table-item
+    &-item {
+      font-size: 14px;
+      line-height: 16px;
+      font-weight: $font-normal;
+      letter-spacing: normal;
+      text-transform: none;
+      margin: 0;
+      color: $playlist-card-secondary-text;
+    }
+  }
+
+  // .playlist-card__title
+  &__title {
+    display: flex;
+    align-items: center;
+  }
+
+  // .playlist-card__album
+  &__album {
+    cursor: pointer;
+
+    // .playlist-album:hover
+    &:hover {
+      text-decoration: underline;
+      color: $white;
+    }
+  }
+
+  // .playlist-card__imgbox
+  &__imgbox {
+    display: block;
+    width: $playlist-card-img;
+    height: $playlist-card-img;
+    margin-right: 16px;
+
+    // .playlist-card__imgbox--img
+    &--img {
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  // .playlist-card__detail
+  &__detail {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-right: 8px;
+
+    // .playlist-card__detail--song-name
+    &--song-name {
+      font-size: 16px;
+      font-weight: $font-normal;
+      line-height: 24px;
+      letter-spacing: normal;
+      text-transform: none;
+      margin: 0;
+      color: $white;
+    }
+
+    // .playlist-card__detail--artist
+    &--artist {
+      cursor: pointer;
+
+      // .playlist-card__detail--artist:hover
+      &:hover {
+        text-decoration: underline;
+        color: $white;
+      }
+    }
+  }
+}
