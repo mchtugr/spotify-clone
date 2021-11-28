@@ -6,7 +6,7 @@ import { BiWorld } from 'react-icons/bi'
 import FooterListCard from '../cards/FooterListCard/FooterListCard'
 import data from '../../languages/en.json'
 
-import './Footer.css'
+import './footer.scss'
 
 const Footer = () => {
   const { footer } = data
@@ -15,69 +15,69 @@ const Footer = () => {
   const { t } = useTranslation('translation', { keyPrefix: 'footer' })
 
   return (
-    <footer className='spotify-footer'>
-      <div className='footer-inner-container'>
+    <footer className='footer'>
+      <div className='footer__inner'>
         {/* UPPER PART */}
-        <div className='footer-upside'>
-          <div className='footer-logo-container'>
+        <div className='footer__upside'>
+          <div className='footer__upside--logo'>
             {/* LOGO */}
-            <Link to='/' className='logo-container'>
+            <Link to='/'>
               <img src='logo.png' alt='spotify-logo' className='logo' />
             </Link>
           </div>
           {/* UPPER-MID */}
-          <div className='footer-upside-middle'>
+          <div className='footer__upside--middle'>
             <FooterListCard data={footer.company} />
             <FooterListCard data={footer.communities} />
             <FooterListCard data={footer.useful_links} />
           </div>
           {/* SOCIAL ICONS */}
-          <ul className='footer-social-icons-container'>
-            <li>
+          <ul className='footer__social-icons'>
+            <li className='footer__social-icons--item'>
               <a
                 href='https://instagram.com/spotify'
-                className='footer-icon-link'
+                className='footer__social-icons--link'
               >
-                <span className='instagram-icon footer-icon'></span>
+                <span className='instagram-icon footer__social-icons--icon'></span>
               </a>
             </li>
-            <li>
+            <li className='footer__social-icons--item'>
               <a
                 href='https://twitter.com/spotify'
-                className='footer-icon-link'
+                className='footer__social-icons--link'
               >
-                <span className='twitter-icon footer-icon'></span>
+                <span className='twitter-icon footer__social-icons--icon'></span>
               </a>
             </li>
-            <li>
+            <li className='footer__social-icons--item'>
               <a
                 href='https://www.facebook.com/Spotify'
-                className='footer-icon-link'
+                className='footer__social-icons--link'
               >
-                <span className='facebook-icon footer-icon'></span>
+                <span className='facebook-icon footer__social-icons--icon'></span>
               </a>
             </li>
           </ul>
         </div>
 
         {/* COUNTRY */}
-        <div className='footer-country'>
+        <div className='footer__country'>
           <BiWorld />
-          <span className='country-name'>{t('country')}</span>
+          <span className='footer__country--name'>{t('country')}</span>
         </div>
         {/* BOTTOM */}
-        <div className='footer-bottom'>
-          <ul className='footer-bottom-left'>
+        <div className='footer__bottom'>
+          <ul className='footer__bottom--left'>
             {/* MAP USING LOCAL LANG DATA */}
             {footer.footer_bottom.map((item, i) => (
-              <li key={i}>
-                <a href={item.link} className='footer-bottom-links'>
+              <li key={i} className='footer__bottom--items'>
+                <a href={item.link} className='footer__bottom--links'>
                   {item.title}
                 </a>
               </li>
             ))}
           </ul>
-          <div className='footer-copyright'>
+          <div className='footer__bottom--copyright'>
             &copy; {new Date().getFullYear()} Spotify AB
           </div>
         </div>

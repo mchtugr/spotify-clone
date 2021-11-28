@@ -4,8 +4,8 @@
 .card-display {
   @include grid-col-template($vertical-card-min-width);
   display: grid;
-  grid-column-gap: 24px;
-  column-gap: 24px;
-  row-gap: 24px;
+  grid-column-gap: $grid-gap;
+  column-gap: $grid-gap;
+  row-gap: $grid-gap;
   margin: 20px 0;
 }
