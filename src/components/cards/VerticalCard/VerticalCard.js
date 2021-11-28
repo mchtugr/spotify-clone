@@ -5,7 +5,7 @@ import { useHistory } from 'react-router'
 import PauseIcon from '../../icons/PauseIcon'
 import PlayIcon from '../../icons/PlayIcon'
 
-import './VerticalCard.css'
+import './vertical-card.scss'
 
 const VerticalCard = ({ data, isArtist, isPlaylist }) => {
   const [isPlaying, setIsPlaying] = useState(false)
@@ -18,28 +18,28 @@ const VerticalCard = ({ data, isArtist, isPlaylist }) => {
   }
   return (
     <div className='vertical-card' onClick={handleClick}>
-      <div className='vertical-card-inner-container'>
+      <div className='vertical-card__inner'>
         {/* IMG */}
-        <div className='vertical-card-img-container'>
+        <div className='vertical-card__imgbox'>
           <img
             src={data.images.length !== 0 ? data.images[0].url : '/backup.png'}
             alt={data.name}
-            className={`vertical-card-img ${
-              isArtist && 'vertical-card-artist-img'
+            className={`vertical-card__imgbox--img ${
+              isArtist ? 'vertical-card__imgbox--artist-img' : ''
             }`}
           />
           {/* ABSOLUTE POSITIONED PLAY BTN */}
           <div
-            className='vertical-play-pause'
+            className='vertical-card__play'
             onClick={() => setIsPlaying(!isPlaying)}
           >
             {isPlaying ? <PauseIcon /> : <PlayIcon />}
           </div>
         </div>
         {/* CARD INFO */}
-        <div className='vertical-card-title'>
-          <p className='vertical-card-song'>{data.name}</p>
-          <p className='vertical-card-artist'>
+        <div className='vertical-card__title'>
+          <p className='vertical-card__title--song'>{data.name}</p>
+          <p className='vertical-card__title--artist'>
             {/* CHANGE CONTENT DEPENDING ON PROPS */}
             {isArtist
               ? t('artist')
