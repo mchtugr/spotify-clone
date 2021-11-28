@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next'
 
 import VerticalCard from '../cards/VerticalCard'
 
-import './DiscoverSection.css'
+import './discover-section.scss'
 
 const DiscoverSection = ({ title, data, isArtist, fromSearch, isPlaylist }) => {
   // to translate from language files
@@ -11,14 +11,14 @@ const DiscoverSection = ({ title, data, isArtist, fromSearch, isPlaylist }) => {
 
   return (
     <div className='discover-section'>
-      <div className='discover-section-header'>
+      <div className='discover-section__header'>
         {/* ROW HEADER */}
         <h2>{title}</h2>
-        <div className='discover-see-all'>{t('see_all')}</div>
+        <div className='discover-section__header--see-all'>{t('see_all')}</div>
       </div>
       {/* OBJECT KEYS CHANGE DEPENDING ON PAGE, RENDER ACCORDINGLY */}
       {!fromSearch ? (
-        <div className='discover-section-card-container'>
+        <div className='discover-section__container'>
           {data.list.map((item) => (
             <React.Fragment key={item.id}>
               <VerticalCard
@@ -30,7 +30,7 @@ const DiscoverSection = ({ title, data, isArtist, fromSearch, isPlaylist }) => {
           ))}
         </div>
       ) : (
-        <div className='discover-section-card-container'>
+        <div className='discover-section__container'>
           {data.items.map((item) => (
             <React.Fragment key={item.id}>
               <VerticalCard

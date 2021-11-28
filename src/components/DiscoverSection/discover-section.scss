@@ -1,0 +1,40 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+.discover-section {
+  margin-top: 32px;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 22px;
+    align-items: flex-end;
+
+    &--see-all {
+      font-size: 12px;
+      font-weight: $font-bold;
+      letter-spacing: 0.1em;
+      line-height: 16px;
+      text-transform: uppercase;
+      background: transparent;
+      color: $playlist-card-secondary-text;
+      white-space: nowrap;
+      cursor: pointer;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &__container {
+    @include grid-col-template($vertical-card-min-width);
+    display: grid;
+    grid-column-gap: $grid-gap;
+    column-gap: $grid-gap;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    overflow-y: hidden;
+    grid-auto-rows: 0;
+    grid-template-rows: 1fr;
+  }
+}
