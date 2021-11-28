@@ -19,3 +19,7 @@
   line-height: 16px;
   text-transform: none;
 }
+
+@mixin grid-col-template($width) {
+  grid-template-columns: repeat(auto-fill, minmax($width, 1fr));
+}

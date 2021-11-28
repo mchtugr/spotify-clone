@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux'
 
 import MusicTypesCard from '../cards/MusicTypesCard'
 
-import './DefaultSearchCategories.css'
+import './default-search-categories.scss'
 
 const DefaultSearchCategories = () => {
   const categories = useSelector((state) => state.categories.list)
@@ -15,7 +15,7 @@ const DefaultSearchCategories = () => {
   return (
     <div>
       <h2>{t('browse_all')}</h2>
-      <div className='demo-card-container'>
+      <div className='card-display'>
         {categories.map((category) => (
           <React.Fragment key={category.id}>
             <MusicTypesCard category={category} />

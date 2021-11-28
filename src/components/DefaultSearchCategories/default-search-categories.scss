@@ -1,0 +1,11 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+.card-display {
+  @include grid-col-template($vertical-card-min-width);
+  display: grid;
+  grid-column-gap: 24px;
+  column-gap: 24px;
+  row-gap: 24px;
+  margin: 20px 0;
+}
