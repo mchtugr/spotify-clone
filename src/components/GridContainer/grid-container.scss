@@ -1,9 +1,11 @@
+@import '../../styles/variables';
+
 .grid-container {
   display: grid;
   padding: 0 32px;
   background-color: transparent;
-  color: #fff;
-  min-height: calc((100vh - 90px) - 60px);
+  color: $white;
+  min-height: calc((100vh - $web-player-height) - $top-banner-height);
   height: auto;
   overflow: scroll;
   margin-top: 70px;
