@@ -14,7 +14,7 @@ import SearchActiveIcon from '../icons/SearchActiveIcon'
 import SearchIcon from '../icons/SearchIcon'
 import { browseFeaturedPlaylists } from '../../redux/actions'
 
-import './LeftNavbar.css'
+import './left-navbar.scss'
 
 const LeftNavbar = () => {
   // to translate from language files
@@ -30,14 +30,14 @@ const LeftNavbar = () => {
   }, [dispatch])
 
   return (
-    <div className='vertical-navbar-container'>
-      <div className='vertical-navbar-inner-container'>
+    <div className='vertical-navbar'>
+      <div className='vertical-navbar__inner'>
         {/* LOGO */}
         <Link to='/'>
-          <div className='vertical-logo-container'>
+          <div className='vertical-navbar__logobox'>
             <img
-              className='vertical-logo'
-              src='https://raw.githubusercontent.com/murtazaaylak/spotify-clone/main/public/logo.png'
+              className='vertical-navbar__logo'
+              src='https://raw.githubusercontent.com/mchtugr/spotify-clone/main/public/logo.png'
               alt='logo'
             ></img>
           </div>
@@ -45,99 +45,105 @@ const LeftNavbar = () => {
         <div>
           {/* HOME */}
           <div
-            className={`vertical-nav-item ${
-              pathname === '/' && 'vertical-nav-item-selected'
+            className={`vertical-navbar__item ${
+              pathname === '/' && 'vertical-navbar__item--selected'
             }`}
           >
-            <Link to='/' className='vertical-navbar-link'>
-              <span className='nav-icon-container'>
+            <Link to='/' className='vertical-navbar__link'>
+              <span className='vertical-navbar__iconbox'>
                 {pathname === '/' ? <HomeActiveIcon /> : <HomeIcon />}
               </span>
-              <p className='nav-link-text'>{t('homepage')}</p>
+              <p className='vertical-navbar__link--text'>{t('homepage')}</p>
             </Link>
           </div>
           {/* SEARCH */}
           <div
-            className={`vertical-nav-item ${
-              pathname === '/search' && 'vertical-nav-item-selected'
+            className={`vertical-navbar__item ${
+              pathname === '/search' && 'vertical-navbar__item--selected'
             }`}
           >
-            <Link to='/search' className='vertical-navbar-link'>
-              <span className='nav-icon-container'>
+            <Link to='/search' className='vertical-navbar__link'>
+              <span className='vertical-navbar__iconbox'>
                 {pathname === '/search' ? <SearchActiveIcon /> : <SearchIcon />}
               </span>
-              <p className='nav-link-text'>{t('search')}</p>
+              <p className='vertical-navbar__link--text'>{t('search')}</p>
             </Link>
           </div>
           {/* COLLECTIONS */}
           <div
-            className={`vertical-nav-item ${
-              pathname.includes('/collection') && 'vertical-nav-item-selected'
+            className={`vertical-navbar__item ${
+              pathname.includes('/collection') &&
+              'vertical-navbar__item--selected'
             }`}
           >
-            <Link to='/collection/playlists' className='vertical-navbar-link'>
-              <span className='nav-icon-container'>
+            <Link to='/collection/playlists' className='vertical-navbar__link'>
+              <span className='vertical-navbar__iconbox'>
                 {pathname === '/collection' ? (
                   <LibraryActiveIcon />
                 ) : (
                   <LibraryIcon />
                 )}
               </span>
-              <p className='nav-link-text'>{t('library')}</p>
+              <p className='vertical-navbar__link--text'>{t('library')}</p>
             </Link>
           </div>
         </div>
         {/* NAVBAR MIDDLE */}
-        <div className='vertical-nav-middle'>
+        <div className='vertical-navbar__middle'>
           {/* CREATE PLAYLIST */}
-          <div className='vertical-nav-item'>
-            <span className='playlist-icon-container'>
+          <div className='vertical-navbar__item'>
+            <span className='vertical-navbar__playlist-icon'>
               <CreatePlaylistIcon />
             </span>
-            <p className='nav-link-text'>{t('playlist')}</p>
+            <p className='vertical-navbar__link--text'>{t('playlist')}</p>
           </div>
           {/* FAVORITES */}
-          <div className='vertical-nav-item'>
+          <div className='vertical-navbar__item'>
             <span>
               <img
-                src='https://raw.githubusercontent.com/murtazaaylak/spotify-clone/main/public/favorites.png'
+                src='https://raw.githubusercontent.com/mchtugr/spotify-clone/main/public/favorites.png'
                 alt='favorite_songs_icon'
-                className='nav-img'
+                className='vertical-navbar__img'
               />
             </span>
-            <p className='nav-link-text'> {t('favorite_songs')}</p>
+            <p className='vertical-navbar__link--text'>
+              {' '}
+              {t('favorite_songs')}
+            </p>
           </div>
           {/* EPISODES */}
-          <div className='vertical-nav-item'>
+          <div className='vertical-navbar__item'>
             <span>
               <img
-                src='https://raw.githubusercontent.com/murtazaaylak/spotify-clone/main/public/episode.png'
+                src='https://raw.githubusercontent.com/mchtugr/spotify-clone/main/public/episode.png'
                 alt='episodes_icon'
-                className='nav-img'
+                className='vertical-navbar__img'
               />
             </span>
-            <p className='nav-link-text'>{t('episodes')}</p>
+            <p className='vertical-navbar__link--text'>{t('episodes')}</p>
           </div>
-          <div className='navbar-hr' />
+          <div className='vertical-navbar__hr' />
           {/* PLAYLISTS */}
-          <div className='navbar-playlists'>
-            <div className='navbar-playlists-container'>
+          <div className='vertical-navbar__playlist'>
+            <div className='vertical-navbar__playlist-container'>
               {playlists.map((playlist) => {
                 return (
                   <Link to={`/playlist/${playlist.id}`} key={playlist.id}>
-                    <div className='playlist-title'>{playlist.name}</div>
+                    <div className='vertical-navbar__playlist--title'>
+                      {playlist.name}
+                    </div>
                   </Link>
                 )
               })}
             </div>
           </div>
         </div>
-        <div className='vertical-nav-item'>
+        <div className='vertical-navbar__item'>
           {/* DOWNLOAD */}
-          <span className='nav-icon-container'>
+          <span className='vertical-navbar__iconbox'>
             <DownloadIcon />
           </span>
-          <p className='nav-link-text'>{t('download')}</p>
+          <p className='vertical-navbar__link--text'>{t('download')}</p>
         </div>
       </div>
     </div>

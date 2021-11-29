@@ -1,0 +1,151 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+.vertical-navbar {
+  width: $left-nav-width;
+  background-color: #000;
+  height: calc(100vh - $web-player-height);
+  color: $white;
+  position: fixed;
+
+  //   .vertical-navbar__inner
+  &__inner {
+    padding: 0 8px;
+    width: $left-nav-width;
+  }
+
+  //   .vertical-navbar__logobox
+  &__logobox {
+    display: block;
+    margin: 0 auto;
+    padding-left: 15px;
+    padding-top: 24px;
+    margin-bottom: 20px;
+  }
+  //   .vertical-navbar__logo
+  &__logo {
+    padding: 0;
+    display: inline-block;
+    max-width: 100%;
+    width: 130px;
+  }
+
+  //   .vertical-navbar__item
+  &__item {
+    width: 100%;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    height: $vertical-navbar-item-height;
+    padding: 0 16px;
+    cursor: pointer;
+    color: $playlist-card-secondary-text;
+
+    //   .vertical-navbar__item:hover
+    &:hover {
+      color: $white;
+    }
+
+    //   .vertical-navbar__item--selected
+    &--selected {
+      background-color: $vertical-navbar-selected-color;
+      color: $white;
+    }
+  }
+
+  //   .vertical-navbar__link
+  &__link {
+    text-decoration: none;
+    color: inherit;
+    width: 100%;
+    display: flex;
+    align-items: center;
+
+    //   .vertical-navbar__link--text
+    &--text {
+      font-size: 14px;
+      line-height: 16px;
+      letter-spacing: normal;
+      text-transform: none;
+      margin-left: 16px;
+      font-weight: $font-bold;
+      color: inherit;
+    }
+  }
+
+  //   .vertical-navbar__iconbox
+  &__iconbox {
+    display: flex;
+    align-items: center;
+    color: inherit;
+
+    //   .vertical-navbar__iconbox svg
+    & svg {
+      font-size: $vertical-navbar-icon-size;
+    }
+  }
+
+  //   .vertical-navbar__middle
+  &__middle {
+    margin-top: 24px;
+  }
+
+  //   .vertical-navbar__img
+  &__img {
+    width: $vertical-navbar-icon-size;
+    height: $vertical-navbar-icon-size;
+    border-radius: 1px;
+  }
+
+  //   .vertical-navbar__playlist-icon
+  &__playlist-icon {
+    @include center;
+    border-radius: 1px;
+    width: $vertical-navbar-icon-size;
+    height: $vertical-navbar-icon-size;
+    background: $white;
+    color: $black;
+  }
+
+  //   .vertical-navbar__hr
+  &__hr {
+    background-color: rgba(255, 255, 255, 0.3);
+    font-weight: 100;
+    outline: none;
+    height: 1px;
+    margin: 8px 16px;
+  }
+
+  //   .vertical-navbar__playlist
+  &__playlist {
+    display: block;
+    height: $vertical-navbar-playlist-height;
+    overflow: scroll;
+    scrollbar-color: auto;
+
+    //   .vertical-navbar__playlist--title
+    &--title {
+      list-style: none;
+      height: 32px;
+      font-size: 14px;
+      letter-spacing: normal;
+      text-transform: none;
+      margin-left: 16px;
+      font-weight: $font-normal;
+      color: $playlist-card-secondary-text;
+      line-height: 20px;
+      text-transform: none;
+      cursor: default;
+
+      //   .vertical-navbar__playlist--title:hover
+      &:hover {
+        color: $white;
+      }
+    }
+  }
+}
+
+.download-icon {
+  display: flex;
+}
