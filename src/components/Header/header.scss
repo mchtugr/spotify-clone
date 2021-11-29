@@ -1,0 +1,66 @@
+@import '../../styles/variables';
+
+.navbar {
+  height: $navbar-height;
+  background-color: $black;
+  margin: 0;
+  padding: 0 15px;
+
+  &__inner {
+    background-color: $black;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 15px;
+    margin: 0 auto;
+    height: $navbar-height;
+    max-width: $x-large-width;
+  }
+
+  &__logo {
+    padding: 20px 0;
+  }
+}
+
+.logo {
+  width: auto;
+  height: $spotify-logo-size;
+}
+
+/* MEDIA QUERIES */
+
+/* Small and Medium Screens */
+@media only screen and (max-width: 991px) {
+  .navbar {
+    height: $navbar-height-small;
+    &__inner {
+      max-width: $medium-width;
+      height: $navbar-height-small;
+    }
+    &__logo {
+      padding: 25px;
+    }
+  }
+
+  .toggle-btn-container {
+    display: flex;
+  }
+
+  .logo {
+    height: $spotify-logo-small-size;
+  }
+}
+
+/* // Large devices (desktops, 992px and up) */
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .navbar__inner {
+    max-width: $large-width;
+  }
+}
+
+/* // X-Large devices (large desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  .navbar__inner {
+    max-width: $x-large-width;
+  }
+}

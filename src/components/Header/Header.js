@@ -5,7 +5,7 @@ import Navigation from '../Navigation'
 import HamburgerMenu from '../ui/HamburgerMenu/'
 import useWindowSize from '../../hooks/useWindowSize'
 
-import './Header.css'
+import './header.scss'
 
 const Header = () => {
   const [selected, setSelected] = useState(false)
@@ -26,9 +26,9 @@ const Header = () => {
   }
 
   return (
-    <div className='banner'>
-      <div className='navbar-container'>
-        <Link to='/' className='logo-container'>
+    <div className='navbar'>
+      <div className='navbar__inner'>
+        <Link to='/' className='navbar__logo'>
           <img src='logo.png' alt='spotify-logo' className='logo' />
         </Link>
         <HamburgerMenu onClick={toggleNavbar} />
