@@ -1,0 +1,116 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+#navigation {
+  padding: 0;
+  margin: 0;
+  transition: display 1s;
+}
+
+#mobile-navigation {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  background-color: $black;
+  height: 100vh;
+  width: $mobile-navigation-width;
+  max-width: 100vw;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  display: none;
+}
+
+.navigation {
+  // .navigation__inner
+  &__inner {
+    @include center;
+  }
+
+  // .navigation__item
+  &__item {
+    padding: 25px 15px;
+    color: $white;
+    font-size: 16px;
+    font-weight: $font-bold;
+    list-style: none;
+
+    // .navigation__item:hover
+    &:hover {
+      color: $spotify-green;
+      cursor: pointer;
+    }
+
+    // .navigation__item--secondary
+    &--secondary {
+      color: $navigation-secondary;
+    }
+
+    // .navigation__item--link
+    &--link {
+      text-decoration: none;
+      color: $navigation-secondary;
+
+      // .navigation__item--link:hover
+      &:hover {
+        color: $spotify-green;
+      }
+    }
+  }
+
+  // .navigation__mobile-logo
+  &__mobile-logo {
+    padding: 25px;
+    padding-left: 40px;
+    padding-bottom: 50px;
+    cursor: pointer;
+
+    // .navigation__mobile-logo img
+    & img {
+      height: 30px;
+      width: auto;
+    }
+  }
+}
+
+.seperator {
+  padding: 25px 17px;
+  color: $white;
+  font-size: 20px;
+  font-weight: 100;
+  cursor: default;
+  list-style: none;
+}
+
+@media only screen and (max-width: 991px) {
+  .navigation {
+    &__inner {
+      display: flex;
+      flex-direction: column;
+      padding: 25px;
+      padding-left: 40px;
+      align-items: flex-start;
+      width: 400px;
+    }
+    &__links {
+      &--primary {
+        font-size: 36px;
+        font-weight: $font-normal;
+        padding: 0;
+        padding-bottom: 10px;
+        flex: 1;
+      }
+      &--secondary {
+        font-size: 28px;
+        font-weight: $font-normal;
+        flex: 1;
+        padding: 0;
+        padding-bottom: 10px;
+      }
+    }
+  }
+}

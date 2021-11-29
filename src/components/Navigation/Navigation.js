@@ -2,7 +2,7 @@ import React from 'react'
 import { useTranslation } from 'react-i18next'
 import { Link } from 'react-router-dom'
 
-import './Navigation.css'
+import './navigation.scss'
 
 const Navigation = ({ isMobile }) => {
   // to translate from language files
@@ -11,25 +11,31 @@ const Navigation = ({ isMobile }) => {
   return (
     //   if is mobile className is 'mobile-navigation' else just 'navigation'
     <ul id={`${isMobile ? 'mobile-navigation' : 'navigation'}`}>
-      <div className='nav-links-container'>
-        <li className='nav-links nav-links-primary'>{t('navbar.premium')}</li>
-        <li className='nav-links nav-links-primary'>{t('navbar.support')}</li>
-        <li className='nav-links nav-links-primary'>{t('navbar.download')}</li>
+      <div className='navigation__inner'>
+        <li className='navigation__item navigation__item--primary'>
+          {t('navbar.premium')}
+        </li>
+        <li className='navigation__item navigation__item--primary'>
+          {t('navbar.support')}
+        </li>
+        <li className='navigation__item navigation__item--primary'>
+          {t('navbar.download')}
+        </li>
         <li className='seperator'>{isMobile ? '__' : '|'}</li>
-        <li className='nav-links nav-links-secondary'>
-          <Link className='route-link' to='/signup'>
+        <li className='navigation__item navigation__item--secondary'>
+          <Link className='navigation__item--link' to='/signup'>
             {t('navbar.signup')}
           </Link>
         </li>
-        <li className='nav-links nav-links-secondary'>
-          <Link className='route-link' to='login'>
+        <li className='navigation__item navigation__item--secondary'>
+          <Link className='navigation__item--link' to='login'>
             {t('navbar.login')}
           </Link>
         </li>
       </div>
       {/* LOGO FOR RESPONSIVE VIEW NAV */}
       {isMobile && (
-        <div className='vertical-navbar-logo-container'>
+        <div className='navigation__mobile-logo'>
           <img src='logo.png' alt='' width='auto' height='40px' />
         </div>
       )}
