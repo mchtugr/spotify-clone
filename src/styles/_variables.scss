@@ -44,6 +44,7 @@ $vertical-card-hover: #262626;
 $footer-icon-bg: #222326;
 $vertical-navbar-selected-color: #282828;
 $navigation-secondary: #b9bfcc;
+$playlist-icon-color: hsla(0, 0%, 100%, 0.7);
 
 // font-weight
 $font-black: 900;
@@ -55,20 +56,26 @@ $left-nav-width: 241px;
 $top-banner-height: 60px;
 $navbar-height: 80px;
 $navbar-height-small: 54px;
+$vertical-navbar-item-height: 40px;
+$vertical-navbar-playlist-height: 128px;
+$web-player-height: 90px;
+
 $x-large-width: 1170px;
 $large-width: 970px;
 $medium-width: 750px;
+$vertical-card-min-width: 180px;
+$mobile-navigation-width: 447px;
+
 $horizontal-card-img: 80px;
 $music-types-card-img: 100px;
 $playlist-card-img: 40px;
-$vertical-card-min-width: 180px;
 $grid-gap: 24px;
 $footer-social-icons-container: 54px;
 $footer-social-icons-size: 20px;
-$web-player-height: 90px;
 $spotify-logo-size: 40px;
 $spotify-logo-small-size: 25px;
-$vertical-navbar-item-height: 40px;
-$vertical-navbar-playlist-height: 128px;
 $vertical-navbar-icon-size: 24px;
-$mobile-navigation-width: 447px;
+
+$play-btn-size: 56px;
+$playlist-svg-font: 28px;
+$playlist-icon-size: 32px;

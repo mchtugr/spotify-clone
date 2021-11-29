@@ -1,0 +1,61 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+.playlist-controls {
+  display: flex;
+  align-items: center;
+  padding: 24px 0;
+  position: relative;
+
+  &__play {
+    @include center;
+    margin-right: $playlist-icon-size;
+    width: $play-btn-size;
+    height: $play-btn-size;
+    border-radius: 28px;
+    background-color: $spotify-dark-green-hover;
+    transition: all 0.2s ease;
+
+    &:hover {
+      transform: scale(1.06);
+    }
+
+    & svg {
+      fill: $white;
+      font-size: $playlist-svg-font;
+    }
+  }
+
+  &__fav {
+    @include center;
+    background: transparent;
+    width: $playlist-icon-size;
+    height: $playlist-icon-size;
+    margin-right: $playlist-icon-size;
+
+    & svg {
+      font-size: $playlist-svg-font;
+      fill: $playlist-icon-color;
+
+      &:hover {
+        fill: $white;
+      }
+    }
+  }
+
+  &__three-dots {
+    @include center;
+    background: transparent;
+    width: $playlist-icon-size;
+    height: $playlist-icon-size;
+
+    & svg {
+      font-size: $playlist-svg-font;
+      fill: $playlist-icon-color;
+
+      &:hover {
+        fill: $white;
+      }
+    }
+  }
+}
