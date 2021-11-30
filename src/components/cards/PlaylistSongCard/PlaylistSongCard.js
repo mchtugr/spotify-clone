@@ -3,6 +3,12 @@ import React from 'react'
 import './playlist-song-card.scss'
 
 const PlaylistSongCard = ({ songData, index }) => {
+  // convert miliseconds to minutes and seconds to display song duration
+  const convertMilisecond = (ms) => {
+    var minutes = Math.floor(ms / 60000)
+    var seconds = ((ms % 60000) / 1000).toFixed(0)
+    return minutes + ':' + (seconds < 10 ? '0' : '') + seconds
+  }
   return (
     <div className='playlist-card'>
       <div className='playlist-card__table'>
@@ -64,7 +70,7 @@ const PlaylistSongCard = ({ songData, index }) => {
         </div>
         {/* DURATION */}
         <div className='playlist-card__duration playlist-card__table-item'>
-          3:44
+          {convertMilisecond(songData.track.duration_ms)}
         </div>
       </div>
     </div>
