@@ -11,7 +11,7 @@
 }
 
 body {
-  background-color: #000;
+  background-color: $black;
 }
 
 p {
@@ -24,8 +24,34 @@ p {
   overflow: hidden;
 }
 
+.page-wrapper {
+  display: flex;
+  grid-template-columns: 1fr auto;
+  background-image: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(rgba(0, 0, 0, 0.6)),
+    to(#121212)
+  );
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), #121212);
+  -webkit-transition: background 1s ease;
+  transition: background 1s ease;
+
+  background-color: $premium-plans-card-footer;
+}
+
+.page-content {
+  width: calc(100vw - $left-nav-width);
+  position: relative;
+  left: $left-nav-width;
+  margin-top: 90px;
+  bottom: $web-player-height;
+  margin-bottom: 20px;
+}
+
 #root {
-  background-color: #fff;
+  background-color: $white;
 }
 
 a {
@@ -117,9 +143,9 @@ a {
 }
 
 .liked-icon svg {
-  fill: #1ed760;
+  fill: $spotify-green;
 }
 
 .liked-icon svg:hover {
-  fill: #1ed760;
+  fill: $spotify-green;
 }

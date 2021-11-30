@@ -10,8 +10,6 @@ import WelcomeSection from '../components/WelcomeSection/'
 import DiscoverSection from '../components/DiscoverSection/'
 import { getNewReleases, getTopArtists, getUserDetails } from '../redux/actions'
 
-import './HomePage.css'
-
 const Homepage = () => {
   const dispatch = useDispatch()
   const newReleases = useSelector((state) => state.newReleases)
