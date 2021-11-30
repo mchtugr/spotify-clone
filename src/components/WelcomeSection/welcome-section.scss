@@ -1,0 +1,29 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+.welcome-section {
+  padding-top: 14px;
+  display: flex;
+  flex-direction: column;
+  background-color: transparent;
+  color: $white;
+
+  &__message {
+    @include ellipsis;
+    max-width: 100%;
+    font-size: 32px;
+    font-weight: $font-bold;
+    letter-spacing: -0.04em;
+    line-height: 36px;
+  }
+
+  &__cardbox {
+    @include grid-col-template($horizontal-card-min-width);
+    margin-top: 22px;
+    display: grid;
+    row-gap: 16px;
+    column-gap: $grid-gap;
+    max-height: 176px;
+    overflow-y: hidden;
+  }
+}

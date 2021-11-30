@@ -186,14 +186,14 @@
     width: 93px;
     overflow: hidden;
     -webkit-appearance: none;
-    background-color: #535353;
+    background-color: $premium-plans-card-footer;
     cursor: default;
   }
 
   input[type='range']::-webkit-slider-runnable-track {
     height: 10px;
     -webkit-appearance: none;
-    color: #b3b3b3;
+    color: $premium-plans-card-footer;
     margin-top: -1px;
     cursor: default;
   }
@@ -204,25 +204,25 @@
     height: 10px;
     cursor: ew-resize;
     background: #434343;
-    box-shadow: -220px 0 0 220px #b3b3b3;
+    box-shadow: -220px 0 0 220px $playlist-card-secondary-text;
     cursor: default;
   }
 }
 /** FF*/
 input[type='range']::-moz-range-progress {
-  background-color: #b3b3b3;
+  background-color: $playlist-card-secondary-text;
   cursor: default;
 }
 input[type='range']::-moz-range-track {
-  background-color: #535353;
+  background-color: $premium-plans-card-footer;
   cursor: default;
 }
 /* IE*/
 input[type='range']::-ms-fill-lower {
-  background-color: #b3b3b3;
+  background-color: $playlist-card-secondary-text;
   cursor: default;
 }
 input[type='range']::-ms-fill-upper {
-  background-color: #535353;
+  background-color: $premium-plans-card-footer;
   cursor: default;
 }
