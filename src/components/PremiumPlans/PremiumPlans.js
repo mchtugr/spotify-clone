@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next'
 import PremiumPlansCard from '../cards/PremiumPlansCard/PremiumPlansCard'
 import data from '../../languages/en.json'
 
-import './PremiumPlans.css'
+import './premium-plans.scss'
 
 const PremiumPlans = () => {
   // to translate from language files
@@ -13,31 +13,31 @@ const PremiumPlans = () => {
 
   return (
     <div className='premium-plans' id='premium-plans'>
-      <div className='premium-plans-inner-container'>
-        <h2 className='premium-plans-heading'>{t('h2')}</h2>
-        <h3 className='premium-plans-subheading'>{t('h3')}</h3>
+      <div className='premium-plans__inner'>
+        <h2 className='premium-plans__heading'>{t('h2')}</h2>
+        <h3 className='premium-plans__subheading'>{t('h3')}</h3>
         {/* PAYMENT LOGOS */}
-        <div className='payment-logos-section'>
-          <ul className='payment-logos-container'>
-            <li className='payment-logo-item-container'>
-              <div className='payment-logo visa'></div>
+        <div className='premium-plans__payment'>
+          <ul className='premium-plans__payment-logos'>
+            <li className='premium-plans__logobox'>
+              <div className='premium-plans__logobox--logo visa'></div>
             </li>
-            <li className='payment-logo-item-container'>
-              <div className='payment-logo mastercard'></div>
+            <li className='premium-plans__logobox'>
+              <div className='premium-plans__logobox--logo mastercard'></div>
             </li>
-            <li className='payment-logo-item-container'>
-              <div className='payment-logo amex'></div>
+            <li className='premium-plans__logobox'>
+              <div className='premium-plans__logobox--logo amex'></div>
             </li>
-            <li className='payment-logo-item-container'>
-              <div className='payment-logo discover'></div>
+            <li className='premium-plans__logobox'>
+              <div className='premium-plans__logobox--logo discover'></div>
             </li>
-            <li className='payment-logo-item-container'>
-              <div className='payment-logo paypal'></div>
+            <li className='premium-plans__logobox'>
+              <div className='premium-plans__logobox--logo paypal'></div>
             </li>
           </ul>
         </div>
-        <div className='premium-plans-cards-container'>
-          <div className='premium-plans-cards-inner-container'>
+        <div className='premium-plans__cardbox'>
+          <div className='premium-plans__cardbox--inner'>
             {premiumPlans.map((plan) => (
               <PremiumPlansCard langData={plan} key={plan.index} />
             ))}

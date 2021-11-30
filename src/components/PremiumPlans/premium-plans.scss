@@ -1,0 +1,134 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+.premium-plans {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: $premium-plans-bg;
+
+  &__inner {
+    padding: 75px 15px;
+    margin: 0 auto;
+  }
+
+  &__heading {
+    text-align: center;
+    font-size: 32px;
+    letter-spacing: -1.28px;
+
+    font-weight: $font-bold;
+    letter-spacing: -1.28px;
+    line-height: 1;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__subheading {
+    font-size: 16px;
+    font-weight: $font-normal;
+    margin: 10px 0;
+    text-align: center;
+    padding: 0;
+  }
+
+  &__payment {
+    @include center;
+    margin-top: 16px;
+  }
+
+  &__payment-logos {
+    @include center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  &__logobox {
+    margin-right: 7px;
+
+    &--logo {
+      display: inline-block;
+      width: 29px;
+      height: 20px;
+      vertical-align: middle;
+    }
+  }
+
+  &__cardbox {
+    margin: 50px 0 26px;
+
+    &--inner {
+      display: grid;
+      justify-content: center;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+  }
+}
+
+.visa {
+  background-image: url(https://content-tooling.spotifycdn.com/images/c870a1e1-f980-4626-ab1b-14eeb8d4cab4_visa.svg);
+}
+
+.mastercard {
+  background-image: url(https://content-tooling.spotifycdn.com/images/e5ebed70-82ea-42ae-917d-b3edb7ed98ef_mastercard.svg);
+}
+
+.amex {
+  background-image: url(https://content-tooling.spotifycdn.com/images/3fcc3442-3a00-455f-9256-d3115ac3e382_amex.svg);
+}
+
+.discover {
+  background-image: url(https://content-tooling.spotifycdn.com/images/205f3c09-6649-42db-8bf3-7a356be0ae37_discover.svg);
+}
+
+.paypal {
+  background-image: url(https://i.scdn.co/image/ab671c3d0000f4300e2f169bed4bb2798accb287);
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media only screen and (max-width: 767px) {
+  .premium-plans__cardbox--inner {
+    display: block;
+    max-width: $premium-plans-cardbox-small;
+    margin: 0 auto;
+  }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .premium-plans__cardbox--inner {
+    display: block;
+    max-width: $premium-plans-cardbox-small;
+    margin: 0 auto;
+  }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .premium-plans {
+    &__cardbox--inner {
+      display: block;
+      max-width: $premium-plans-cardbox-small;
+      width: auto;
+      margin: 0 auto;
+    }
+
+    &__inner {
+      width: $large-width;
+    }
+  }
+}
+
+/* X-Large devices (large desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  .premium-plans {
+    &__inner {
+      width: $x-large-width;
+    }
+    &__heading {
+      font-size: 40px;
+      letter-spacing: -1.6px;
+    }
+  }
+}
