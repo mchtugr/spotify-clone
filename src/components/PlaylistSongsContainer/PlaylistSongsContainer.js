@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next'
 
 import DurationIcon from '../icons/DurationIcon'
 
-import './PlaylistSongsContainer.css'
+import './playlist-songs-container.scss'
 
 const PlaylistSongsContainer = ({ children }) => {
   // to translate from language files
@@ -11,24 +11,24 @@ const PlaylistSongsContainer = ({ children }) => {
     keyPrefix: 'playlist_detail_page.playlist_songs_container',
   })
   return (
-    <div className='playlist-songs-container'>
-      <div className='playlist-songs-table-container'>
-        <div className='playlist-songs-table'>
+    <div className='playlist__songbox'>
+      <div className='playlist__tablebox'>
+        <div className='playlist__table'>
           {/* ORDER */}
-          <p className='playlist-songs-table-header'>#</p>
+          <p className='playlist__table--header'>#</p>
           {/* TITLE */}
-          <p className='playlist-songs-table-header'>{t('title')}</p>
+          <p className='playlist__table--header'>{t('title')}</p>
           {/* ALBUM */}
-          <p className='playlist-songs-table-header'>{t('album')}</p>
+          <p className='playlist__table--header'>{t('album')}</p>
           {/* ADDED AT */}
-          <p className='playlist-songs-table-header'>{t('added_at')}</p>
+          <p className='playlist__table--header'>{t('added_at')}</p>
           {/* DURATION */}
-          <p className='playlist-songs-table-header duration-icon'>
+          <p className='playlist__table--header duration-icon'>
             <DurationIcon />
           </p>
         </div>
       </div>
-      <div className='playlist-song-cards-container'>{children}</div>
+      <div className='playlist__cardbox'>{children}</div>
     </div>
   )
 }
