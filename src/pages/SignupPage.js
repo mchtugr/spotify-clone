@@ -6,7 +6,7 @@ import Button from '../components/ui/Button'
 import CustomInput from '../components/ui/CustomInput'
 import Divider from '../components/ui/Divider'
 
-import './SignupPage.css'
+import '../styles/signup-page.scss'
 
 const SignupPage = () => {
   // to translate from language files
@@ -51,22 +51,22 @@ const SignupPage = () => {
     }
   }
   return (
-    <div className='signup-container'>
-      <div className='header-container'>
+    <div className='signup-page'>
+      <div className='signup-page__header'>
         {/* LOGO */}
-        <div className='signup-page-logo-section'>
-          <Link to='/' className='signup-page-logo-container'>
-            <div className='signup-logo'></div>
+        <div className='signup-page__logo-section'>
+          <Link to='/' className='signup-page__logobox'>
+            <div className='signup-page__logo'></div>
           </Link>
         </div>
-        <h2 className='signup-heading'>{t('heading')}</h2>
+        <h2 className='signup-page__heading'>{t('heading')}</h2>
       </div>
       {/* FACEBOOK SIGNUP */}
       <div
-        className='facebook-signup-container'
+        className='signup-page__facebook'
         onClick={() => alert('Not Active!')}
       >
-        <div className='facebook-btn-wrapper'>
+        <div className='signup-page__facebook--btnbox'>
           <Button variant='facebook' animated>
             {t('facebook')}
           </Button>
@@ -75,7 +75,7 @@ const SignupPage = () => {
       {/* CUSTOM DIVIDER */}
       <Divider>{t('or')}</Divider>
       <form onSubmit={handleSubmit}>
-        <h2 className='signup-subheader'>{t('subheading')}</h2>
+        <h2 className='signup-page__subheader'>{t('subheading')}</h2>
         {/* EMAIL */}
         <CustomInput
           label={t('email_label')}
@@ -117,7 +117,7 @@ const SignupPage = () => {
           showError={usernameError}
         />
 
-        <div className='signup-btn-container'>
+        <div className='signup-page__btnbox'>
           <div className='signup-btn-wrapper'>
             <Button variant='spotify' animated type='submit'>
               {t('sign_up_btn')}
@@ -125,10 +125,10 @@ const SignupPage = () => {
           </div>
         </div>
         {/* LOGIN REDIRECT */}
-        <div className='login-option'>
+        <div className='signup-page__login'>
           <span>{t('login_direct')}</span>
           <span>
-            <Link to='/login' className='login-link'>
+            <Link to='/login' className='signup-page__login--link'>
               {t('login')}
             </Link>
           </span>
