@@ -12,8 +12,6 @@ import {
   displayDefaultSearchCategories,
 } from '../redux/actions'
 
-import './SearchPage.css'
-
 const SearchPage = () => {
   const dispatch = useDispatch()
   const search = useSelector((state) => state.search)
