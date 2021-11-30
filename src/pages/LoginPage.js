@@ -11,7 +11,7 @@ import Divider from '../components/ui/Divider'
 import CustomInput from '../components/ui/CustomInput'
 import { accessUrl } from '../spotify'
 
-import './LoginPage.css'
+import '../styles/login-page.scss'
 
 const LoginPage = () => {
   const history = useHistory()
@@ -40,36 +40,36 @@ const LoginPage = () => {
   const { t } = useTranslation('translation', { keyPrefix: 'login' })
 
   return (
-    <div className='login-page-container'>
+    <div className='login-page'>
       {/* LOGO */}
-      <div className='login-page-logo-section'>
-        <Link to='/' className='login-logo-container'>
-          <div className='login-logo'></div>
+      <div className='login-page__logo-section'>
+        <Link to='/' className='login-page__logobox'>
+          <div className='login-page__logo'></div>
         </Link>
       </div>
-      <div className='login-page-inner-container'>
+      <div className='login-page__inner'>
         {/* FACEBOOK LOGIN */}
-        <div className='facebook-container social-icon-container'>
+        <div className='facebook-container login-page__social-iconbox'>
           <Button variant='facebook-dark'>
-            <span className='social-btn-icon'>
+            <span className='login-page__social-icon'>
               <RiFacebookCircleFill size='16px' />
             </span>
             {t('facebook')}
           </Button>
         </div>
         {/* APPLE LOGIN */}
-        <div className='apple-container social-icon-container'>
+        <div className='apple-container login-page__social-iconbox'>
           <Button variant='apple'>
-            <span className='social-btn-icon'>
+            <span className='login-page__social-icon'>
               <RiAppleFill size='16px' />
             </span>
             {t('apple')}
           </Button>
         </div>
         {/* GOOGLE LOGIN */}
-        <div className='apple-container social-icon-container'>
+        <div className='apple-container login-page__social-iconbox'>
           <Button variant='google'>
-            <span className='social-btn-icon'>
+            <span className='login-page__social-icon'>
               <FcGoogle size='16px' />
             </span>
             {t('google')}
@@ -114,15 +114,17 @@ const LoginPage = () => {
             isLogin
           />
 
-          <div className='forget-password'>{t('forget')}</div>
-          <div className='form-submit-section'>
+          <div className='login-page__forget'>{t('forget')}</div>
+          <div className='login-page__form-submit'>
             <div
-              className='form-remember'
+              className='login-page__remember'
               onClick={() => setSelected(!selected)}
             >
               <div
                 className={
-                  selected ? 'remember-checkbox-selected' : 'remember-checkbox'
+                  selected
+                    ? 'login-page__checkbox--selected'
+                    : 'login-page__checkbox'
                 }
               >
                 {selected ? (
@@ -131,7 +133,7 @@ const LoginPage = () => {
                   <IoSquareOutline size='24px' />
                 )}
               </div>
-              <div className='remember-text'>{t('remember')}</div>
+              <div className='login-page__remember--text'>{t('remember')}</div>
             </div>
             <Button variant='spotify-dark' type='submit'>
               {t('login-btn')}
@@ -140,8 +142,8 @@ const LoginPage = () => {
         </form>
         {/* SIGNUP REDIRECT */}
         <Divider style={{ width: '100%' }} />
-        <div className='login-footer-signup'>
-          <h2 className='no-account'>{t('no_account')}</h2>
+        <div className='login-page__signup'>
+          <h2 className='login-page__no-account'>{t('no_account')}</h2>
           <Button variant='google' onClick={() => history.push('/signup')}>
             {t('sign_up_btn')}
           </Button>
