@@ -1,0 +1,140 @@
+@import '../../styles/variables';
+
+.trial-offers {
+  min-height: $trial-offers-minheight;
+  padding: 72px 70px;
+  background-color: $primary;
+  color: $white;
+  width: 100%;
+  display: block;
+
+  &__heading {
+    font-size: 40px;
+    line-height: 1.2;
+    margin: 0;
+    padding: 0;
+    padding-top: 54px;
+    font-weight: $font-black;
+    width: 100%;
+    display: inline-block;
+    letter-spacing: 0.25px;
+  }
+
+  &__subheading {
+    margin-top: 30px;
+    font-size: 24px;
+    font-weight: $font-normal;
+    line-height: 1.5;
+    padding: 0;
+    max-width: 100%;
+    display: inline-block;
+    letter-spacing: 0.25px;
+  }
+
+  &__btnbox {
+    margin: 35px 0 0;
+    display: flex;
+  }
+
+  &__footer {
+    max-width: $trial-offers-maxwidth;
+    font-size: 12px;
+    letter-spacing: 0.25px;
+    margin-top: 40px;
+    padding-bottom: 30px;
+
+    &--link {
+      text-decoration: underline;
+      cursor: pointer;
+    }
+  }
+
+  &__btn {
+    border-radius: 50px;
+    padding: 5px 10px;
+    border: 3px solid transparent;
+
+    &--get-started {
+      margin-right: -15px;
+      padding-left: 0;
+    }
+
+    &:active {
+      border: 3px solid $black;
+      transform: scale(0.95);
+    }
+  }
+}
+
+/* XS Screens */
+@media only screen and (max-width: 480px) {
+  .trial-offers {
+    padding-left: 15px;
+    padding-right: 15px;
+
+    &__heading {
+      margin: 0;
+      padding: 0;
+      font-size: calc(24px + 4 * ((100vw - 320px) / 160));
+    }
+
+    &__subheading {
+      font-size: 18px;
+      margin: 15px 0px 0px;
+    }
+
+    &__btnbox {
+      flex-direction: column;
+    }
+
+    &__btn {
+      &--view-plans {
+        flex: 1;
+      }
+
+      &--get-started {
+        flex: 1;
+        margin-right: 0;
+        padding: 5px 10px;
+      }
+    }
+  }
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+  .trial-offers {
+    padding-left: 15px;
+    padding-right: 15px;
+
+    &__heading {
+      font-size: 28px;
+    }
+
+    &__subheading {
+      font-size: 18px;
+    }
+
+    &__btnbox {
+      flex-direction: column;
+    }
+    &__btn {
+      &--view-plans {
+        flex: 1;
+      }
+
+      &--get-started {
+        flex: 1;
+        margin-right: 0;
+        padding: 5px 10px;
+      }
+    }
+  }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .trial-offers {
+    padding-top: 48px;
+  }
+}
