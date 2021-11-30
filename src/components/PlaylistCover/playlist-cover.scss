@@ -1,0 +1,109 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+.playlist-cover {
+  padding: 24px 0;
+  display: grid;
+  grid-template-columns:
+    $playlist-cover-img-size
+    1fr;
+  grid-column-gap: $grid-gap;
+  -webkit-column-gap: $grid-gap;
+  column-gap: $grid-gap;
+
+  // .playlist-cover__imgbox
+  &__imgbox {
+    width: $playlist-cover-img-size;
+    height: $playlist-cover-img-size;
+  }
+
+  // .playlist-cover__img
+  &__img {
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 4px 60px rgb(0 0 0 / 50%);
+  }
+  // .playlist-cover__info
+  &__info {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    // .playlist-cover__info--type
+    &--type {
+      margin: 4px 0 0;
+      letter-spacing: -0.4px;
+      font-size: 12px;
+      font-weight: $font-bold;
+      line-height: 16px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    // .playlist-cover__info--title
+    &--title {
+      display: -webkit-box;
+      -webkit-line-clamp: 1;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      margin: 0;
+      padding: 0.08em 0;
+      font-size: $extra-larger-font-size;
+      line-height: $extra-larger-font-size;
+      font-weight: $font-bold;
+      letter-spacing: -0.04em;
+      text-transform: none;
+      margin-top: 8px;
+    }
+  }
+
+  // .playlist-cover__detail
+  &__detail {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 16px;
+
+    // .playlist-cover__detail--text
+    &--text {
+      font-size: 14px;
+      line-height: 16px;
+      font-weight: $font-normal;
+      letter-spacing: normal;
+      text-transform: none;
+      color: $playlist-card-secondary-text;
+      padding-bottom: 8px;
+    }
+  }
+
+  // .playlist-cover__owner
+  &__owner {
+    display: flex;
+    color: $playlist-card-secondary-text;
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: $font-normal;
+    letter-spacing: normal;
+    text-transform: none;
+
+    // .playlist-cover__owner--info
+    &--info {
+      color: $white;
+      font-weight: $font-bold;
+      cursor: pointer;
+
+      // .playlist-cover__owner--info:hover
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    // .playlist-cover__owner--follower::before,
+    // .playlist-cover__owner--song::before
+    &--follower::before,
+    &--song::before {
+      content: '•';
+      margin: 0px 4px;
+    }
+  }
+}

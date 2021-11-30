@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux'
 
 import Loading from '../ui/Loading'
 
-import './PlaylistCover.css'
+import './playlist-cover.scss'
 
 const PlaylistCover = () => {
   // to translate from language files
@@ -20,35 +20,37 @@ const PlaylistCover = () => {
   return (
     <div className='playlist-cover'>
       {/* PLAYLIST IMG */}
-      <div className='playlist-cover-img-container'>
+      <div className='playlist-cover__imgbox'>
         <img
           src={currentPlaylist.data.images[0].url}
-          alt='deneme'
-          className='playlist-cover-img'
+          alt={`${currentPlaylist.data.name} playlist`}
+          className='playlist-cover__img'
         />
       </div>
-      <div className='playlist-cover-text'>
+      <div className='playlist-cover__info'>
         {/* TYPE */}
-        <h3 className='playlist-cover-type'>{t('playlist')}</h3>
+        <h3 className='playlist-cover__info--type'>{t('playlist')}</h3>
         {/* NAME */}
-        <h1 className='playlist-header-title'>{currentPlaylist.data.name}</h1>
+        <h1 className='playlist-cover__info--title'>
+          {currentPlaylist.data.name}
+        </h1>
         {/* DETAILS */}
-        <div className='playlist-cover-detail'>
-          <p className='playlist-cover-detail-text'>
+        <div className='playlist-cover__detail'>
+          <p className='playlist-cover__detail--text'>
             {currentPlaylist.data.description}
           </p>
-          <div className='playlist-cover-detail-owner-section'>
-            <p className='playlist-cover-detail-owner'>
+          <div className='playlist-cover__owner'>
+            <p className='playlist-cover__owner--info'>
               {currentPlaylist.data.owner.display_name}
             </p>
-            <p className='playlist-cover-detail-owner-item'>
+            <p className='playlist-cover__owner--follower'>
               {/* USE DECIMAL SEPERATOR */}
               {currentPlaylist.data.followers.total
                 .toString()
                 .replace(/\B(?=(\d{3})+(?!\d))/g, '.')}{' '}
               {t('likes')}
             </p>
-            <p className='playlist-cover-detail-owner-item'>
+            <p className='playlist-cover__owner--song'>
               {currentPlaylist.data.tracks.total} {t('songs')}
             </p>
           </div>
