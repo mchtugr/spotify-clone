@@ -1,0 +1,228 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+.web-player {
+  background-color: $bg-color-11;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: $web-player-height;
+  border-top: 1px solid $vertical-navbar-selected-color;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 16px;
+
+  //   .web-player__icons
+  &__icons {
+    @include center;
+    flex-basis: 54px;
+    width: $playlist-icon-size;
+    height: $playlist-icon-size;
+    flex-basis: $playlist-icon-size;
+    flex-grow: 0;
+    flex-shrink: 0;
+
+    //   .web-player__icons svg
+    & svg {
+      fill: $playlist-card-secondary-text;
+
+      //   .web-player__icons svg:hover
+      &:hover {
+        fill: $white;
+      }
+    }
+  }
+
+  //   .web-player__playback-bar
+  &__playback-bar {
+    flex: 1;
+    -webkit-appearance: none;
+    background-color: $premium-plans-card-footer;
+    height: 4px;
+    overflow: hidden;
+    width: auto;
+    border-radius: 2px;
+    margin: 2px;
+    cursor: default;
+    color: rgb(16, 16, 16);
+  }
+
+  //   .web-player__play-btn
+  &__play-btn {
+    @include center;
+    fill: $black;
+    background-color: $white;
+    width: $playlist-icon-size;
+    height: $playlist-icon-size;
+
+    border-radius: 50%;
+
+    //   .web-player__play-btn:hover
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+}
+
+.player-left {
+  display: flex;
+  align-items: center;
+  min-width: $web-player-left;
+  width: 30%;
+  // .player-left__imgbox
+  &__imgbox {
+    flex-basis: 56px;
+    flex-grow: 0;
+    flex-shrink: 0;
+    width: $web-player-img;
+    height: $web-player-img;
+    display: block;
+  }
+
+  // .player-left__img
+  &__img {
+    width: 100%;
+    height: 100%;
+  }
+
+  // .player-left__song
+  &__song {
+    margin: 0 14px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    text-align: left;
+
+    // .player-left__song--title
+    &--title {
+      font-size: 14px;
+      line-height: 16px;
+      letter-spacing: normal;
+      text-transform: none;
+      font-weight: 400;
+      color: $white;
+    }
+
+    // .player-left__song--artist
+    &--artist {
+      font-size: 14px;
+      line-height: 16px;
+      letter-spacing: normal;
+      text-transform: none;
+      color: $playlist-card-secondary-text;
+    }
+  }
+}
+
+.player-middle {
+  max-width: $web-player-middle;
+  width: 40%;
+  display: block;
+
+  // .player-middle__inner
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: $web-player-height;
+  }
+
+  // .player-middle__control
+  &__control {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 12px;
+
+    // .player-middle__control--left
+    &--left {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 8px;
+    }
+
+    // .player-middle__control--right
+    &--right {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 8px;
+    }
+  }
+
+  // .player-middle__playback-bar
+  &__playback-bar {
+    display: flex;
+    color: $white;
+    align-items: center;
+
+    // .player-middle__playback-bar--time
+    &--time {
+      margin: 0 8px;
+      word-break: normal;
+      font-size: 11px;
+      color: $playlist-card-secondary-text;
+    }
+  }
+}
+
+.player-right {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  min-width: $web-player-right;
+  width: 30%;
+  // .player-right__sound
+  &__sound {
+    @include center;
+  }
+}
+
+/*Chrome*/
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  input[type='range'] {
+    width: 93px;
+    overflow: hidden;
+    -webkit-appearance: none;
+    background-color: #535353;
+    cursor: default;
+  }
+
+  input[type='range']::-webkit-slider-runnable-track {
+    height: 10px;
+    -webkit-appearance: none;
+    color: #b3b3b3;
+    margin-top: -1px;
+    cursor: default;
+  }
+
+  input[type='range']::-webkit-slider-thumb {
+    width: 1px;
+    -webkit-appearance: none;
+    height: 10px;
+    cursor: ew-resize;
+    background: #434343;
+    box-shadow: -220px 0 0 220px #b3b3b3;
+    cursor: default;
+  }
+}
+/** FF*/
+input[type='range']::-moz-range-progress {
+  background-color: #b3b3b3;
+  cursor: default;
+}
+input[type='range']::-moz-range-track {
+  background-color: #535353;
+  cursor: default;
+}
+/* IE*/
+input[type='range']::-ms-fill-lower {
+  background-color: #b3b3b3;
+  cursor: default;
+}
+input[type='range']::-ms-fill-upper {
+  background-color: #535353;
+  cursor: default;
+}
