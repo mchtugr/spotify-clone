@@ -1,0 +1,40 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+.searchbar {
+  display: flex;
+  position: relative;
+  flex: 1;
+
+  &__icon {
+    @include center;
+    top: 8px;
+    left: 16px;
+    position: absolute;
+
+    & svg {
+      font-size: 24px;
+    }
+  }
+
+  &__input {
+    @include ellipsis;
+    border: 0px;
+    border-radius: 500px;
+    color: $black;
+    height: 40px;
+    padding: 6px 48px;
+    width: $searchbar-input-width;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &__cross-icon {
+    @include center;
+    position: absolute;
+    left: 330px;
+    top: 8px;
+  }
+}

@@ -9,7 +9,7 @@ import {
   getSearchResults,
 } from '../../redux/actions'
 
-import './SearchInput.css'
+import './search-input.scss'
 
 const SearchInput = () => {
   const [keyword, setKeyword] = useState('')
@@ -47,9 +47,9 @@ const SearchInput = () => {
   }
 
   return (
-    <div className='search-input-container'>
+    <div className='searchbar'>
       <form onSubmit={handleSubmit}>
-        <div className='search-icon-container'>
+        <div className='searchbar__icon'>
           <SearchIcon />
         </div>
         <input
@@ -57,10 +57,10 @@ const SearchInput = () => {
           value={keyword}
           onChange={handleChange}
           placeholder={t('placeholder')}
-          className='search-input'
+          className='searchbar__input'
         />
         {keyword.length > 0 && (
-          <div className='cross-icon-container' onClick={clearSearch}>
+          <div className='searchbar__cross-icon' onClick={clearSearch}>
             <CrossIcon />
           </div>
         )}
