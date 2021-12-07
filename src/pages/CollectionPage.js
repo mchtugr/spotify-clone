@@ -45,7 +45,7 @@ const CollectionPage = ({ match }) => {
         <GridContainer>
           <div>
             <h2>{t(`${match.params.type}`)}</h2>
-            <div className='demo-card-container'>
+            <div className='card-display'>
               {list.map((playlist, i) => (
                 <React.Fragment key={i}>
                   <VerticalCard
